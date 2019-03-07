@@ -1,0 +1,10 @@
+<% include partials/header %>
+<h1>Home page!</h1>
+<h1>Search listing</h1>
+<% search_data.forEach(function(data){ %>
+<div class="">
+  <h4><%= data.name %></h4>
+  <h5> <%= data.listing %></h5>
+</div>
+<% }); %>
+<% include partials/footer %>

@@ -1,0 +1,10 @@
+<h1>This template will be used for showing detail information of a lisitng</h1>
+
+<p><%=listing.name %></p>
+<p><%=listing.location %></p>
+<% if(currentUser && listing.author.id.equals(currentUser._id)){ %>
+  <a href="/listing/<%= listing._id %>/edit">Edit</a>
+  <form class="" action="/listing/<%=listing._id %>?_method=delete" method="post">
+  <button type="submit" name="button">Remove</button>
+  </form>
+<% }%>

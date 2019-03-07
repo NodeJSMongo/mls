@@ -1,0 +1,12 @@
+
+<h1>Search listing</h1>
+<% listings.forEach(function(listing){ %>
+<div class="">
+  <h4><%= listing.name %></h4>
+  <h5> <%= listing.location %></h5>
+</div>
+<a href="/listing/<%= listing._id %>">Details</a>
+<% if(currentUser && listing.author.id.equals(currentUser._id)){ %>
+<a href="/listing/<%= listing._id %>/edit">Edit</a>
+<% } %>
+<% }); %>
