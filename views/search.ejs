@@ -1,10 +1,35 @@
 <% include partials/header %>
-<h1>Home page!</h1>
-<h1>Search listing</h1>
-<% search_data.forEach(function(data){ %>
-<div class="">
-  <h4><%= data.name %></h4>
-  <h5> <%= data.listing %></h5>
+<% include partials/loggedin %>
+<div class="container">
+  <h1>This functionlity is currently in progress.</h1>
+
+  <a href="/listing"> <u>Click here to see all listing</u></a>
+
+  <ul class="list-group">
+    <li class="list-group-item active">Class</li>
+    <li class="list-group-item">In progress</li>
+    <li class="list-group-item">In progress</li>
+    <li class="list-group-item">In progress</li>
+  </ul>
+
+  <ul class="list-group">
+    <li class="list-group-item active">Availibility</li>
+    <li class="list-group-item">In progress</li>
+    <li class="list-group-item">In progress</li>
+    <li class="list-group-item">In progress</li>
+  </ul>
+
+  <ul class="list-group">
+    <li class="list-group-item active">Sales or lease</li>
+    <li class="list-group-item">In progress</li>
+    <li class="list-group-item">In progress</li>
+    <li class="list-group-item">In progress</li>
+  </ul>
+
+  <ul class="list-group">
+    <li class="list-group-item active">Archives</li>
+    <li class="list-group-item">In progress</li>
+  </ul>
 </div>
-<% }); %>
+
 <% include partials/footer %>
