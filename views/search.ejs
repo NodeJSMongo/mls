@@ -5,31 +5,49 @@
 
   <a href="/listing"> <u>Click here to see all listing</u></a>
 
-  <ul class="list-group">
-    <li class="list-group-item active">Class</li>
-    <li class="list-group-item">In progress</li>
-    <li class="list-group-item">In progress</li>
-    <li class="list-group-item">In progress</li>
-  </ul>
-
-  <ul class="list-group">
-    <li class="list-group-item active">Availibility</li>
-    <li class="list-group-item">In progress</li>
-    <li class="list-group-item">In progress</li>
-    <li class="list-group-item">In progress</li>
-  </ul>
-
-  <ul class="list-group">
-    <li class="list-group-item active">Sales or lease</li>
-    <li class="list-group-item">In progress</li>
-    <li class="list-group-item">In progress</li>
-    <li class="list-group-item">In progress</li>
-  </ul>
-
-  <ul class="list-group">
-    <li class="list-group-item active">Archives</li>
-    <li class="list-group-item">In progress</li>
-  </ul>
-</div>
+  <form class="" action="/listing" method="GET">
+  <div class="row">
+    <div class="col">
+      <label for="name" class="">Class</label><br>
+        <select class="" data-style="" name="name">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Apartment</option>
+                <option name="table2" value="house">House</option>
+                <option name="table3" value="Land">Land</option>
+            </optgroup>
+        </select>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <label for="name">Availability</label><br>
+      <select class="" data-style="" name="">
+          <optgroup label="Select Table">
+              <option name="" value="0">Select One</option>
+              <option name="table1" value="">Available</option>
+              <option name="table2" value="">Unavailable</option>
+          </optgroup>
+      </select>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <label for="location">Sale or Lease</label> <br>
+      <select class="" data-style="" name="">
+          <optgroup label="Select Table">
+              <option name="" value="0">Select One</option>
+              <option name="table1" value="">Sale</option>
+              <option name="table2" value="">Lease</option>
+              <option name="table2" value="">Sub-Lease</option>
+          </optgroup>
+      </select>
+    </div>
+  </div>
+  <hr>
+    <input type="submit" name="" value="Continue">
+  </form>
 
 <% include partials/footer %>

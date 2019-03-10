@@ -5,6 +5,12 @@
     <h1 class="display-4 center">Your Search listing</h1>
   </div>
 
+  <div class="">
+    <% if(noMatch !== null) { %>
+      <h4><%= noMatch %> </h4>
+      <% } %>
+  </div>
+
     <% listings.forEach(function(listing){ %>
       <ul class="list-group">
         <li class="list-group-item">

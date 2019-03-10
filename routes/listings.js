@@ -5,14 +5,37 @@ var middleware = require("../middleware");
 //Restful API
 
 router.get("/listing", middleware.isLoggedIn, function(req,res){
-  //get all listings from db
-  Listing.find({}, function(err, listings){
-    if(err){
-      console.log(err);
-    }else{
-      res.render("listing", {listings: listings});
-    }
-  });
+  var noMatch = null;
+  var finalQuery = {};
+  if(req.query.name){
+    finalQuery.name = req.query.name;
+  }
+  if(req.query.location){
+    finalQuery.location =  req.query.location;
+  }
+
+  if(finalQuery){
+    //get all listings from db
+    Listing.find(finalQuery, function(err, listings){
+      if(err){
+        console.log(err);
+      }else{
+        if(listings.length < 1){
+          var noMatch = "No listing found match that search. Please try again";
+        }
+        res.render("listing", {listings: listings, noMatch: noMatch});
+      }
+    });
+  }else{
+    //get all listings from db
+    Listing.find({}, function(err, listings){
+      if(err){
+        console.log(err);
+      }else{
+        res.render("listing", {listings: listings, noMatch: noMatch});
+      }
+    });
+  }
 });
 
 router.post("/listing", middleware.isLoggedIn, function(req, res){
