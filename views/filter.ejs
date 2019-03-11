@@ -1,3 +1,5 @@
+<% include partials/header %>
+<% include partials/loggedin %>
 <% listings.forEach(function(listing){ %>
   <ul class="list-group">
     <li class="list-group-item">
@@ -9,3 +11,4 @@
     </li>
   </ul>
 <% }); %>
+<% include partials/footer %>

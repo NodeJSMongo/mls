@@ -1,7 +1,12 @@
-select{
-  display: block;
+#centeredheading{
+  text-align: center;
 }
 
-optgroup option{
-  display: inline;
+.bottomPadding{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.logout{
+  margin-top: 1rem;
 }
