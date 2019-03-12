@@ -1,7 +1,351 @@
 <% include partials/header %>
 <% include partials/loggedin %>
 <div class="container">
+  <h1>Create a form</h1>
   <form class="" action="/listing" method="post">
+
+    <h6 id="centeredheading">Location</h6>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <label for="name" class="">Division</label>
+        <select class="" data-style="" name="division">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+      <div class="col">
+        <label for="name" class="">District</label>
+        <select class="" data-style="" name="district">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+      <div class="col">
+        <label for="name" class="">City</label>
+        <select class="" data-style="" name="city">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+      <div class="col">
+        <label for="name" class="">Thana</label>
+        <select class="" data-style="" name="thana">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+      <div class="col">
+        <label for="name" class="">Union</label>
+        <select class="" data-style="" name="union">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+    </div>
+
+    <div class="row bottomPadding">
+      <div class="col">
+        <label for="name" class="">Main Intersaction</label>
+        <input type="text" name="intersaction" value="" placeholder="Ashulia & Chandra">
+      </div>
+      <div class="col">
+        <label for="name" class="">Nearest Hiway</label>
+        <input type="text" name="transit" value="" placeholder="Savar-Dhaka Hiway">
+      </div>
+      <div class="col">
+        <label for="name" class="">Famous Establishment</label>
+        <input type="text" name="famousEstablishment" value="" placeholder="Smirit Shaowdha">
+      </div>
+    </div>
+
+
+    <h6 id="centeredheading">Amounts/Dates</h6>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <label for="name" class="">List Price</label>
+        <input type="text" name="listPrice" value="">
+      </div>
+      <div class="col">
+        <label for="name" class="">Assesment</label>
+        <input type="text" name="assesment" value="">
+      </div>
+      <div class="col">
+        <label for="name" class="">Assesment Year</label>
+        <input type="text" name="assesmentYear" value="">
+      </div>
+    </div>
+
+    <div class="row bottomPadding">
+      <div class="col">
+        <label for="name" class="">Contract Commencement</label>
+        <input type="text" name="contractCommencement" value="">
+      </div>
+      <div class="col">
+        <label for="name" class="">Expiry Date</label>
+        <input type="text" name="expiryDate" value="">
+      </div>
+    </div>
+
+    <div class="row bottomPadding">
+      <div class="col">
+        <label for="name" class="">Possession Date</label>
+        <input type="text" name="possessionDate" value="">
+      </div>
+      <div class="col">
+        <label for="name" class="">Holdover Days</label>
+        <input type="text" name="holdoverDays" value="">
+      </div>
+      <div class="">
+        <label for="name" class="">Seller/Landlord Name</label>
+        <input type="text" name="sellerName" value="">
+      </div>
+    </div>
+
+    <h6 id="centeredheading">Exterior</h6>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <label for="name" class="">Type</label>
+        <select class="" data-style="" name="type">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+      <div class="col">
+        <label for="name" class="">Style</label>
+        <select class="" data-style="" name="style">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+      <div class="col">
+        <label for="name" class="">Garage Type</label>
+        <select class="" data-style="" name="garageType">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+    </div>
+
+    <div class="row bottomPadding">
+      <div class="col">
+        <label for="name" class="">Garage Parking Spcs</label>
+        <input type="text" name="parkingSpcs" value="">
+      </div>
+      <div class="col">
+        <label for="name" class="">Pool</label>
+        <input type="text" name="pool" value="">
+      </div>
+      <div class="col">
+        <label for="name" class="">Water</label>
+        <input type="text" name="water" value="">
+      </div>
+    </div>
+
+    <h6 id="centeredheading">Waterfront</h6>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <label for="name" class="">Water Body Name</label>
+        <select class="" data-style="" name="waterBodyName">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+      <div class="col">
+        <label for="name" class="">Water Body Type</label>
+        <select class="" data-style="" name="waterBodyType">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+      <div class="col">
+        <label for="name" class="">Water frontage (m)</label>
+        <input type="text" name="waterFrontage" value="">
+      </div>
+    </div>
+
+    <div class="row bottomPadding">
+      <div class="col">
+        <label for="name" class="">Access</label>
+        <select class="" data-style="" name="accessToProperty">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+      <div class="col">
+        <label for="name" class="">Alternative Power</label>
+        <select class="" data-style="" name="alternativePower">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+      <div class="col">
+        <label for="name" class="">Rural Services</label>
+        <select class="" data-style="" name="ruralServices">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+      <div class="col">
+        <label for="name" class="">Sewage</label>
+        <select class="" data-style="" name="sewage">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+    </div>
+
+    <h6 id="centeredheading">Interior</h6>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <label for="name" class="">Rooms</label>
+        <input type="text" name="water" value="">
+      </div>
+      <div class="col">
+        <label for="name" class="">#Washrooms</label>
+        <input type="text" name="water" value="">
+      </div>
+      <div class="col">
+        <label for="name" class="">#Prices</label>
+        <input type="text" name="water" value="">
+      </div>
+    </div>
+
+    <div class="row bottomPadding">
+      <div class="col">
+        <label for="name" class="">Level</label>
+        <select class="" data-style="" name="level">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+      <div class="col">
+        <label for="name" class="">Family Room</label>
+        <select class="" data-style="" name="level">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+      <div class="col">
+        <label for="name" class="">A/C</label>
+        <select class="" data-style="" name="ac">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+      <div class="col">
+        <label for="name" class="">Elevator/Lift</label>
+        <select class="" data-style="" name="elevator">
+            <optgroup label="Select Table">
+                <option name="" value="0">Select One</option>
+                <option name="table1" value="Apartment">Dhaka</option>
+                <option name="table2" value="house">Chittagong</option>
+                <option name="table3" value="Land">Khulna</option>
+            </optgroup>
+        </select>
+      </div>
+    </div>
+
+
+    <h6 id="centeredheading">Rooms/Details</h6>
+    <hr>
+    <p>This page should have different type of info. I am not clear inperspective of Bangladesh Housing Styles.</p>
+    <hr>
+    <h6>Comments</h6>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <label for="name" class="">Remarks for Clients</label>
+        <input type="text" name="remarksForClients" value="">
+      </div>
+      <div class="col">
+
+      </div>
+      <div class="col">
+
+      </div>
+    </div>
+
+
+    <label for="name" class="">Extras</label>
+    <input type="text" name="extras" value="">
+
+    <label for="name" class="">Remarks For Brokerages</label>
+    <input type="text" name="remarksForBrokerages" value="">
+
+
     <label for=""> Property Type: </label> <input type="text" name="name" value="">
     <label for=""> location: </label> <input type="text" name="location" value="">
     <button type="submit" name="button">Submit</button>
