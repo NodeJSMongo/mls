@@ -14,8 +14,7 @@ var authRoutes = require("./routes/index");
 var secretRoutes = require("./routes/secret");
 var searchRoutes = require("./routes/search");
 var listingsRoutes = require("./routes/listings");
-var linksRoutes = require("./routes/links");
-var informationRoutes = require("./routes/information");
+
 
 
 // mongodb connection by mongoose client
@@ -55,8 +54,6 @@ app.use(authRoutes);
 app.use(secretRoutes);
 app.use(searchRoutes);
 app.use(listingsRoutes);
-app.use(linksRoutes);
-app.use(informationRoutes);
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("server connection successful");
