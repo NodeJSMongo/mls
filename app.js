@@ -22,7 +22,6 @@ mongoose.connect("mongodb://mls_app:543TWOone@ds035693.mlab.com:35693/mls", { us
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-app.set("views", "/views");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
