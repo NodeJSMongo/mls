@@ -1,52 +1,98 @@
 <% include partials/header %>
 <% include partials/loggedin %>
-<div class="container">
-  <h1>This functionlity is currently in progress.</h1>
-
-  <a href="/listing"> <u>Click here to see all listing</u></a>
+<div class="container bottomPadding">
 
   <form class="" action="/listing" method="GET">
-  <div class="row">
-    <div class="col">
-      <label for="name" class="">Class</label>
-        <select class="" data-style="" name="name">
-            <optgroup label="Select Table">
-                <option name="" value="0">Select One</option>
-                <option name="table1" value="Apartment">Apartment</option>
-                <option name="table2" value="house">House</option>
-                <option name="table3" value="Land">Land</option>
-            </optgroup>
+  <div class="row bottomPadding">
+    <div class="col bottomPadding">
+      <label for="propertyclass" class="">Class</label>
+        <select class="" data-style="" name="propertyclass">
+              <option name="" value="0">Select One</option>
+              <option name="table1" value="Residential">Residential</option>
+              <option name="table2" value="Commercial">Commercial</option>
         </select>
     </div>
   </div>
   <hr>
-  <div class="row">
-    <div class="col">
-      <label for="name">Availability</label>
-      <select class="" data-style="" name="">
-          <optgroup label="Select Table">
-              <option name="" value="0">Select One</option>
-              <option name="table1" value="">Available</option>
-              <option name="table2" value="">Unavailable</option>
-          </optgroup>
+  <div class="row bottomPadding">
+    <div class="col bottomPadding">
+      <label for="status">Availability</label>
+      <select class="" data-style="" name="status">
+          <option name="" value="0">Select One</option>
+          <option name="table1" value="Available">Available</option>
+          <option name="table2" value="Unvailable">Unavailable</option>
       </select>
     </div>
   </div>
   <hr>
-  <div class="row">
-    <div class="col">
-      <label for="location">Sale or Lease</label>
-      <select class="" data-style="" name="">
-          <optgroup label="Select Table">
-              <option name="" value="0">Select One</option>
-              <option name="table1" value="">Sale</option>
-              <option name="table2" value="">Lease</option>
-              <option name="table2" value="">Sub-Lease</option>
-          </optgroup>
+  <div class="row bottomPadding">
+    <div class="col bottomPadding">
+      <label for="sale">Sale or Lease</label>
+      <select class="" data-style="" name="sale">
+            <option name="" value="0">Select One</option>
+            <option name="table1" value="Sale">Sale</option>
+            <option name="table2" value="Lease">Lease</option>
+            <option name="table3" value="Sub Lease">Sub-Lease</option>
       </select>
     </div>
   </div>
   <hr>
+<div class="row bottomPadding">
+  <div class="col bottomPadding">
+    <label for="area" class="">Area</label>
+    <select class="" data-style="" name="area">
+            <option name="" value="N/A">Select One</option>
+            <option name="table1" value="Adabar">Adabar</option>
+            <option name="table2" value="Azampur">Azampur</option>
+            <option name="table3" value="Badda">Badda</option>
+            <option name="table4" value="Bangsal">Bangsal</option>
+            <option name="table5" value="Bimanbandar">Bimanbandar</option>
+            <option name="table6" value="Cantonment">Cantonment</option>
+            <option name="table7" value="Chowkbazar">Chowkbazar</option>
+            <option name="table8" value="Darus Salam">Darus Salam</option>
+            <option name="table9" value="Demra">Demra</option>
+            <option name="table10" value="Dhanmondi">Dhanmondi</option>
+            <option name="table11" value="Gendaria">Gendaria</option>
+            <option name="table12" value="Gulshan">Gulshan</option>
+            <option name="table13" value="Hazaribagh">Hazaribagh</option>
+            <option name="table14" value="Kadamtali">Kadamtali</option>
+            <option name="table15" value="Kafrul">Kafrul</option>
+            <option name="table16" value="Kalabagan">Kalabagan</option>
+            <option name="table17" value="kamrangirchar">kamrangirchar</option>
+            <option name="table18" value="Khilgoan">Khilgoan</option>
+            <option name="table19" value="Khilkhet">Khilkhet</option>
+            <option name="table20" value="Kotwali">Kotwali</option>
+            <option name="table21" value="Lalbagh">Lalbagh</option>
+            <option name="table22" value="Mirpur">Mirpur</option>
+            <option name="table23" value="Mohammadpur">Mohammadpur</option>
+            <option name="table24" value="Motijheel">Motijheel</option>
+            <option name="table25" value="New Market">New Market</option>
+            <option name="table26" value="Pallabi">Pallabi</option>
+            <option name="table27" value="Paltan">Paltan</option>
+            <option name="table28" value="Panthapath">Panthapath</option>
+            <option name="table29" value="Romna">Ramna</option>
+            <option name="table30" value="Rampura">Rampura</option>
+            <option name="table31" value="Shabujbagh">Shabujbagh</option>
+            <option name="table32" value="Shah Ali">Shah Ali</option>
+            <option name="table33" value="Sher-e-Bangla Nagar">Sher-e-Bangla Nagar</option>
+            <option name="table34" value="Shyampur">Shyampur</option>
+            <option name="table35" value="Sutrapur">Sutrapur</option>
+            <option name="table36" value="Tejgoan">Tejgoan</option>
+            <option name="table37" value="Tejgoan Industrial Area">Tejgoan Industrial Area</option>
+            <option name="table38" value="Turag">Turag</option>
+            <option name="table39" value="Uttar Khan">Uttar Khan</option>
+            <option name="table40" value="Uttara">Uttara</option>
+            <option name="table41" value="Vatara">Vatara</option>
+            <option name="table42" value="Wari">Wari</option>
+    </select>
+  </div>
+</div>
+
+  <div class="row bottomPadding">
+    <div class="col bottomPadding">
+      <p>Price range for search will be added soon</p>
+    </div>
+  </div>
     <input type="submit" name="" value="Continue">
   </form>
 

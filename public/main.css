@@ -10,3 +10,7 @@
 .logout{
   margin-top: 1rem;
 }
+
+span.card-title{
+  font-weight: 600;
+}

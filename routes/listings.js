@@ -7,11 +7,17 @@ var middleware = require("../middleware");
 router.get("/listing", middleware.isLoggedIn, function(req,res){
   var noMatch = null;
   var finalQuery = {};
-  if(req.query.name){
-    finalQuery.name = req.query.name;
+  if(req.query.propertyclass){
+    finalQuery.propertyclass = req.query.propertyclass;
   }
-  if(req.query.location){
-    finalQuery.location =  req.query.location;
+  if(req.query.status){
+    finalQuery.status =  req.query.status;
+  }
+  if(req.query.sale){
+    finalQuery.sale =  req.query.sale;
+  }
+  if(req.query.area){
+    finalQuery.area =  req.query.area;
   }
 
   if(finalQuery){
@@ -37,15 +43,57 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
     });
   }
 });
-
+// Upload a new listing
 router.post("/listing", middleware.isLoggedIn, function(req, res){
   //get the data
-  var name = req.body.name;
-  var location = req.body.location;
+  var propertyclass = req.body.propertyclass;
+  var status = req.body.status;
+  var sale = req.body.sale;
+
+  var division = req.body.division;
+  var district = req.body.district;
+  var city = req.body.city;
+  var area = req.body.area;
+  var community = req.body.community;
+
+  var listprice = req.body.listprice;
+  var contractdate = req.body.contractdate;
+  var expirydate = req.body.expirydate;
+  var possessiondate = req.body.possessiondate;
+  var holdoverdays = req.body.holdoverdays;
+  var sellername = req.body.sellername;
+
+  var exteriortype = req.body.exteriortype;
+  var water = req.body.water;
+  var power = req.body.power;
+
+  var room = req.body.room;
+  var bedroom = req.body.bedroom;
+  var washroom = req.body.washroom;
+  var kitchen = req.body.kitchen;
+  var level = req.body.level;
+  var ac = req.body.ac;
+  var elevator = req.body.elevator;
+
+  var remarkforclients = req.body.remarkforclients;
+  var extras = req.body.extras;
+  var remarkforbrokers = req.body.remarkforbrokers;
+
   var author ={
     id: req.user._id
   }
-  var newListing = {name: name, location: location, author:author}
+  var newListing = {
+    author: author,
+    propertyclass: propertyclass, status: status, sale: sale,
+    division: division, district: district, city: city,
+    area: area, community: community,
+    listprice: listprice, contractdate: contractdate, expirydate: expirydate,
+    possessiondate: possessiondate,holdoverdays: holdoverdays, sellername: sellername,
+    exteriortype: exteriortype, water: water, power: power,
+    room: room, bedroom: bedroom, washroom: washroom, kitchen: kitchen, level: level,
+    ac: ac, elevator: elevator,
+    remarkforclients: remarkforclients, extras: extras, remarkforbrokers: remarkforbrokers
+  }
   //add the data
   Listing.create(newListing, function(err, newlyCreated){
     if(err){

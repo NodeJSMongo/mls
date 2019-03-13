@@ -1,15 +1,95 @@
 <% include partials/header %>
 <% include partials/loggedin %>
-<h1>This template will be used for showing detail information of a lisitng</h1>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <figure class="figure">
+        <img src="/SEOCapture.PNG" class="figure-img img-fluid rounded" alt="...">
+        <figcaption class="figure-caption">A caption for the above image.</figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-body"> <span class="card-title">Property Class: </span> <span class="card-text"><%=listing.propertyclass %></span></div>
+        <div class="card-body"> <span class="card-title">Property Status: </span> <span class="card-text"><%=listing.status %></span></div>
+        <div class="card-body"> <span class="card-title">List Price: </span> <span class="card-text"><%=listing.listprice %></span></div>
+        <div class="card-body"> <span class="card-title">Holdover Days: </span> <span class="card-text"><%=listing.holdoverdays %></span></div>
+        <div class="card-body"> <span class="card-title">Seller Name: </span> <span class="card-text"><%=listing.sellername %></span></div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-body"> <span class="card-title">Division: </span> <span class="card-text"><%=listing.division %></span></div>
+        <div class="card-body"> <span class="card-title">District: </span> <span class="card-text"><%=listing.district %></span></div>
+        <div class="card-body"> <span class="card-title">City: </span> <span class="card-text"><%=listing.city %></span></div>
+        <div class="card-body"> <span class="card-title">Area: </span> <span class="card-text"><%=listing.area %></span></div>
+        <div class="card-body"> <span class="card-title">Community: </span> <span class="card-text"><%=listing.community %></span></div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-body"> <span class="card-title">Contract Date: </span> <span class="card-text"><%=listing.contractdate %></span></div>
+        <div class="card-body"> <span class="card-title">Expiry Date: </span> <span class="card-text"><%=listing.expirydate %></span></div>
+        <div class="card-body"> <span class="card-title">Possession Date: </span> <span class="card-text"><%=listing.possessiondate %></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-body"> <span class="card-title">Number of Rooms: </span> <span class="card-text"><%=listing.room %></span></div>
+        <div class="card-body"> <span class="card-title">Number of Bedrooms: </span> <span class="card-text"><%=listing.bedroom %></span></div>
+        <div class="card-body"> <span class="card-title">Number of Washrooms: </span> <span class="card-text"><%=listing.washroom %></span></div>
+        <div class="card-body"> <span class="card-title">Number of kitchens: </span> <span class="card-text"><%=listing.kitchen %></span></div>
+        <div class="card-body"> <span class="card-title">Property Volume: </span> <span class="card-text"><%=listing.level %></span></div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-body"> <span class="card-title">Property Exterior: </span> <span class="card-text"><%=listing.exteriortype %></span></div>
+        <div class="card-body"> <span class="card-title">Water Supply Facility: </span> <span class="card-text"><%=listing.water %></span></div>
+        <div class="card-body"> <span class="card-title">Power Supply Facility: </span> <span class="card-text"><%=listing.power %></span></div>
+        <div class="card-body"> <span class="card-title">Air Cooler Facility: </span> <span class="card-text"><%=listing.ac %></span></div>
+        <div class="card-body"> <span class="card-title">Elevator/Lift Service: </span> <span class="card-text"><%=listing.elevator %></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card">
+          <div class="card-body"> <span class="card-title">Remarks For Clients: </span> <span class="card-text"><%=listing.remarkforclients %></span></div>
+        </div>
+        <div class="card">
+          <div class="card-body"> <span class="card-title">Extras: </span> <span class="card-text"><%=listing.extras %></span></div>
+        </div>
+        <div class="card">
+          <div class="card-body"> <span class="card-title">Remarks for Brokerages: </span> <span class="card-text"><%=listing.remarkforbrokers %></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <% if(currentUser && listing.author.id.equals(currentUser._id)){ %>
+        <a href="/listing/<%= listing._id %>/edit">Edit</a>
+        <form class="" action="/listing/<%=listing._id %>?_method=delete" method="post">
+        <button type="submit" name="button">Remove</button>
+        </form>
+      <% }%>
 
-<p><%=listing.name %></p>
-<p><%=listing.location %></p>
-<% if(currentUser && listing.author.id.equals(currentUser._id)){ %>
-  <a href="/listing/<%= listing._id %>/edit">Edit</a>
-  <form class="" action="/listing/<%=listing._id %>?_method=delete" method="post">
-  <button type="submit" name="button">Remove</button>
-  </form>
-<% }%>
-
-<a href="/listing">back</a>
+      <a href="/listing">back</a>
+    </div>
+  </div>
+</div>
 <% include partials/footer %>

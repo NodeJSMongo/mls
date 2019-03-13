@@ -14,7 +14,7 @@
     <% listings.forEach(function(listing){ %>
       <ul class="list-group">
         <li class="list-group-item">
-            <h5> <span><%= listing.name %> </span> | <span><%= listing.location %></span> </h5>
+            <h5> <span><%= listing.propertyclass %> </span> | <span><%= listing.exteriortype %> </span> | <span><%= listing.area %></span> </h5>
           <a href="/listing/<%= listing._id %>">Details</a>
           <% if(currentUser && listing.author.id.equals(currentUser._id)){ %>
           <a href="/listing/<%= listing._id %>/edit">Edit</a>

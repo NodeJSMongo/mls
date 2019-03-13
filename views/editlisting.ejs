@@ -1,9 +1,9 @@
 <% include partials/header %>
 <% include partials/loggedin %>
-<h1>Edit <%= listing.name %></h1>
+<h1>Edit <%= listing.propertyclass %></h1>
 <form class="" action="/listing/<%= listing._id %>?_method=PUT" method="POST">
-  <label for=""> Property Type: </label> <input type="text" name="listing[name]" value="<%=listing.name %>">
-  <label for=""> location: </label> <input type="text" name="listing[location]" value="<%=listing.location %>">
+  <label for=""> Property Type: </label> <input type="text" name="listing[propertyclass]" value="<%=listing.propertyclass %>">
+  <label for=""> location: </label> <input type="text" name="listing[status]" value="<%=listing.status %>">
   <button type="submit" name="button"> Submit </button>
 </form>
 <% include partials/footer %>
