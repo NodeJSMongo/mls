@@ -7,11 +7,17 @@ var middleware = require("../middleware");
 router.get("/listing", middleware.isLoggedIn, function(req,res){
   var noMatch = null;
   var finalQuery = {};
-  if(req.query.propertyclass){
-    finalQuery.propertyclass = req.query.propertyclass;
+  if(req.query.propertyclass == "Residential"){
+    finalQuery.propertyclass = "Residential";
   }
-  if(req.query.status){
-    finalQuery.status =  req.query.status;
+  if(req.query.propertyclass == "Commercial"){
+    finalQuery.propertyclass = "Commercial";
+  }
+  if(req.query.status == "Available"){
+    finalQuery.status =  "Available";
+  }
+  if(req.query.status == "Unvailable"){
+    finalQuery.status =  "Unvailable";
   }
   if(req.query.sale){
     finalQuery.sale =  req.query.sale;

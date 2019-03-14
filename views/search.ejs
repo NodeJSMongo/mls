@@ -4,88 +4,86 @@
 
   <form class="" action="/listing" method="GET">
   <div class="row bottomPadding">
-    <div class="col bottomPadding">
-      <label for="propertyclass" class="">Class</label>
-        <select class="" data-style="" name="propertyclass">
-              <option name="" value="0">Select One</option>
-              <option name="table1" value="Residential">Residential</option>
-              <option name="table2" value="Commercial">Commercial</option>
-        </select>
-    </div>
+    <fieldset class="col">
+        <legend>Class</legend>
+        <input type="checkbox" name="propertyclass" value="Residential">Residential<br>
+        <input type="checkbox" name="propertyclass" value="Commercial">Commercial<br>
+    </fieldset>
+    <fieldset class="col">
+        <legend>Availability</legend>
+        <input type="checkbox" name="status" value="Available">Available<br>
+        <input type="checkbox" name="status" value="Unvailable">Unvailable<br>
+    </fieldset>
+    <fieldset class="col">
+        <legend>Sale or Lease</legend>
+        <input type="checkbox" name="status" value="Sale">Sale<br>
+        <input type="checkbox" name="status" value="Lease">Lease<br>
+        <input type="checkbox" name="status" value="Sub Lease">Sub-Lease<br>
+    </fieldset>
+  </div>
+  <hr>
+  <h4>Area</h4>
+  <div class="row bottomPadding">
+    <fieldset class="col">
+        <input type="checkbox" name="Adabar" value="Adabar">Adabar<br>
+        <input type="checkbox" name="Azampur" value="Azampur">Azampur<br>
+        <input type="checkbox" name="Badda" value="Badda">Badda<br>
+        <input type="checkbox" name="Bangsal" value="Bangsal">Bangsal<br>
+        <input type="checkbox" name="Bimanbandar" value="Bimanbandar">Bimanbandar<br>
+        <input type="checkbox" name="Cantonment" value="Cantonment">Cantonment<br>
+        <input type="checkbox" name="Chowkbazar" value="Chowkbazar">Chowkbazar<br>
+    </fieldset>
+    <fieldset class="col">
+        <input type="checkbox" name="Darus Salam" value="Darus Salam">Darus Salam<br>
+        <input type="checkbox" name="Demra" value="Demra">Demra<br>
+        <input type="checkbox" name="Dhanmondi" value="Dhanmondi">Dhanmondi<br>
+        <input type="checkbox" name="Gendaria" value="Gendaria">Gendaria<br>
+        <input type="checkbox" name="Gulshan" value="Gulshan">Gulshan<br>
+        <input type="checkbox" name="Hazaribagh" value="Hazaribagh">Hazaribagh<br>
+        <input type="checkbox" name="Kadamtali" value="Kadamtali">Kadamtali<br>
+    </fieldset>
+    <fieldset class="col">
+        <input type="checkbox" name="Kafrul" value="Kafrul">Kafrul<br>
+        <input type="checkbox" name="Kalabagan" value="Kalabagan">Kalabagan<br>
+        <input type="checkbox" name="kamrangirchar" value="kamrangirchar">kamrangirchar<br>
+        <input type="checkbox" name="Khilgoan" value="Khilgoan">Khilgoan<br>
+        <input type="checkbox" name="Khilkhet" value="Khilkhet">Khilkhet<br>
+        <input type="checkbox" name="Kotwali" value="Kotwali">Kotwali<br>
+        <input type="checkbox" name="Lalbagh" value="Lalbagh">Lalbagh<br>
+    </fieldset>
+    <fieldset class="col">
+        <input type="checkbox" name="Mirpur" value="Mirpur">Mirpur<br>
+        <input type="checkbox" name="Mohammadpur" value="Mohammadpur">Mohammadpur<br>
+        <input type="checkbox" name="Motijheel" value="Motijheel">Motijheel<br>
+        <input type="checkbox" name="New Market" value="New Market">New Market<br>
+        <input type="checkbox" name="Pallabi" value="Pallabi">Pallabi<br>
+        <input type="checkbox" name="Paltan" value="Paltan">Paltan<br>
+        <input type="checkbox" name="Panthapath" value="Panthapath">Panthapath<br>
+    </fieldset>
+    <fieldset class="col">
+        <input type="checkbox" name="Ramna" value="Ramna">Ramna<br>
+        <input type="checkbox" name="Rampura" value="Rampura">Rampura<br>
+        <input type="checkbox" name="Shabujbagh" value="Shabujbagh">Shabujbagh<br>
+        <input type="checkbox" name="Shah Ali" value="Shah Ali">Shah Ali<br>
+        <input type="checkbox" name="Sher-e-Bangla Nagar" value="Sher-e-Bangla Nagar">Sher-e-Bangla Nagar<br>
+        <input type="checkbox" name="Shyampur" value="Shyampur">Shyampur<br>
+        <input type="checkbox" name="Sutrapur" value="Sutrapur">Sutrapur<br>
+    </fieldset>
+    <fieldset class="col">
+        <input type="checkbox" name="Tejgoan" value="Tejgoan">Tejgoan<br>
+        <input type="checkbox" name="Tejgoan Industrial Area" value="Tejgoan Industrial Area">Tejgoan Industrial Area<br>
+        <input type="checkbox" name="Turag" value="Turag">Turag<br>
+        <input type="checkbox" name="Uttar Khan" value="Uttar Khan">Uttar Khan<br>
+        <input type="checkbox" name="Uttara" value="Uttara">Uttara<br>
+        <input type="checkbox" name="Vatara" value="Vatara">Vatara<br>
+        <input type="checkbox" name="Wari" value="Wari">Wari<br>
+    </fieldset>
   </div>
   <hr>
   <div class="row bottomPadding">
-    <div class="col bottomPadding">
-      <label for="status">Availability</label>
-      <select class="" data-style="" name="status">
-          <option name="" value="0">Select One</option>
-          <option name="table1" value="Available">Available</option>
-          <option name="table2" value="Unvailable">Unavailable</option>
-      </select>
-    </div>
-  </div>
-  <hr>
-  <div class="row bottomPadding">
-    <div class="col bottomPadding">
-      <label for="sale">Sale or Lease</label>
-      <select class="" data-style="" name="sale">
-            <option name="" value="0">Select One</option>
-            <option name="table1" value="Sale">Sale</option>
-            <option name="table2" value="Lease">Lease</option>
-            <option name="table3" value="Sub Lease">Sub-Lease</option>
-      </select>
-    </div>
   </div>
   <hr>
 <div class="row bottomPadding">
-  <div class="col bottomPadding">
-    <label for="area" class="">Area</label>
-    <select class="" data-style="" name="area">
-            <option name="" value="N/A">Select One</option>
-            <option name="table1" value="Adabar">Adabar</option>
-            <option name="table2" value="Azampur">Azampur</option>
-            <option name="table3" value="Badda">Badda</option>
-            <option name="table4" value="Bangsal">Bangsal</option>
-            <option name="table5" value="Bimanbandar">Bimanbandar</option>
-            <option name="table6" value="Cantonment">Cantonment</option>
-            <option name="table7" value="Chowkbazar">Chowkbazar</option>
-            <option name="table8" value="Darus Salam">Darus Salam</option>
-            <option name="table9" value="Demra">Demra</option>
-            <option name="table10" value="Dhanmondi">Dhanmondi</option>
-            <option name="table11" value="Gendaria">Gendaria</option>
-            <option name="table12" value="Gulshan">Gulshan</option>
-            <option name="table13" value="Hazaribagh">Hazaribagh</option>
-            <option name="table14" value="Kadamtali">Kadamtali</option>
-            <option name="table15" value="Kafrul">Kafrul</option>
-            <option name="table16" value="Kalabagan">Kalabagan</option>
-            <option name="table17" value="kamrangirchar">kamrangirchar</option>
-            <option name="table18" value="Khilgoan">Khilgoan</option>
-            <option name="table19" value="Khilkhet">Khilkhet</option>
-            <option name="table20" value="Kotwali">Kotwali</option>
-            <option name="table21" value="Lalbagh">Lalbagh</option>
-            <option name="table22" value="Mirpur">Mirpur</option>
-            <option name="table23" value="Mohammadpur">Mohammadpur</option>
-            <option name="table24" value="Motijheel">Motijheel</option>
-            <option name="table25" value="New Market">New Market</option>
-            <option name="table26" value="Pallabi">Pallabi</option>
-            <option name="table27" value="Paltan">Paltan</option>
-            <option name="table28" value="Panthapath">Panthapath</option>
-            <option name="table29" value="Romna">Ramna</option>
-            <option name="table30" value="Rampura">Rampura</option>
-            <option name="table31" value="Shabujbagh">Shabujbagh</option>
-            <option name="table32" value="Shah Ali">Shah Ali</option>
-            <option name="table33" value="Sher-e-Bangla Nagar">Sher-e-Bangla Nagar</option>
-            <option name="table34" value="Shyampur">Shyampur</option>
-            <option name="table35" value="Sutrapur">Sutrapur</option>
-            <option name="table36" value="Tejgoan">Tejgoan</option>
-            <option name="table37" value="Tejgoan Industrial Area">Tejgoan Industrial Area</option>
-            <option name="table38" value="Turag">Turag</option>
-            <option name="table39" value="Uttar Khan">Uttar Khan</option>
-            <option name="table40" value="Uttara">Uttara</option>
-            <option name="table41" value="Vatara">Vatara</option>
-            <option name="table42" value="Wari">Wari</option>
-    </select>
-  </div>
 </div>
 
   <div class="row bottomPadding">
