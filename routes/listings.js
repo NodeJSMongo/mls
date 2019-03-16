@@ -2,40 +2,65 @@ var express = require("express");
 var router = express.Router();
 var Listing = require("../models/listing");
 var middleware = require("../middleware");
+//var finalQuery = require("../objects/finalquery");
 //Restful API
 
 router.get("/listing", middleware.isLoggedIn, function(req,res){
   var noMatch = null;
-  var finalQuery = {};
+  var areaQuery ={};
+  var proQuery = {};
+  var saleQuery ={};
+  var statusQuery = {};
+
   if(req.query.propertyclass == "Residential"){
-    finalQuery.propertyclass = "Residential";
+    proQuery.propertyclass = "Residential";
   }
   if(req.query.propertyclass == "Commercial"){
-    finalQuery.propertyclass = "Commercial";
+    proQuery.propertyclass = "Commercial";
   }
   if(req.query.status == "Available"){
-    finalQuery.status =  "Available";
+    statusQuery.status =  "Available";
   }
   if(req.query.status == "Unvailable"){
-    finalQuery.status =  "Unvailable";
+    statusQuery.status =  "Unvailable";
   }
   if(req.query.sale){
-    finalQuery.sale =  req.query.sale;
+    saleQuery.sale =  req.query.sale;
   }
   if(req.query.area){
-    finalQuery.area =  req.query.area;
+    areaQuery.area = req.query.area;
   }
 
-  if(finalQuery){
+  if(proQuery){
     //get all listings from db
-    Listing.find(finalQuery, function(err, listings){
-      if(err){
-        console.log(err);
-      }else{
-        if(listings.length < 1){
-          var noMatch = "No listing found match that search. Please try again";
-        }
-        res.render("listing", {listings: listings, noMatch: noMatch});
+  var filter1 =  Listing.find(proQuery, function(err, listings){
+    if(listings.length < 1){
+        filter1 = Listing.find({}, function(err, listings){});
+      }
+      if(statusQuery){
+        var filter2 = filter1.find(statusQuery, function(err, listings){
+          if(listings.length < 1){
+              filter2 = Listing.find(proQuery, function(err, listings){});
+            }
+          if(saleQuery){
+            var filter3 = filter2.find(saleQuery, function(err, listings){
+              if(listings.length < 1){
+                  filter3 = filter1.find(statusQuery, function(err, listings){});
+                }
+              if(areaQuery){
+                filter3.find(areaQuery, function(err, listings){
+                  if(err){
+                    console.log(err);
+                  }else if(listings.length < 1){
+                      var noMatch = "No listing found match that search. Please try again";
+                    }else{
+                      res.render("listing", {listings: listings, noMatch: noMatch});
+                    }
+                });
+              }
+            });
+          }
+        });
       }
     });
   }else{
