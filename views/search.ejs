@@ -91,21 +91,44 @@
   </div>
   <hr>
   <div class="row bottomPadding">
-    <legend>Measurement</legend>
+    <div class="col bottomPadding">
+    <label for="measurement">Square ft.</label>
     <fieldset class="col">
-      <label for="measurement"></label>
-      <select class="" name="measurement">
+      <select class="" name="measurement" size="3">
         <option name="measurement" value=""> less than 700</option>
         <option name="measurement" value=""> 700 - 1100</option>
         <option name="measurement" value="">1100 -1500</option>
         <option name="measurement" value="">More than 1500</option>
       </select>
     </fieldset>
+    </div>
+    <div class="col bottomPadding">
+      <label for="type">Property Type:</label>
+      <fieldset class="col">
+        <select class="" name="exterior" size="3">
+          <option name="exterior" value="" selected>Apartment</option>
+          <option name="exterior" value="">House</option>
+          <option name="exterior" value="">Duplex</option>
+          <option name="exterior" value="">Multiplex</option>
+          <option name="exterior" value="">Market</option>
+        </select>
+      </fieldset>
+    </div>
+    <div class="col bottomPadding">
+      <label for="exterior">Outer Design</label>
+      <fieldset class="col">
+        <select class="" name="exterior" size="3">
+          <option name="exterior" value="" selected>Brick</option>
+          <option name="exterior" value="">White plaster</option>
+          <option name="exterior" value="">Colorful</option>
+          <option name="exterior" value="">Mosaic</option>
+          <option name="exterior" value="">Half-building</option>
+        </select>
+      </fieldset>
+    </div>
   </div>
   <hr>
   <div class="row bottomPadding">
-    <div class="col bottomPadding">
-    </div>
   </div>
     <input type="submit" name="" value="Continue">
   </form>

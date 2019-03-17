@@ -34,17 +34,17 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
   if(proQuery){
     //get all listings from db
   var filter1 =  Listing.find(proQuery, function(err, listings){
-    if(listings.length < 1){
+    if(listings.length == 0){
         filter1 = Listing.find({}, function(err, listings){});
       }
       if(statusQuery){
         var filter2 = filter1.find(statusQuery, function(err, listings){
-          if(listings.length < 1){
+          if(listings.length == 0){
               filter2 = Listing.find(proQuery, function(err, listings){});
             }
           if(saleQuery){
             var filter3 = filter2.find(saleQuery, function(err, listings){
-              if(listings.length < 1){
+              if(listings.length == 0){
                   filter3 = filter1.find(statusQuery, function(err, listings){});
                 }
               if(areaQuery){
