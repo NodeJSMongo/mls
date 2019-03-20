@@ -81,13 +81,31 @@
   </div>
   <hr>
   <div class="row bottomPadding">
+    <div class="col bottomPadding">
     <legend>Price</legend>
     <fieldset class="col">
-        <label for="minprice">Min</label>
-        <input type="number" name="minprice" value="">
-        <label for="minprice">Max</label>
-        <input type="number" name="maxprice" value="">
+        <input type="checkbox" name="listprice" value="6200000">60 -70 lac<br>
+        <input type="checkbox" name="listprice" value="6200000">70 -80 lac<br>
+        <input type="checkbox" name="listprice" value="6200000">80 -90 lac<br>
+        <input type="checkbox" name="listprice" value="6200000">90 -100 lac<br>
+        <input type="checkbox" name="listprice" value="6200000">100 -110 lac<br>
+        <input type="checkbox" name="listprice" value="6200000">110 -120 lac<br>
+        <input type="checkbox" name="listprice" value="6200000">120 -130 lac<br>
     </fieldset>
+    </div>
+    <div class="col bottomPadding">
+    <legend>Bedrooms</legend>
+    <fieldset class="col">
+        <label for="bedroom">Min</label>
+        <input type="checkbox" name="bedroom" value="1">Single<br>
+        <input type="checkbox" name="bedroom" value="2">Double<br>
+        <input type="checkbox" name="bedroom" value="3">Three<br>
+        <input type="checkbox" name="bedroom" value="4">Four<br>
+        <input type="checkbox" name="bedroom" value="5">Five<br>
+        <input type="checkbox" name="bedroom" value="6">Six<br>
+        <input type="checkbox" name="bedroom" value="7">More than 6<br>
+    </fieldset>
+    </div>
   </div>
   <hr>
   <div class="row bottomPadding">
@@ -106,25 +124,38 @@
       <label for="type">Property Type:</label>
       <fieldset class="col">
         <select class="" name="exterior" size="3">
-          <option name="exterior" value="" selected>Apartment</option>
-          <option name="exterior" value="">House</option>
-          <option name="exterior" value="">Duplex</option>
-          <option name="exterior" value="">Multiplex</option>
-          <option name="exterior" value="">Market</option>
+          <option name="exteriortype" value="">Apartment</option>
+          <option name="exteriortype" value="">House</option>
+          <option name="exteriortype" value="">Duplex</option>
+          <option name="exteriortype" value="">Multiplex</option>
+          <option name="exteriortype" value="">Market</option>
+          <option name="exteriortype" value="">Half-building</option>
         </select>
       </fieldset>
     </div>
     <div class="col bottomPadding">
-      <label for="exterior">Outer Design</label>
+      <label for="level">Outer Design</label>
       <fieldset class="col">
-        <select class="" name="exterior" size="3">
-          <option name="exterior" value="" selected>Brick</option>
-          <option name="exterior" value="">White plaster</option>
-          <option name="exterior" value="">Colorful</option>
-          <option name="exterior" value="">Mosaic</option>
-          <option name="exterior" value="">Half-building</option>
+        <select class="" name="level" size="3">
+          <option name="level" value="First Floor">First Floor</option>
+          <option name="level" value="Second Floor">2nd Floor</option>
+          <option name="level" value="Third Floor"> 3rd Floor</option>
+          <option name="level" value="Sixth Floor">4th, 5th, 6th Floor</option>
+          <option name="level" value="Ninth Floor"> 7th, 8th, 9th Floor</option>
+          <option name="level" value="Skyscrapper"> 10th or above</option>
         </select>
       </fieldset>
+    </div>
+    <div class="col bottomPadding">
+    <label for="laststatus">Last Status</label>
+    <fieldset class="col">
+      <select class="" name="laststatus" size="3">
+        <option name="laststatus" value="">Unchanged</option>
+        <option name="laststatus" value="">Price adjusted</option>
+        <option name="laststatus" value="">Conditional Sold</option>
+        <option name="laststatus" value="">Sold</option>
+      </select>
+    </fieldset>
     </div>
   </div>
   <hr>

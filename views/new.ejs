@@ -162,6 +162,17 @@
                 <option name="table3" value="Market">Market</option>
         </select>
       </div>
+      <div class="col bottomPadding">
+      <label for="measurement">Square ft.</label>
+      <fieldset class="col">
+        <select class="" name="measurement" size="3">
+          <option name="measurement" value="700">less than 700</option>
+          <option name="measurement" value="1100"> 700 - 1100</option>
+          <option name="measurement" value="1500">1100 -1500</option>
+          <option name="measurement" value="1501">More than 1500</option>
+        </select>
+      </fieldset>
+      </div>
     </div>
 
     <div class="row bottomPadding">
@@ -205,12 +216,15 @@
         <input type="number" name="kitchen" value="">
       </div>
       <div class="col">
-        <label for="level" class="">#Levels</label>
+        <label for="level" class="">Level</label>
         <select class="" data-style="" name="level">
                 <option name="" value="N/A">Select One</option>
-                <option name="table1" value="One Story">One Story</option>
-                <option name="table2" value="Two Storied">Two Storied</option>
-                <option name="table3" value="Multi Storied">Multi Storied</option>
+                <option name="table1" value="First Floor">First Floor</option>
+                <option name="table2" value="Second Floor">2nd Floor</option>
+                <option name="table3" value="Third Floor"> 3rd Floor</option>
+                <option name="table4" value="Sixth Floor">4th, 5th, 6th Floor</option>
+                <option name="table5" value="Ninth Floor"> 7th, 8th, 9th Floor</option>
+                <option name="table6" value="Skyscrapper"> 10th or above</option>
         </select>
       </div>
     </div>
@@ -260,9 +274,18 @@
       <label for="status" class="">Availibility</label>
       <select class="" data-style="" name="status">
               <option name="" value="N/A">Select One</option>
-              <option name="table1" value="Available">Unsold</option>
+              <option name="table1" value="Available" selected>Unsold</option>
               <option name="table2" value="Unvailable">Conditional Sale</option>
               <option name="table3" value="Unvailable">Sold</option>
+      </select>
+    </div>
+    <div class="col">
+      <label for="laststatus" class="">Availibility</label>
+      <select class="" data-style="" name="laststatus">
+        <option name="laststatus" value="" selected>Unchanged</option>
+        <option name="laststatus" value="">Price adjusted</option>
+        <option name="laststatus" value="">Conditional Sold</option>
+        <option name="laststatus" value="">Sold</option>
       </select>
     </div>
 
