@@ -9,8 +9,7 @@
     <div class="row">
       <div class="col">
         <label for="propertyclass" class="">Property Class</label>
-        <select class="" data-style="" name="propertyclass">
-                <option name="" value="N/A">Select One</option>
+        <select class="" data-style="" name="propertyclass" required>
                 <option name="table1" value="Residential">Residential</option>
                 <option name="table2" value="Commercial">Commercial</option>
         </select>
@@ -18,8 +17,7 @@
 
       <div class="col">
         <label for="sale" class="">Sale or Lease</label>
-        <select class="" data-style="" name="sale">
-                <option name="" value="N/A">Select One</option>
+        <select class="" data-style="" name="sale" required>
                 <option name="table1" value="Sale">Sale</option>
                 <option name="table2" value="Lease">Lease</option>
                 <option name="table3" value="Sub Lease">Sub Lease</option>
@@ -34,29 +32,25 @@
       <div class="col">
         <label for="name" class="">Division</label>
         <select class="" data-style="" name="division">
-                <option name="" value="N/A">Select One</option>
-                <option name="table1" value="Dhaka">Dhaka</option>
+                <option name="table2" value="Dhaka" selected>Dhaka</option>
         </select>
       </div>
       <div class="col">
         <label for="name" class="">District</label>
         <select class="" data-style="" name="district">
-                <option name="" value="N/A">Select One</option>
-                <option name="table1" value="Dhaka">Dhaka</option>
+                <option name="table1" value="Dhaka" selected>Dhaka</option>
         </select>
       </div>
       <div class="col">
         <label for="name" class="">City</label>
-        <select class="" data-style="" name="city">
-                <option name="" value="N/A">Select One</option>
+        <select class="" data-style="" name="city" required>
                 <option name="table1" value="Dhaka Uttar">Dhaka Uttar</option>
                 <option name="table2" value="Dhaka Dokkhin">Dhaka Dokkhin</option>
         </select>
       </div>
       <div class="col">
-        <label for="name" class="">Area</label>
-        <select class="" data-style="" name="area">
-                <option name="" value="N/A">Select One</option>
+        <legend for="name" class="">Area</legend>
+        <select class="" data-style="" name="area" required size="5">
                 <option name="table1" value="Adabar">Adabar</option>
                 <option name="table2" value="Azampur">Azampur</option>
                 <option name="table3" value="Badda">Badda</option>
@@ -115,6 +109,7 @@
     <hr>
     <div class="row">
       <div class="col">
+        <!-- Put condition for price -->
         <label for="listprice" class="">List Price</label>
         <input type="number" name="listprice" value="" placeholder="E.g: 50,00,000">
       </div>
@@ -152,24 +147,23 @@
     <hr>
     <div class="row">
       <div class="col">
-        <label for="name" class="">Exterior Type</label>
-        <select class="" data-style="" name="exteriortype">
-                <option name="" value="N/A">Select One</option>
-                <option name="table1" value="House">House</option>
-                <option name="table2" value="Apartment">Apartment</option>
-                <option name="table3" value="Building">Building</option>
-                <option name="table3" value="Store">Store</option>
-                <option name="table3" value="Market">Market</option>
+        <label for="name" class="">Property Type:</label>
+        <select class="" data-style="" name="exteriortype" required size="3">
+          <option name="exteriortype1" value="Apartment">Apartment</option>
+          <option name="exteriortype2" value="House">House</option>
+          <option name="exteriortype3" value="Duplex">Duplex</option>
+          <option name="exteriortype4" value="Multiplex">Multiplex</option>
+          <option name="exteriortype5" value="Market">Market</option>
         </select>
       </div>
       <div class="col bottomPadding">
       <label for="measurement">Square ft.</label>
       <fieldset class="col">
         <select class="" name="measurement" size="3">
-          <option name="measurement" value="700">less than 700</option>
+          <option name="measurement" value="700">&#139; than 700</option>
           <option name="measurement" value="1100"> 700 - 1100</option>
           <option name="measurement" value="1500">1100 -1500</option>
-          <option name="measurement" value="1501">More than 1500</option>
+          <option name="measurement" value="1501"> &#155; 1500</option>
         </select>
       </fieldset>
       </div>
@@ -199,10 +193,8 @@
     <h6 id="centeredheading">Interior</h6>
     <hr>
     <div class="row">
-      <div class="col">
-        <label for="room" class="">#Rooms</label>
-        <input type="number" name="room" value="">
-      </div>
+
+      <!-- exclude rooms -->
       <div class="col">
         <label for="bedroom" class="">#Bedrooms</label>
         <input type="number" name="bedroom" value="">
@@ -218,12 +210,11 @@
       <div class="col">
         <label for="level" class="">Level</label>
         <select class="" data-style="" name="level">
-                <option name="" value="N/A">Select One</option>
                 <option name="table1" value="First Floor">First Floor</option>
                 <option name="table2" value="Second Floor">2nd Floor</option>
                 <option name="table3" value="Third Floor"> 3rd Floor</option>
-                <option name="table4" value="Sixth Floor">4th, 5th, 6th Floor</option>
-                <option name="table5" value="Ninth Floor"> 7th, 8th, 9th Floor</option>
+                <option name="table4" value="Sixth Floor">4th, 5th or 6th Floor</option>
+                <option name="table5" value="Ninth Floor"> 7th, 8th or 9th Floor</option>
                 <option name="table6" value="Skyscrapper"> 10th or above</option>
         </select>
       </div>
@@ -253,39 +244,37 @@
     <hr>
     <div class="row">
       <div class="col">
-        <label for="remarkforclients" class="">Remarks for Clients</label>
-        <textarea name="remarkforclients" rows="8" cols="80"></textarea>
+        <legend>Remarks for Clients: </legend>
+        <textarea name="remarkforclients" rows="2" cols="80" maxlength="250"></textarea>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <label for="extras" class="">Extras</label>
-        <textarea name="extras" rows="8" cols="80"></textarea>
+        <legend>Extras: </legend>
+        <textarea name="extras" rows="2" cols="80" maxlength="250"></textarea>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <label for="remarkforbrokers" class="">Remarks for Brokerages</label>
-        <textarea name="remarkforbrokers" rows="8" cols="80"></textarea>
+        <legend>Remarks for Brokerages: </legend>
+        <textarea name="remarkforbrokers" rows="2" cols="80" maxlength="250"></textarea>
       </div>
     </div>
-    <h6>Status</h6>
     <div class="col">
-      <label for="status" class="">Availibility</label>
-      <select class="" data-style="" name="status">
-              <option name="" value="N/A">Select One</option>
-              <option name="table1" value="Available" selected>Unsold</option>
-              <option name="table2" value="Unvailable">Conditional Sale</option>
-              <option name="table3" value="Unvailable">Sold</option>
+      <!-- Default Availibility is unsold -->
+      <label for="status" class=""></label>
+      <select class="" data-style="" name="status" hidden>
+        <option name="table1" value="Available" selected>Unsold</option>
+        <option name="table1" value="Unvailable" >sold</option>
       </select>
     </div>
     <div class="col">
-      <label for="laststatus" class="">Availibility</label>
-      <select class="" data-style="" name="laststatus">
-        <option name="laststatus" value="" selected>Unchanged</option>
-        <option name="laststatus" value="">Price adjusted</option>
-        <option name="laststatus" value="">Conditional Sold</option>
-        <option name="laststatus" value="">Sold</option>
+      <legend for="name" class="">Last Status</legend>
+      <select class="" data-style="" name="laststatus" size="3">
+        <option name="laststatus1" value="av">Available</option>
+        <option name="laststatus2" value="pa">Price adjusted</option>
+        <option name="laststatus3" value="cs">Conditional Sold</option>
+        <option name="laststatus4" value="sc">Sold</option>
       </select>
     </div>
 

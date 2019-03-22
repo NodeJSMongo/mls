@@ -1,6 +1,28 @@
 <% include partials/header %>
 <% include partials/loggedin %>
 <br>
+<table>
+  <tr>
+    <td rowspan="2">
+      <figure class="figure">
+        <img src="/SEOCapture.PNG" class="figure-img img-fluid rounded" alt="...">
+        <figcaption class="figure-caption">A caption for the above image.</figcaption>
+      </figure>
+    </td>
+    <td>
+        <td colspan="2">List Price: <span class="card-text"><%=listing.listprice %> </span>
+          Property Status: <span class="card-text"><%=listing.status %> </span>
+        </td>
+        <td colspan="2">
+          <span class="card-title">Number of Rooms: </span> <span class="card-text"><%=listing.room %> </span>
+          <span class="card-title">Number of Bedrooms: </span> <span class="card-text"><%=listing.bedroom %></span>
+          <span class="card-title">Number of Washrooms: </span> <span class="card-text"><%=listing.washroom %></span>
+          <span class="card-title">Number of kitchens: </span> <span class="card-text"><%=listing.kitchen %></span>
+          <span class="card-title">Property Volume: </span> <span class="card-text"><%=listing.level %></span>
+        </td>
+    </td>
+  </tr>
+</table>
 <div class="container">
   <div class="row">
     <div class="col-sm">

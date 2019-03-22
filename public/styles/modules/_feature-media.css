@@ -1,0 +1,13 @@
+.featureMedia{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin: auto;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: solid 2px black;
+
+  fieldset{
+    padding: .25rem;
+    border: 0px;
+  }
+}

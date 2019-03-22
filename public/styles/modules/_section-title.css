@@ -1,0 +1,79 @@
+.section-title{
+  text-align: center;
+  margin: 30px auto;
+  color: #da291c;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size-adjust: 100%;
+  font-size: 1.6rem;
+
+  &__media{
+    margin: 90px auto 0 auto;
+    font-size: 1.6rem;
+  }
+
+  &__access{
+    color: #eee;
+    font-weight: bold;
+    margin: 60px auto;
+  }
+
+  &__bundle{
+    display: none;
+    sub{
+      font-size: .8rem;
+    }
+  }
+
+  &__empower{
+    margin: 20px auto;
+    text-align: left;
+    color: #414042;
+    font-weight: bold;
+  }
+
+  &__place{
+    margin: 10px auto 120px auto;
+    color: #eee;
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width:768px) {
+  .section-title{
+    font-size: 1.8rem;
+    margin: 90px auto;
+    &{
+      font-size: 2rem;
+    }
+
+    &__access{
+      color: #eee;
+      font-weight: bold;
+      margin: 60px auto;
+    }
+
+    &__bundle{
+      display: block;
+      color: #414042;
+      text-align: left;
+      width: 80%;
+      font-weight: bold;
+      margin: 90px auto 60px auto;
+      strong{
+        color: #222;
+        font-weight: bolder;
+      }
+      sub{
+        font-size: .8rem;
+      }
+    }
+    &__place{
+      margin: 10px auto 120px auto;
+      color: #eee;
+      font-size: 1.2rem;
+    }
+  }
+}

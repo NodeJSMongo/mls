@@ -1,0 +1,28 @@
+.button{
+  background-color: #da291c;
+  border-radius: 5px;
+  padding:7px 14px;
+  font-weight: bold;
+  transition: all 250ms ease;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  font-size: .9rem;
+
+  &-logo{
+    border-radius: 0 0 10px 10px;
+    padding:1.3rem 3rem;
+    font-size: 1.2rem;
+  }
+  &-search{
+    background-color: #ccc;
+    border-radius: 0 0 10px 10px;
+    padding:1.3rem 1.5rem;
+    font-size: .9rem;
+    color: #fff;
+  }
+
+  &-search:hover{
+    background-color: #333;
+  }
+}

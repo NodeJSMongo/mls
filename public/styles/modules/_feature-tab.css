@@ -1,0 +1,15 @@
+.feature-tab{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  margin-bottom: 2rem;
+  justify-items: center;
+  padding-bottom: 1rem;
+  border-bottom: solid 1px black;
+
+  div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding:1rem;
+  }
+}

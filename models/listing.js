@@ -22,17 +22,19 @@ var listingSchema = new mongoose.Schema({
   water:String,
   power:String,
 
-  room:Number,
   bedroom:Number,
   washroom:Number,
   kitchen:Number,
   level: String,
   ac:String,
   elevator:String,
+  measurement: String,
 
   remarkforclients:String,
   extras:String,
   remarkforbrokers:String,
+  laststatus: String,
+
 
   author:{
     id:{

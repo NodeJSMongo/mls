@@ -1,0 +1,18 @@
+  .headerNav{
+    display: grid;
+    grid-template-columns: 1fr;
+    border-bottom:3px #eee solid;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    background-color: #fff;
+    z-index: 15;
+
+    ul{
+      display: block;
+
+      li{
+        display: inline-block;
+      }
+    }
+  }

@@ -1,30 +1,35 @@
 <% include partials/header %>
 <% include partials/loggedin %>
-<div class="container bottomPadding">
 
   <form class="" action="/listing" method="GET">
-  <div class="row bottomPadding">
-    <fieldset class="col">
-        <legend>Class</legend>
-        <input type="checkbox" name="propertyclass" value="Residential">Residential<br>
-        <input type="checkbox" name="propertyclass" value="Commercial">Commercial<br>
-    </fieldset>
-    <fieldset class="col">
-        <legend>Availability</legend>
-        <input type="checkbox" name="status" value="Available">Available<br>
-        <input type="checkbox" name="status" value="Unvailable">Unvailable<br>
-    </fieldset>
-    <fieldset class="col">
-        <legend>Sale or Lease</legend>
-        <input type="checkbox" name="sale" value="Sale">Sale<br>
-        <input type="checkbox" name="sale" value="Lease">Lease<br>
-        <input type="checkbox" name="sale" value="Sub Lease">Sub-Lease<br>
-    </fieldset>
-  </div>
-  <hr>
-  <h4>Area</h4>
-  <div class="row bottomPadding">
-    <fieldset class="col">
+    <div class="featureProduct">
+      <div class="">
+        <fieldset class="col_css">
+            <h3>Class</h3>
+            <input type="checkbox" name="propertyclass" value="Residential">Residential<br>
+            <input type="checkbox" name="propertyclass" value="Commercial">Commercial<br>
+        </fieldset>
+      </div>
+      <div class="">
+        <fieldset class="col_css">
+            <h3>Availability</h3>
+            <input type="checkbox" name="status" value="Available">Available<br>
+            <input type="checkbox" name="status" value="Unvailable">Unvailable<br>
+        </fieldset>
+      </div>
+      <div class="">
+        <fieldset class="col_css">
+            <h3>Sale or Lease</h3>
+            <input type="checkbox" name="sale" value="Sale">Sale<br>
+            <input type="checkbox" name="sale" value="Lease">Lease<br>
+            <input type="checkbox" name="sale" value="Sub Lease">Sub-Lease<br>
+        </fieldset>
+      </div>
+    </div>
+
+  <h3>Area</h3>
+  <div class="featureMedia">
+    <fieldset class="col_css">
         <input type="checkbox" name="area" value="Adabar">Adabar<br>
         <input type="checkbox" name="area" value="Azampur">Azampur<br>
         <input type="checkbox" name="area" value="Badda">Badda<br>
@@ -33,7 +38,7 @@
         <input type="checkbox" name="area" value="Cantonment">Cantonment<br>
         <input type="checkbox" name="area" value="Chowkbazar">Chowkbazar<br>
     </fieldset>
-    <fieldset class="col">
+    <fieldset class="col_css">
         <input type="checkbox" name="area" value="Darus Salam">Darus Salam<br>
         <input type="checkbox" name="area" value="Demra">Demra<br>
         <input type="checkbox" name="area" value="Dhanmondi">Dhanmondi<br>
@@ -42,7 +47,7 @@
         <input type="checkbox" name="area" value="Hazaribagh">Hazaribagh<br>
         <input type="checkbox" name="area" value="Kadamtali">Kadamtali<br>
     </fieldset>
-    <fieldset class="col">
+    <fieldset class="col_css">
         <input type="checkbox" name="area" value="Kafrul">Kafrul<br>
         <input type="checkbox" name="area" value="Kalabagan">Kalabagan<br>
         <input type="checkbox" name="area" value="kamrangirchar">kamrangirchar<br>
@@ -51,7 +56,7 @@
         <input type="checkbox" name="area" value="Kotwali">Kotwali<br>
         <input type="checkbox" name="area" value="Lalbagh">Lalbagh<br>
     </fieldset>
-    <fieldset class="col">
+    <fieldset class="col_css">
         <input type="checkbox" name="area" value="Mirpur">Mirpur<br>
         <input type="checkbox" name="area" value="Mohammadpur">Mohammadpur<br>
         <input type="checkbox" name="area" value="Motijheel">Motijheel<br>
@@ -60,7 +65,7 @@
         <input type="checkbox" name="area" value="Paltan">Paltan<br>
         <input type="checkbox" name="area" value="Panthapath">Panthapath<br>
     </fieldset>
-    <fieldset class="col">
+    <fieldset class="col_css">
         <input type="checkbox" name="area" value="Ramna">Ramna<br>
         <input type="checkbox" name="area" value="Rampura">Rampura<br>
         <input type="checkbox" name="area" value="Shabujbagh">Shabujbagh<br>
@@ -69,7 +74,7 @@
         <input type="checkbox" name="area" value="Shyampur">Shyampur<br>
         <input type="checkbox" name="area" value="Sutrapur">Sutrapur<br>
     </fieldset>
-    <fieldset class="col">
+    <fieldset class="col_css">
         <input type="checkbox" name="area" value="Tejgoan">Tejgoan<br>
         <input type="checkbox" name="area" value="Tejgoan Industrial Area">Tejgoan Industrial Area<br>
         <input type="checkbox" name="area" value="Turag">Turag<br>
@@ -78,88 +83,102 @@
         <input type="checkbox" name="area" value="Vatara">Vatara<br>
         <input type="checkbox" name="area" value="Wari">Wari<br>
     </fieldset>
-  </div>
-  <hr>
-  <div class="row bottomPadding">
-    <div class="col bottomPadding">
-    <legend>Price</legend>
-    <fieldset class="col">
-        <input type="checkbox" name="listprice" value="6200000">60 -70 lac<br>
-        <input type="checkbox" name="listprice" value="6200000">70 -80 lac<br>
-        <input type="checkbox" name="listprice" value="6200000">80 -90 lac<br>
-        <input type="checkbox" name="listprice" value="6200000">90 -100 lac<br>
-        <input type="checkbox" name="listprice" value="6200000">100 -110 lac<br>
-        <input type="checkbox" name="listprice" value="6200000">110 -120 lac<br>
-        <input type="checkbox" name="listprice" value="6200000">120 -130 lac<br>
-    </fieldset>
     </div>
-    <div class="col bottomPadding">
-    <legend>Bedrooms</legend>
-    <fieldset class="col">
-        <label for="bedroom">Min</label>
-        <input type="checkbox" name="bedroom" value="1">Single<br>
-        <input type="checkbox" name="bedroom" value="2">Double<br>
-        <input type="checkbox" name="bedroom" value="3">Three<br>
-        <input type="checkbox" name="bedroom" value="4">Four<br>
-        <input type="checkbox" name="bedroom" value="5">Five<br>
-        <input type="checkbox" name="bedroom" value="6">Six<br>
-        <input type="checkbox" name="bedroom" value="7">More than 6<br>
-    </fieldset>
+
+    <div class="feature-tab">
+      <div class="">
+        <div class="">
+          <h3>Price Range (In Lakh)</h3>
+          <fieldset>
+            <input type="checkbox" name="listprice" value="6200000">60 -70 <br>
+            <input type="checkbox" name="listprice" value="6200000">70 -80 <br>
+            <input type="checkbox" name="listprice" value="6200000">80 -90 <br>
+            <input type="checkbox" name="listprice" value="6200000">90 -100 <br>
+          </fieldset>
+
+        </div>
+        <div class="">
+          <fieldset>
+            <input type="checkbox" name="listprice" value="6200000">100 -110<br>
+            <input type="checkbox" name="listprice" value="6200000">110 -120<br>
+            <input type="checkbox" name="listprice" value="6200000">120 -130<br>
+            <input type="checkbox" name="listprice" value="6200000">130 more<br>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="">
+        <div class="">
+          <h3>Number of Bedrooms</h3>
+          <fieldset class="col_css">
+              <input type="checkbox" name="bedroom" value="1">Single<br>
+              <input type="checkbox" name="bedroom" value="2">Double<br>
+              <input type="checkbox" name="bedroom" value="3">Three<br>
+              <input type="checkbox" name="bedroom" value="4">Four<br>
+          </fieldset>
+        </div>
+        <div class="">
+          <fieldset class="col_css">
+              <input type="checkbox" name="bedroom" value="5">Five<br>
+              <input type="checkbox" name="bedroom" value="6">Six<br>
+              <input type="checkbox" name="bedroom" value="7">Seven<br>
+              <input type="checkbox" name="bedroom" value="8">7 plus<br>
+          </fieldset>
+        </div>
+      </div>
     </div>
-  </div>
-  <hr>
-  <div class="row bottomPadding">
-    <div class="col bottomPadding">
-    <label for="measurement">Square ft.</label>
-    <fieldset class="col">
+
+  <div class="featureBundles">
+    <div class="col_css bottomPadding">
+    <h3>Square ft.</h3>
+    <fieldset class="col_css">
       <select class="" name="measurement" size="3">
-        <option name="measurement" value=""> less than 700</option>
-        <option name="measurement" value=""> 700 - 1100</option>
-        <option name="measurement" value="">1100 -1500</option>
-        <option name="measurement" value="">More than 1500</option>
+        <option name="measurement" value="700">&#139; than 700</option>
+        <option name="measurement" value="1100"> 700 - 1100</option>
+        <option name="measurement" value="1500">1100 -1500</option>
+        <option name="measurement" value="1501"> &#155; 1500</option>
       </select>
     </fieldset>
     </div>
-    <div class="col bottomPadding">
-      <label for="type">Property Type:</label>
-      <fieldset class="col">
-        <select class="" name="exterior" size="3">
-          <option name="exteriortype" value="">Apartment</option>
-          <option name="exteriortype" value="">House</option>
-          <option name="exteriortype" value="">Duplex</option>
-          <option name="exteriortype" value="">Multiplex</option>
-          <option name="exteriortype" value="">Market</option>
-          <option name="exteriortype" value="">Half-building</option>
+    <div class="col_css bottomPadding">
+      <h3>Property Type:</h3>
+      <fieldset class="col_css">
+        <select class="" name="exteriortype" size="3">
+          <option name="exteriortype" value="Apartment">Apartment</option>
+          <option name="exteriortype" value="House">House</option>
+          <option name="exteriortype" value="Duplex">Duplex</option>
+          <option name="exteriortype" value="Multiplex">Multiplex</option>
+          <option name="exteriortype" value="Market">Market</option>
         </select>
       </fieldset>
     </div>
-    <div class="col bottomPadding">
-      <label for="level">Outer Design</label>
-      <fieldset class="col">
+    <div class="col_css bottomPadding">
+      <h3>Level</h3>
+      <fieldset class="col_css">
         <select class="" name="level" size="3">
           <option name="level" value="First Floor">First Floor</option>
           <option name="level" value="Second Floor">2nd Floor</option>
           <option name="level" value="Third Floor"> 3rd Floor</option>
-          <option name="level" value="Sixth Floor">4th, 5th, 6th Floor</option>
-          <option name="level" value="Ninth Floor"> 7th, 8th, 9th Floor</option>
+          <option name="level" value="Sixth Floor">4th, 5th or 6th Floor</option>
+          <option name="level" value="Ninth Floor"> 7th, 8th or 9th Floor</option>
           <option name="level" value="Skyscrapper"> 10th or above</option>
         </select>
       </fieldset>
     </div>
     <div class="col bottomPadding">
-    <label for="laststatus">Last Status</label>
-    <fieldset class="col">
+    <h3>Last Status</h3>
+    <fieldset class="col_css">
       <select class="" name="laststatus" size="3">
-        <option name="laststatus" value="">Unchanged</option>
-        <option name="laststatus" value="">Price adjusted</option>
-        <option name="laststatus" value="">Conditional Sold</option>
-        <option name="laststatus" value="">Sold</option>
+        <option name="laststatus" value="Unchanged">Unchanged</option>
+        <option name="laststatus" value="Adjusted">Price adjusted</option>
+        <option name="laststatus" value="CS">Conditional Sold</option>
+        <option name="laststatus" value="SC">Sold</option>
       </select>
     </fieldset>
     </div>
   </div>
   <hr>
-  <div class="row bottomPadding">
+  <div class="row_css bottomPadding">
   </div>
     <input type="submit" name="" value="Continue">
   </form>

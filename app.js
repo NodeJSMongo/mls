@@ -53,6 +53,6 @@ app.use(secretRoutes);
 app.use(searchRoutes);
 app.use(listingsRoutes);
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 5000, function(){
   console.log("server connection successful");
 });

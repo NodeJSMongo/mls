@@ -1,29 +1,47 @@
 <% include partials/header %>
 <% include partials/loggedin %>
-<div class="container">
-  <div class="jumbotron">
-    <h1 class="display-4 center">Your Search listing</h1>
-  </div>
 
   <div class="">
     <% if(noMatch !== null) { %>
       <h4><%= noMatch %> </h4>
       <% } %>
   </div>
-
-    <% listings.forEach(function(listing){ %>
-      <ul class="list-group">
-        <li class="list-group-item">
-            <h5> <span><%= listing.propertyclass %> </span> | <span><%= listing.exteriortype %> </span> | <span><%= listing.area %></span> </h5>
-          <a href="/listing/<%= listing._id %>">Details</a>
-          <% if(currentUser && listing.author.id.equals(currentUser._id)){ %>
+  <table class="wrapper">
+    <tr class="">
+      <th>MLS#</th>
+      <th>Property Class</th>
+      <th>Sale or Lease</th>
+      <th>Area</th>
+      <th>Community</th>
+      <th>List Price</th>
+      <th>Property Type</th>
+      <th>Square ft.</th>
+      <th>Water</th>
+      <th>Power</th>
+      <th>Last Statu</th>
+      </tr>
+  <% listings.forEach(function(listing){ %>
+        <tr class="">
+          <td>Currently N/A</td>
+          <td><%= listing.propertyclass %> </td>
+          <td><%= listing.sale %> </td>
+          <td><%= listing.area %> </td>
+          <td><%= listing.community %> </td>
+          <td><%= listing.listprice %> </td>
+          <td><%= listing.exteriortype %> </td>
+          <td><%= listing.measurement %> </td>
+          <td><%= listing.water %> </td>
+          <td><%= listing.power %> </td>
+          <td><%= listing.laststatus %> </td>
+          <td><a href="/listing/<%= listing._id %>">Details</a></td>
+          <td>
+            <% if(currentUser && listing.author.id.equals(currentUser._id)){ %>
           <a href="/listing/<%= listing._id %>/edit">Edit</a>
-          <% } %>
-        </li>
-      </ul>
+            <% } %>
+          </td>
+        </tr>
     <% }); %>
-    <br>
-    <a href="/search">back</a> |
-    <a href="/listing/new">Create a new Listing</a>
-</div>
+
+</table>
+
 <% include partials/footer %>
