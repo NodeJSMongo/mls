@@ -1072,3 +1072,71 @@ table tr td{
     display: none;
   }
 }
+
+.show{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  position: relative;
+  width: 100%;
+  margin: auto;
+}
+
+.show_image {
+  border:1px #000 solid;
+}
+
+.show_image img {
+  max-width: 80%;
+  }
+
+.show_first{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+.show_second{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border:1px #000 solid;
+  }
+
+.show_border{
+      border:1px #000 solid;
+  }
+
+.show_third{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border:1px #000 solid;
+  }
+
+.show_four{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border:1px #000 solid;
+  }
+
+.show_five{
+    display: grid;
+    grid-template-columns: 1fr;
+    border:1px #000 solid;
+  }
+
+.show_six{
+    display: grid;
+    grid-template-columns: 1fr;
+    border:1px #000 solid;
+  }
+
+.show_six-point{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+.card-title{
+  font-weight: bolder;
+}
+
+.card-text{
+  font-size: .9rem;
+}

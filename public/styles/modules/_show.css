@@ -1,0 +1,66 @@
+.show{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  position: relative;
+  width: 100%;
+  margin: auto;
+
+&_image {
+  border:1px #000 solid;
+  img {
+  max-width: 80%;
+  }
+}
+
+  &_first{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  &_second{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border:1px #000 solid;
+  }
+
+  &_border{
+      border:1px #000 solid;
+  }
+
+  &_third{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border:1px #000 solid;
+  }
+
+  &_four{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border:1px #000 solid;
+  }
+
+  &_five{
+    display: grid;
+    grid-template-columns: 1fr;
+    border:1px #000 solid;
+  }
+
+  &_six{
+    display: grid;
+    grid-template-columns: 1fr;
+    border:1px #000 solid;
+
+    &-point{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+
+.card-title{
+  font-weight: bolder;
+}
+
+.card-text{
+  font-size: .9rem;
+}
