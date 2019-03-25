@@ -35,7 +35,7 @@
 
   &_four{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     border:1px #000 solid;
   }
 
@@ -57,8 +57,13 @@
   }
 }
 
+.card-body{
+  padding-left: 1rem;
+}
+
 .card-title{
   font-weight: bolder;
+  font-size: .9rem;
 }
 
 .card-text{
