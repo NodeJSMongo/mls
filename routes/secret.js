@@ -21,4 +21,16 @@ router.post("/bdmlsregistration", function(req, res){
     });
   });
 });
+
+router.get("/bdmlsregistration/:id", middleware.isLoggedIn, function(req, res){
+  // find the listing id and show the listing template
+  User.findById(req.params.id, function(err, findUser){
+    if(err){
+      req.flash("error", "Listing not found");
+      res.redirect("back");
+    }else{
+        res.render("showUser", {user: findUser});
+    }
+  });
+});
 module.exports = router;

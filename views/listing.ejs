@@ -1,47 +1,71 @@
 <% include partials/header %>
 <% include partials/loggedin %>
 
+<div class="wrapper">
   <div class="">
     <% if(noMatch !== null) { %>
       <h4><%= noMatch %> </h4>
       <% } %>
   </div>
-  <table class="wrapper">
-    <tr class="">
-      <th>MLS#</th>
-      <th>Property Class</th>
-      <th>Sale or Lease</th>
-      <th>Area</th>
-      <th>Community</th>
-      <th>List Price</th>
-      <th>Property Type</th>
-      <th>Square ft.</th>
-      <th>Water</th>
-      <th>Power</th>
-      <th>Last Statu</th>
-      </tr>
-  <% listings.forEach(function(listing){ %>
-        <tr class="">
-          <td>Currently N/A</td>
-          <td><%= listing.propertyclass %> </td>
-          <td><%= listing.sale %> </td>
-          <td><%= listing.area %> </td>
-          <td><%= listing.community %> </td>
-          <td><%= listing.listprice %> </td>
-          <td><%= listing.exteriortype %> </td>
-          <td><%= listing.measurement %> </td>
-          <td><%= listing.water %> </td>
-          <td><%= listing.power %> </td>
-          <td><%= listing.laststatus %> </td>
-          <td><a href="/listing/<%= listing._id %>">Details</a></td>
-          <td>
-            <% if(currentUser && listing.author.id.equals(currentUser._id)){ %>
-          <a href="/listing/<%= listing._id %>/edit">Edit</a>
-            <% } %>
-          </td>
+  </div>
+  <%
+    function formattedDate(foundDate){
+      foundDate = (foundDate.getMonth() + 1) + '/' + foundDate.getDate() + '/' +  foundDate.getFullYear();
+      return foundDate;
+    }
+  %>
+  <div class="listings">
+    <table>
+      <tr class="">
+        <th>#</th>
+        <th>LSC</th>
+        <th>Street Name</th>
+        <th>Apt/Unit</th>
+        <th>Municipality</th>
+        <th>Community</th>
+        <th>Price</th>
+        <th>Property Type</th>
+        <th>Br + Wr</th>
+        <th>Exposure</th>
+        <th>Balcony</th>
+        <th>Parking</th>
+        <th>Maintainence</th>
+        <th>Contract Date</th>
+        <th>List Brokerage</th>
+        <th>Brokerage Ph#</th>
+        <th>CB comm</th>
+        <th>MLS#</th>
         </tr>
-    <% }); %>
+    <% listings.forEach(function(listing){ %>
+          <tr class="">
+            <td> # </td>
+            <td><%= listing.laststatus %> </td>
+            <td> <%= listing.stname %> </td>
+            <td> <%= listing.unit %>  </td>
+            <td><%= listing.city %> </td>
+            <td><%= listing.community %> </td>
+            <td><%= listing.listprice %> </td>
+            <td><%= listing.propertyclass %> </td>
+            <td><%= listing.bedroom %>+<%= listing.washroom %></td>
+            <td> <%= listing.exposure %> </td>
+            <td> <%= listing.balcony %> </td>
+            <td> <%= listing.parking %> </td>
+            <td> Tk <%= listing.maint %>/=</td>
+            <td> <%= formattedDate(listing.contractdate) %> </td>
+            <td> Brokerage </td>
+            <td> broker ph </td>
+            <td> commision </td>
+            <td> MLS# </td>
+            <td><a href="/listing/<%= listing._id %>">Details</a></td>
+            <td>
+              <% if(currentUser && listing.author.id.equals(currentUser._id)){ %>
+            <a href="/listing/<%= listing._id %>/edit">Edit</a>
+              <% } %>
+            </td>
+          </tr>
+      <% }); %>
 
-</table>
+  </table>
+  </div>
 
 <% include partials/footer %>

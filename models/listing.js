@@ -10,6 +10,12 @@ var listingSchema = new mongoose.Schema({
   city: String,
   area: String,
   community: String,
+  stname: String,
+  unit: String,
+  exposure: String,
+  balcony: String,
+  parking: Number,
+  maint: Number,
 
   listprice: Number,
   contractdate: Date,
@@ -34,7 +40,6 @@ var listingSchema = new mongoose.Schema({
   extras:String,
   remarkforbrokers:String,
   laststatus: String,
-
 
   author:{
     id:{

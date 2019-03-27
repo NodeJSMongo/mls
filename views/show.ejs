@@ -30,7 +30,7 @@
         <div class="">
           <div class="card-body"> <span class="card-title">Property Status: </span> <span class="card-text"><%=listing.laststatus %></span></div>
           <div class="card-body"> <span class="card-title">Price: </span> <span class="card-text"><%=listing.listprice %></span></div>
-          <div class="card-body"> <span class="card-title">For: </span> <span class="card-text"><%=listing.listprice %></span></div>
+          <div class="card-body"> <span class="card-title">For: </span> <span class="card-text"><%=listing.sale %></span></div>
         </div>
 
       </div>
@@ -39,8 +39,8 @@
         <div class="">
           <div class="card-body"> <span class="card-title">Property Class: </span> <span class="card-text"><%=listing.propertyclass %></span></div>
           <div class="card-body"> <span class="card-title">Property Type: </span> <span class="card-text"><%=listing.exteriortype %></span></div>
-          <div class="card-body"> <span class="card-title">Level: </span> <span class="card-text"><%=listing.exteriortype %></span></div>
-          <div class="card-body"> <span class="card-title">Unit: </span> <span class="card-text"><%=listing.exteriortype %></span></div>
+          <div class="card-body"> <span class="card-title">Level: </span> <span class="card-text"><%=listing.level %></span></div>
+          <div class="card-body"> <span class="card-title">Unit: </span> <span class="card-text"><%=listing.unit %></span></div>
         </div>
         <div class="">
           <div class="card-body"> <span class="card-title">Number of Bedrooms: </span> <span class="card-text"><%=listing.bedroom %></span></div>
@@ -65,32 +65,31 @@
     </div>
     <div class="">
       <div class="card-body"> <span class="card-title">Possession Date: </span> <span class="card-text"><%= formattedDate(listing.possessiondate) %></span></div>
-      <div class="card-body"> <span class="card-title">Contact After Expiry: </span> <span class="card-text"><%= formattedDate(listing.possessiondate) %></span></div>
+      <div class="card-body"> <span class="card-title">Contact After Expiry: </span> <span class="card-text">N</span></div>
     </div>
   </div>
   <div class="show_four">
     <div class="">
       <div class="card-body"> <span class="card-title">Property Exterior: </span> <span class="card-text"><%=listing.exteriortype %></span></div>
       <div class="card-body"> <span class="card-title">Total Sq. ft: </span> <span class="card-text"><%=listing.measurement %></span></div>
-      <div class="card-body"> <span class="card-title">Exposure: </span> <span class="card-text"><%= formattedDate(listing.possessiondate) %></span></div>
+      <div class="card-body"> <span class="card-title">Exposure: </span> <span class="card-text"><%= listing.exposure %></span></div>
     </div>
     <div class="">
-      <div class="card-body"> <span class="card-title">Maintainence: </span> <span class="card-text"><%= formattedDate(listing.possessiondate) %></span></div>
-      <div class="card-body"> <span class="card-title">Taxes Included: </span> <span class="card-text"><%= formattedDate(listing.possessiondate) %></span></div>
-      <div class="card-body"> <span class="card-title">Hydro Included: </span> <span class="card-text"><%= formattedDate(listing.possessiondate) %></span></div>
-      <div class="card-body"> <span class="card-title">Cable Tv Included: </span> <span class="card-text"><%=listing.ac %></span></div>
-      <div class="card-body"> <span class="card-title">Bldg Ins Included: </span> <span class="card-text"><%=listing.ac %></span></div>
-      <div class="card-body"> <span class="card-title">Com Elem Incl: </span> <span class="card-text"><%=listing.ac %></span></div>
+      <div class="card-body"> <span class="card-title">Maintainence: </span> <span class="card-text"><%= listing.maint %></span></div>
+      <div class="card-body"> <span class="card-title">Taxes Included: </span> <span class="card-text">N</span></div>
+      <div class="card-body"> <span class="card-title">Hydro Included: </span> <span class="card-text">N</span></div>
+      <div class="card-body"> <span class="card-title">Cable Tv Included: </span> <span class="card-text">N</span></div>
+      <div class="card-body"> <span class="card-title">Bldg Ins Included: </span> <span class="card-text">N</span></div>
+      <div class="card-body"> <span class="card-title">Com Elem Incl: </span> <span class="card-text">Y</span></div>
       <div class="card-body"> <span class="card-title">Air Condition: </span> <span class="card-text"><%=listing.ac %></span></div>
       <div class="card-body"> <span class="card-title">Elevator/Lift Service: </span> <span class="card-text"><%=listing.elevator %></span></div>
     </div>
     <div class="">
-      <div class="card-body"> <span class="card-title">Balcony: </span> <span class="card-text"><%=listing.water %></span></div>
-      <div class="card-body"> <span class="card-title">Garage Spaces: </span> <span class="card-text"><%=listing.power %></span></div>
-      <div class="card-body"> <span class="card-title">Total Parking Spaces: </span> <span class="card-text"><%=listing.water %></span></div>
+      <div class="card-body"> <span class="card-title">Balcony: </span> <span class="card-text"><%=listing.balcony %></span></div>
+      <div class="card-body"> <span class="card-title">Total Parking Spaces: </span> <span class="card-text"><%=listing.parking %></span></div>
       <div class="card-body"> <span class="card-title">Water Supply: </span> <span class="card-text"><%=listing.water %></span></div>
       <div class="card-body"> <span class="card-title">Power Supply: </span> <span class="card-text"><%=listing.power %></span></div>
-      <div class="card-body"> <span class="card-title">Bldg Amenities: </span> <span class="card-text"><%=listing.power %></span></div>
+      <div class="card-body"> <span class="card-title">Bldg Amenities: </span> <span class="card-text">Bike storage, Exercise, Room, Indoor included.</span></div>
     </div>
     <div class="">
       <table>
@@ -133,7 +132,7 @@
   <div class="show_six">
     <div class="">
       <div class="">
-        <h2>Brokerage's information</h2>
+        <h4>Brokerage info</h4>
       </div>
       <br>
     </div>
@@ -145,14 +144,14 @@
       </div>
 
       <div class="">
-        <div class="card-body"> <span class="card-title">Condition: </span> <span class="card-text">Condition</span></div>
-        <div class="card-body"> <span class="card-title">CB comm: </span> <span class="card-text"> CB comm</span></div>
+        <div class="card-body"> <span class="card-title">Condition: </span> <span class="card-text"> </span></div>
+        <div class="card-body"> <span class="card-title">CB comm: </span> <span class="card-text"> 2.25%</span></div>
       </div>
 
       <div class="">
-        <div class="card-body"> <span class="card-title">Ad: </span> <span class="card-text">Ad: </span></div>
-        <div class="card-body"> <span class="card-title">Escape</span> <span class="card-text">Escape</span></div>
+        <div class="card-body"> <span class="card-title">Ad: </span> <span class="card-text"> Y </span></div>
         <div class="card-body"> <span class="card-title">Original </span> <span class="card-text"><%=listing.listprice %></span></div>
+        <div class="card-body"> <span class="card-title">Last Updated </span> <span class="card-text"></span></div>
       </div>
     </div>
   </div>

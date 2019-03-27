@@ -1,12 +1,12 @@
 <% include partials/header %>
 <% include partials/loggedin %>
-<div class="container">
-  <h1>Create a form</h1>
+<div class="wrapper">
+  <h1>Add New</h1>
   <form class="" action="/listing" method="post">
 
     <h6 id="centeredheading">Property Classification</h6>
     <hr>
-    <div class="row">
+    <div class="new_1">
       <div class="col">
         <label for="propertyclass" class="">Property Class</label>
         <select class="" data-style="" name="propertyclass" required>
@@ -28,21 +28,19 @@
 
     <h6 id="centeredheading">Location</h6>
     <hr>
-    <div class="row">
+    <div class="new_2">
       <div class="col">
-        <label for="name" class="">Division</label>
+        <label for="name" class="">Division</label> <br>
         <select class="" data-style="" name="division">
                 <option name="table2" value="Dhaka" selected>Dhaka</option>
         </select>
-      </div>
-      <div class="col">
-        <label for="name" class="">District</label>
+        <br>
+        <label for="name" class="">District</label> <br>
         <select class="" data-style="" name="district">
                 <option name="table1" value="Dhaka" selected>Dhaka</option>
         </select>
-      </div>
-      <div class="col">
-        <label for="name" class="">City</label>
+        <br>
+        <label for="name" class="">City</label> <br>
         <select class="" data-style="" name="city" required>
                 <option name="table1" value="Dhaka Uttar">Dhaka Uttar</option>
                 <option name="table2" value="Dhaka Dokkhin">Dhaka Dokkhin</option>
@@ -95,169 +93,164 @@
                 <option name="table42" value="Wari">Wari</option>
         </select>
       </div>
-    </div>
-
-    <div class="row bottomPadding">
-      <div class="col">
-        <label for="community" class="">Community</label>
+      <div class="">
+        <label for="stname"> Street </label> <br>
+        <input type="text" name="stname" value="" placeholder="67 T&T road"> <br>
+        <label for="unit"> Unit </label> <br>
+        <input type="text" name="unit" value="" placeholder="6B"> <br>
+        <label for="community" class="">Community</label> <br>
         <input type="text" name="community" value="" placeholder="E.g: Farmgate">
       </div>
-    </div>
 
+    </div>
 
     <h6 id="centeredheading">Amounts/Dates</h6>
     <hr>
-    <div class="row">
+    <div class="new_3">
+      <div>
       <div class="col">
-        <!-- Put condition for price -->
-        <label for="listprice" class="">List Price</label>
+        <label for="listprice" class="">List Price</label> <br>
         <input type="number" name="listprice" value="" placeholder="E.g: 50,00,000">
       </div>
-    </div>
-
-    <div class="row bottomPadding">
       <div class="col">
-        <label for="name" class="">Contract Commencement</label>
+        <label for="name" class="">Contract Commencement</label> <br>
         <input type="date" name="contractdate" value="">
       </div>
       <div class="col">
-        <label for="name" class="">Expiry Date</label>
+        <label for="name" class="">Expiry Date</label> <br>
         <input type="date" name="expirydate" value="">
       </div>
-    </div>
-
-    <div class="row bottomPadding">
       <div class="col">
-        <label for="name" class="">Possession Date</label>
+        <label for="name" class="">Possession Date</label> <br>
         <input type="date" name="possessiondate" value="">
       </div>
       <div class="col">
-        <label for="name" class="">Holdover Days</label>
+        <label for="name" class="">Holdover Days</label> <br>
         <input type="number" name="holdoverdays" value="">
       </div>
       <div class="">
-        <label for="name" class="">Seller/Landlord Name</label>
+        <label for="name" class="">Seller/Landlord Name</label> <br>
         <input type="text" name="sellername" value="">
       </div>
-    </div>
+      </div>
+      <div class="">
+        <div class="">
+          <label for="name" class="">Property Type:</label> <br>
+          <select class="" data-style="" name="exteriortype" required size="3">
+            <option name="exteriortype1" value="Apartment">Apartment</option>
+            <option name="exteriortype2" value="House">House</option>
+            <option name="exteriortype3" value="Duplex">Duplex</option>
+            <option name="exteriortype4" value="Multiplex">Multiplex</option>
+            <option name="exteriortype5" value="Market">Market</option>
+          </select>
+        </div>
+        <div class="">
+        <label for="measurement">Square ft.</label> <br>
+          <select class="" name="measurement" size="3">
+            <option name="measurement" value="700">&#139; than 700</option>
+            <option name="measurement" value="1100"> 700 - 1100</option>
+            <option name="measurement" value="1500">1100 -1500</option>
+            <option name="measurement" value="1501"> &#155; 1500</option>
+          </select>
+        </div>
+        <div class="">
+          <label for="measurement">Exposure</label> <br>
+          <input type="text" name="exposure" value="" placeholder="East/west/north/south">
+        </div>
+        <div class="">
+          <label for="measurement">Balcony</label> <br>
+          <input type="text" name="balcony" value="" placeholder="open/enclosed">
+        </div>
+      </div>
 
+      <div class="">
+        <div class="">
+          <label for="water" class="">Water</label> <br>
+          <select class="" data-style="" name="water">
+                  <option name="" value="N/A">Select One</option>
+                  <option name="table3" value="Supply">WASA Supply</option>
+                  <option name="table3" value="Tubewell">Pump/Tubewell</option>
+          </select>
+        </div>
+        <div class="">
+          <label for="power" class="">Power</label> <br>
+          <select class="" data-style="" name="power">
+                  <option name="" value="N/A">Select One</option>
+                  <option name="table3" value="powersupply">City power supply</option>
+                  <option name="table3" value="solar">Solar</option>
+                  <option name="table3" value="gas">Gas Line</option>
+          </select>
+        </div>
+        <div class="">
+          <label for="parking">Parking</label> <br>
+          <input type="Number" name="parking" value="" placeholder="">
+        </div>
+        <div class="">
+          <label for="maint">Maintainence</label> <br>
+          <input type="Number" name="maint" value="" placeholder="7000">
+        </div>
+      </div>
+
+      <div class="">
+        <div class="">
+          <label for="bedroom" class="">#Bedrooms</label> <br>
+          <input type="number" name="bedroom" value="">
+        </div>
+        <div class="">
+          <label for="washroom" class="">#Washrooms</label> <br>
+          <input type="number" name="washroom" value="">
+        </div>
+        <div class="">
+          <label for="kitchen" class="">#Kitchens</label> <br>
+          <input type="number" name="kitchen" value="">
+        </div>
+        <div class="">
+          <label for="level" class="">Level</label> <br>
+          <select class="" data-style="" name="level">
+                  <option name="table1" value="First Floor">First Floor</option>
+                  <option name="table2" value="Second Floor">2nd Floor</option>
+                  <option name="table3" value="Third Floor"> 3rd Floor</option>
+                  <option name="table4" value="Sixth Floor">4th, 5th or 6th Floor</option>
+                  <option name="table5" value="Ninth Floor"> 7th, 8th or 9th Floor</option>
+                  <option name="table6" value="Skyscrapper"> 10th or above</option>
+          </select>
+        </div>
+       <div class="">
+         <label for="ac" class="">A/C</label> <br>
+         <select class="" data-style="" name="ac">
+                 <option name="" value="N/A">Select One</option>
+                 <option name="table1" value="Included">Included</option>
+                 <option name="table2" value="Not Included">Not Included</option>
+         </select>
+       </div>
+       <div class="">
+         <label for="elevator" class="">Elevator/Lift</label> <br>
+         <select class="" data-style="" name="elevator">
+                 <option name="" value="N/A">Select One</option>
+                 <option name="table1" value="Included">Included</option>
+                 <option name="table2" value="Not Included">Not Included</option>
+         </select>
+       </div>
+      </div>
+    </div>
 <!-- End of prices and Dates -->
-
-    <h6 id="centeredheading">Exterior</h6>
-    <hr>
-    <div class="row">
-      <div class="col">
-        <label for="name" class="">Property Type:</label>
-        <select class="" data-style="" name="exteriortype" required size="3">
-          <option name="exteriortype1" value="Apartment">Apartment</option>
-          <option name="exteriortype2" value="House">House</option>
-          <option name="exteriortype3" value="Duplex">Duplex</option>
-          <option name="exteriortype4" value="Multiplex">Multiplex</option>
-          <option name="exteriortype5" value="Market">Market</option>
-        </select>
-      </div>
-      <div class="col bottomPadding">
-      <label for="measurement">Square ft.</label>
-      <fieldset class="col">
-        <select class="" name="measurement" size="3">
-          <option name="measurement" value="700">&#139; than 700</option>
-          <option name="measurement" value="1100"> 700 - 1100</option>
-          <option name="measurement" value="1500">1100 -1500</option>
-          <option name="measurement" value="1501"> &#155; 1500</option>
-        </select>
-      </fieldset>
-      </div>
-    </div>
-
-    <div class="row bottomPadding">
-      <div class="col">
-        <label for="water" class="">Water</label>
-        <select class="" data-style="" name="water">
-                <option name="" value="N/A">Select One</option>
-                <option name="table3" value="Supply">WASA Supply</option>
-                <option name="table3" value="Tubewell">Pump/Tubewell</option>
-        </select>
-      </div>
-      <div class="col">
-        <label for="power" class="">Power</label>
-        <select class="" data-style="" name="power">
-                <option name="" value="N/A">Select One</option>
-                <option name="table3" value="powersupply">City power supply</option>
-                <option name="table3" value="solar">Solar</option>
-                <option name="table3" value="gas">Gas Line</option>
-        </select>
-      </div>
-    </div>
-    <!-- End of Exterior -->
-
-    <h6 id="centeredheading">Interior</h6>
-    <hr>
-    <div class="row">
-
-      <!-- exclude rooms -->
-      <div class="col">
-        <label for="bedroom" class="">#Bedrooms</label>
-        <input type="number" name="bedroom" value="">
-      </div>
-      <div class="col">
-        <label for="washroom" class="">#Washrooms</label>
-        <input type="number" name="washroom" value="">
-      </div>
-      <div class="col">
-        <label for="kitchen" class="">#Kitchens</label>
-        <input type="number" name="kitchen" value="">
-      </div>
-      <div class="col">
-        <label for="level" class="">Level</label>
-        <select class="" data-style="" name="level">
-                <option name="table1" value="First Floor">First Floor</option>
-                <option name="table2" value="Second Floor">2nd Floor</option>
-                <option name="table3" value="Third Floor"> 3rd Floor</option>
-                <option name="table4" value="Sixth Floor">4th, 5th or 6th Floor</option>
-                <option name="table5" value="Ninth Floor"> 7th, 8th or 9th Floor</option>
-                <option name="table6" value="Skyscrapper"> 10th or above</option>
-        </select>
-      </div>
-    </div>
-
-   <div class="row bottomPadding">
-     <div class="col">
-       <label for="ac" class="">A/C</label>
-       <select class="" data-style="" name="ac">
-               <option name="" value="N/A">Select One</option>
-               <option name="table1" value="Included">Included</option>
-               <option name="table2" value="Not Included">Not Included</option>
-       </select>
-     </div>
-     <div class="col">
-       <label for="elevator" class="">Elevator/Lift</label>
-       <select class="" data-style="" name="elevator">
-               <option name="" value="N/A">Select One</option>
-               <option name="table1" value="Included">Included</option>
-               <option name="table2" value="Not Included">Not Included</option>
-       </select>
-     </div>
-    </div>
 
     <!-- End of interior -->
     <h6>Comments</h6>
     <hr>
-    <div class="row">
+    <div class="new_4">
       <div class="col">
         <legend>Remarks for Clients: </legend>
-        <textarea name="remarkforclients" rows="2" cols="80" maxlength="250"></textarea>
+        <textarea name="remarkforclients" rows="2" cols="100" maxlength="250"></textarea>
       </div>
-    </div>
-    <div class="row">
       <div class="col">
         <legend>Extras: </legend>
-        <textarea name="extras" rows="2" cols="80" maxlength="250"></textarea>
+        <textarea name="extras" rows="2" cols="100" maxlength="250"></textarea>
       </div>
-    </div>
-    <div class="row">
+
       <div class="col">
         <legend>Remarks for Brokerages: </legend>
-        <textarea name="remarkforbrokers" rows="2" cols="80" maxlength="250"></textarea>
+        <textarea name="remarkforbrokers" rows="2" cols="100" maxlength="250"></textarea>
       </div>
     </div>
     <div class="col">
@@ -269,12 +262,12 @@
       </select>
     </div>
     <div class="col">
-      <legend for="name" class="">Last Status</legend>
-      <select class="" data-style="" name="laststatus" size="3">
-        <option name="laststatus1" value="av">Available</option>
-        <option name="laststatus2" value="pa">Price adjusted</option>
-        <option name="laststatus3" value="cs">Conditional Sold</option>
-        <option name="laststatus4" value="sc">Sold</option>
+      <select class="" data-style="" name="laststatus" size="3" hidden>
+        <option name="laststatus1" value="Available">Available</option>
+        <option name="laststatus2" value="Price Changed">Price Changed</option>
+        <option name="laststatus3" value="Conditional Sold">Conditional Sold</option>
+        <option name="laststatus4" value="Sold">Sold</option>
+        <option name="laststatus4" value="Terminated">Terminated</option>
       </select>
     </div>
 

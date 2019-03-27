@@ -89,6 +89,12 @@ router.post("/listing", middleware.isLoggedIn, function(req, res){
   var city = req.body.city;
   var area = req.body.area;
   var community = req.body.community;
+  var stname = req.body.stname;
+  var unit = req.body.unit;
+  var exposure = req.body.exposure;
+  var balcony = req.body.balcony;
+  var parking = req.body.parking;
+  var maint = req.body.maint;
 
   var listprice = req.body.listprice;
   var contractdate = req.body.contractdate;
@@ -130,7 +136,8 @@ router.post("/listing", middleware.isLoggedIn, function(req, res){
     bedroom: bedroom, washroom: washroom, kitchen: kitchen, level: level,
     ac: ac, elevator: elevator,
     remarkforclients: remarkforclients, extras: extras, remarkforbrokers: remarkforbrokers,
-    laststatus: laststatus, measurement:measurement
+    laststatus: laststatus, measurement:measurement, stname: stname,
+    unit: unit, exposure: exposure, balcony: balcony, parking: parking, maint: maint
   }
   //add the data
   Listing.create(newListing, function(err, newlyCreated){

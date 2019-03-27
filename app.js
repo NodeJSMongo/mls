@@ -8,12 +8,14 @@ var passport = require("passport");
 var LocalStrategy = require("passport-local");
 var methodOverride = require("method-override");
 var Listing = require("./models/listing");
+var Brokerage = require("./models/brokerage");
 var User = require("./models/user");
 
 var authRoutes = require("./routes/index");
 var secretRoutes = require("./routes/secret");
 var searchRoutes = require("./routes/search");
 var listingsRoutes = require("./routes/listings");
+var brokerageRoutes = require("./routes/brokerage");
 
 
 
@@ -52,6 +54,7 @@ app.use(authRoutes);
 app.use(secretRoutes);
 app.use(searchRoutes);
 app.use(listingsRoutes);
+app.use(brokerageRoutes);
 
 app.listen(process.env.PORT || 5000, function(){
   console.log("server connection successful");
