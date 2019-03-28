@@ -10,7 +10,17 @@ router.get("/bdmlsregistration", function(req, res){
 });
 
 router.post("/bdmlsregistration", function(req, res){
-  var newUser = new User({username: req.body.username});
+  var newUser = new User({
+      username: req.body.username,
+      brokerage: req.body.brokerage,
+      phone: req.body.phone,
+
+      unit: req.body.unit,
+      street: req.body.street,
+      city: req.body.city,
+      division: req.body.division
+    });
+
   User.register(newUser, req.body.password, function(err, user){
     if(err){
       console.log(err);
@@ -22,7 +32,7 @@ router.post("/bdmlsregistration", function(req, res){
   });
 });
 
-router.get("/bdmlsregistration/:id", middleware.isLoggedIn, function(req, res){
+router.get("/bdmlsregistration/:id", function(req, res){
   // find the listing id and show the listing template
   User.findById(req.params.id, function(err, findUser){
     if(err){

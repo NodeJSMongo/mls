@@ -490,11 +490,6 @@ table td {
                  "fc";
 }
 
-.wrapper_show{
-  display: grid;
-  max-width: 100%;
-}
-
 .headerNav{
     display: grid;
     grid-template-columns: 1fr;
@@ -827,6 +822,7 @@ table td {
 
 .new_2 div label{
       font-size: .8rem;
+      font-weight: bolder;
     }
 
 .new_3{
@@ -843,6 +839,7 @@ table td {
 
 .new_3 div label{
       font-size: .8rem;
+      font-weight: bolder;
     }
 
 .new_4{
@@ -859,6 +856,7 @@ table td {
 
 .new_4 div label{
       font-size: .8rem;
+      font-weight: bolder;
     }
 
 .dropdown{

@@ -95,13 +95,12 @@
       </div>
       <div class="">
         <label for="stname"> Street </label> <br>
-        <input type="text" name="stname" value="" placeholder="67 T&T road"> <br>
+        <input type="text" name="stname" value="" placeholder="67 T&T Road" required> <br>
         <label for="unit"> Unit </label> <br>
         <input type="text" name="unit" value="" placeholder="6B"> <br>
         <label for="community" class="">Community</label> <br>
-        <input type="text" name="community" value="" placeholder="E.g: Farmgate">
+        <input type="text" name="community" value="" placeholder="Farmgate" required>
       </div>
-
     </div>
 
     <h6 id="centeredheading">Amounts/Dates</h6>
@@ -110,7 +109,7 @@
       <div>
       <div class="col">
         <label for="listprice" class="">List Price</label> <br>
-        <input type="number" name="listprice" value="" placeholder="E.g: 50,00,000">
+        <input type="number" name="listprice" value="" placeholder="5000000" required step="50000" min="100000">
       </div>
       <div class="col">
         <label for="name" class="">Contract Commencement</label> <br>
@@ -132,6 +131,10 @@
         <label for="name" class="">Seller/Landlord Name</label> <br>
         <input type="text" name="sellername" value="">
       </div>
+      <div class="">
+        <label for="cbcomm" class="">Brokerage Commission</label> <br>
+        <input type="text" name="cbcomm" value="">
+      </div>
       </div>
       <div class="">
         <div class="">
@@ -140,17 +143,17 @@
             <option name="exteriortype1" value="Apartment">Apartment</option>
             <option name="exteriortype2" value="House">House</option>
             <option name="exteriortype3" value="Duplex">Duplex</option>
-            <option name="exteriortype4" value="Multiplex">Multiplex</option>
+            <option name="exteriortype4" value="Multiplex">Multi-storey</option>
             <option name="exteriortype5" value="Market">Market</option>
           </select>
         </div>
         <div class="">
         <label for="measurement">Square ft.</label> <br>
-          <select class="" name="measurement" size="3">
-            <option name="measurement" value="700">&#139; than 700</option>
+          <select class="" name="measurement" size="3" required>
+            <option name="measurement" value="700">Less than 700</option>
             <option name="measurement" value="1100"> 700 - 1100</option>
             <option name="measurement" value="1500">1100 -1500</option>
-            <option name="measurement" value="1501"> &#155; 1500</option>
+            <option name="measurement" value="1501"> More than 1500</option>
           </select>
         </div>
         <div class="">
@@ -166,43 +169,51 @@
       <div class="">
         <div class="">
           <label for="water" class="">Water</label> <br>
-          <select class="" data-style="" name="water">
+          <select class="" data-style="" name="water" required>
                   <option name="" value="N/A">Select One</option>
-                  <option name="table3" value="Supply">WASA Supply</option>
-                  <option name="table3" value="Tubewell">Pump/Tubewell</option>
+                  <option name="table3" value="WASA">WASA</option>
+                  <option name="table3" value="pump">Pump</option>
           </select>
         </div>
         <div class="">
           <label for="power" class="">Power</label> <br>
-          <select class="" data-style="" name="power">
+          <select class="" data-style="" name="power" required>
                   <option name="" value="N/A">Select One</option>
-                  <option name="table3" value="powersupply">City power supply</option>
-                  <option name="table3" value="solar">Solar</option>
-                  <option name="table3" value="gas">Gas Line</option>
+                  <option name="table3" value="PDB">PDB</option>
+                  <option name="table3" value="Solar">Solar</option>
+                  <option name="table3" value="Generator">Generator</option>
           </select>
         </div>
         <div class="">
           <label for="parking">Parking</label> <br>
-          <input type="Number" name="parking" value="" placeholder="">
+          <input type="Number" name="parking" value="" placeholder="" min="0">
         </div>
         <div class="">
           <label for="maint">Maintainence</label> <br>
           <input type="Number" name="maint" value="" placeholder="7000">
+        </div>
+        <div class="">
+          <label for="occupy">Currently Occupied</label> <br>
+          <input type="text" name="occupy" value="" placeholder="Owner/Tenant">
+        </div>
+        <div class="">
+          <label for="amenities" class="">Amenities</label> <br>
+          <textarea name="amenities" rows="2" cols="20" placeholder="Bike Storage, Gym, Indoor Pool, Party/Meeting Room etc."></textarea>
         </div>
       </div>
 
       <div class="">
         <div class="">
           <label for="bedroom" class="">#Bedrooms</label> <br>
-          <input type="number" name="bedroom" value="">
+          <input type="number" name="bedroom" value="" required min="1">
         </div>
         <div class="">
           <label for="washroom" class="">#Washrooms</label> <br>
-          <input type="number" name="washroom" value="">
+          <input type="number" name="washroom" value="" required min="1">
         </div>
         <div class="">
           <label for="kitchen" class="">#Kitchens</label> <br>
-          <input type="number" name="kitchen" value="">
+          <input type="number" name="kitchen" value="" required min="1">
         </div>
         <div class="">
           <label for="level" class="">Level</label> <br>
@@ -210,29 +221,34 @@
                   <option name="table1" value="First Floor">First Floor</option>
                   <option name="table2" value="Second Floor">2nd Floor</option>
                   <option name="table3" value="Third Floor"> 3rd Floor</option>
-                  <option name="table4" value="Sixth Floor">4th, 5th or 6th Floor</option>
-                  <option name="table5" value="Ninth Floor"> 7th, 8th or 9th Floor</option>
-                  <option name="table6" value="Skyscrapper"> 10th or above</option>
+                  <option name="table4" value="Four to Sixth Floor">4th, 5th or 6th Floor</option>
+                  <option name="table5" value="Seventh to Ninth Floor"> 7th, 8th or 9th Floor</option>
+                  <option name="table6" value="Above tenth Floor"> 10th or above</option>
           </select>
         </div>
        <div class="">
          <label for="ac" class="">A/C</label> <br>
          <select class="" data-style="" name="ac">
-                 <option name="" value="N/A">Select One</option>
-                 <option name="table1" value="Included">Included</option>
-                 <option name="table2" value="Not Included">Not Included</option>
+                 <option name="table1" value="Available">Available</option>
+                 <option name="table2" value="Not Available">Not Available</option>
          </select>
        </div>
        <div class="">
          <label for="elevator" class="">Elevator/Lift</label> <br>
          <select class="" data-style="" name="elevator">
-                 <option name="" value="N/A">Select One</option>
-                 <option name="table1" value="Included">Included</option>
-                 <option name="table2" value="Not Included">Not Included</option>
+                 <option name="table1" value="Available">Available</option>
+                 <option name="table2" value="Not Included">Not Available</option>
+         </select>
+       </div>
+       <div class="">
+         <label for="ad" class="">Advertisment</label> <br>
+         <select class="" data-style="" name="ad">
+                 <option name="table1" value="Yes">Yes</option>
+                 <option name="table2" value="No">No</option>
          </select>
        </div>
       </div>
-    </div>
+     </div>
 <!-- End of prices and Dates -->
 
     <!-- End of interior -->
@@ -263,7 +279,7 @@
     </div>
     <div class="col">
       <select class="" data-style="" name="laststatus" size="3" hidden>
-        <option name="laststatus1" value="Available">Available</option>
+        <option name="laststatus1" value="Available" selected >Available</option>
         <option name="laststatus2" value="Price Changed">Price Changed</option>
         <option name="laststatus3" value="Conditional Sold">Conditional Sold</option>
         <option name="laststatus4" value="Sold">Sold</option>
@@ -275,5 +291,5 @@
     <button type="submit" name="button">Submit</button>
   </form>
 </div>
-
+</div>
 <% include partials/footer %>

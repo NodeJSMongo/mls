@@ -16,6 +16,7 @@ var listingSchema = new mongoose.Schema({
   balcony: String,
   parking: Number,
   maint: Number,
+  occupy: String,
 
   listprice: Number,
   contractdate: Date,
@@ -23,6 +24,9 @@ var listingSchema = new mongoose.Schema({
   possessiondate: Date,
   holdoverdays: Number,
   sellername: String,
+  cbcomm: Number,
+  ad: String,
+  amenities: String,
 
   exteriortype:String,
   water:String,

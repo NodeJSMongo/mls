@@ -14,6 +14,8 @@
       return foundDate;
     }
   %>
+
+
   <div class="listings">
     <table>
       <tr class="">
@@ -36,9 +38,9 @@
         <th>CB comm</th>
         <th>MLS#</th>
         </tr>
-    <% listings.forEach(function(listing){ %>
+    <% listings.forEach(function(listing, index){ %>
           <tr class="">
-            <td> # </td>
+            <td> <%= index %></td>
             <td><%= listing.laststatus %> </td>
             <td> <%= listing.stname %> </td>
             <td> <%= listing.unit %>  </td>
@@ -52,10 +54,10 @@
             <td> <%= listing.parking %> </td>
             <td> Tk <%= listing.maint %>/=</td>
             <td> <%= formattedDate(listing.contractdate) %> </td>
-            <td> Brokerage </td>
-            <td> broker ph </td>
-            <td> commision </td>
-            <td> MLS# </td>
+            <td> <%= currentUser.brokerage %>  </td>
+            <td> <%= currentUser.phone %> </td>
+            <td> <%= listing.cbcomm %> % </td>
+            <td> <%= ("BD").concat(listing.id.slice(4, 9)); %></td>
             <td><a href="/listing/<%= listing._id %>">Details</a></td>
             <td>
               <% if(currentUser && listing.author.id.equals(currentUser._id)){ %>

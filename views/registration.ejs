@@ -1,10 +1,25 @@
 <% include partials/header %>
-<% include partials/loggedin %>
 <h1>User Registration</h1>
 
 <form class="" action="/bdmlsregistration" method="post">
-  <input type="text" name="username" placeholder="Enter your User ID">
-  <input type="password" name="password" placeholder="Enter your PIN">
+  <label for="username">User ID</label> <br>
+  <input type="text" name="username" placeholder="Enter your User ID"><br>
+  <label for="password">User PIN</label> <br>
+  <input type="password" name="password" placeholder="Enter your PIN"><br>
+  <label for="brokerage">Brokerage Name</label> <br>
+  <input type="text" name="brokerage" placeholder="Right At Reality Inc. Brokerage"><br>
+  <label for="phone">Contact Number</label> <br>
+  <input type="text" name="phone" placeholder="0171-288-5802"><br>
+  <h4>Brokerage Address</h4> <hr>
+  <label for="unit">Unit</label> <br>
+  <input type="text" name="unit" placeholder="68B"><br>
+  <label for="street">Street</label> <br>
+  <input type="text" name="street" placeholder="67 Banani, Block-B"><br>
+  <label for="city">City</label> <br>
+  <input type="text" name="city" placeholder="Dhaka Uttar"><br>
+  <label for="division">Division</label> <br>
+  <input type="text" name="division" placeholder="Dhaka"><br>
+  <br>
   <button type="submit" name="button">Continue</button>
 </form>
 

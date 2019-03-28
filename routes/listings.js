@@ -95,6 +95,7 @@ router.post("/listing", middleware.isLoggedIn, function(req, res){
   var balcony = req.body.balcony;
   var parking = req.body.parking;
   var maint = req.body.maint;
+  var occupy = req.body.occupy;
 
   var listprice = req.body.listprice;
   var contractdate = req.body.contractdate;
@@ -102,6 +103,9 @@ router.post("/listing", middleware.isLoggedIn, function(req, res){
   var possessiondate = req.body.possessiondate;
   var holdoverdays = req.body.holdoverdays;
   var sellername = req.body.sellername;
+  var cbcomm = req.body.cbcomm;
+  var ad = req.body.ad;
+  var amenities = req.body.amenities;
 
   var exteriortype = req.body.exteriortype;
   var water = req.body.water;
@@ -130,14 +134,14 @@ router.post("/listing", middleware.isLoggedIn, function(req, res){
     propertyclass: propertyclass, status: status, sale: sale,
     division: division, district: district, city: city,
     area: area, community: community,
-    listprice: listprice, contractdate: contractdate, expirydate: expirydate,
+    listprice: listprice, contractdate: contractdate, expirydate: expirydate, cbcomm: cbcomm,
     possessiondate: possessiondate,holdoverdays: holdoverdays, sellername: sellername,
     exteriortype: exteriortype, water: water, power: power,
     bedroom: bedroom, washroom: washroom, kitchen: kitchen, level: level,
-    ac: ac, elevator: elevator,
+    ac: ac, elevator: elevator, ad: ad, amenities: amenities,
     remarkforclients: remarkforclients, extras: extras, remarkforbrokers: remarkforbrokers,
     laststatus: laststatus, measurement:measurement, stname: stname,
-    unit: unit, exposure: exposure, balcony: balcony, parking: parking, maint: maint
+    unit: unit, exposure: exposure, balcony: balcony, parking: parking, maint: maint, occupy:occupy
   }
   //add the data
   Listing.create(newListing, function(err, newlyCreated){
