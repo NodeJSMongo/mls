@@ -1,7 +1,35 @@
 var express = require("express");
 var router = express.Router();
 var Listing = require("../models/listing");
+//var multer =  require("multer");
 var middleware = require("../middleware");
+/*
+var storage = multer.diskStorage({
+  destination: function(req, file, cb){
+    cb(null, './uploads');
+  },
+  filename: function(req, file, cb){
+    cb(null, file.originalname);
+  }
+});
+
+var fileFilter = function(req, file, cb){
+  if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png'){
+    cb(null, true);
+  }else{
+    cb(null, false);
+  }
+}
+
+var upload = multer({
+  storage: storage,
+  limits: {
+  fileSize: (1024 * 1024 * 5)
+},
+  fileFilter: fileFilter
+});
+
+*/
 //var finalQuery = require("../objects/finalquery");
 //Restful API
 
@@ -78,6 +106,7 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
   }
 
 });
+//upload.single('image'),
 // Upload a new listing
 router.post("/listing", middleware.isLoggedIn, function(req, res){
   //get the data
@@ -125,6 +154,7 @@ router.post("/listing", middleware.isLoggedIn, function(req, res){
 
   var status = req.body.status;
   var laststatus = req.body.laststatus;
+  //var image = req.file.path;
 
   var author ={
     id: req.user._id
@@ -142,6 +172,7 @@ router.post("/listing", middleware.isLoggedIn, function(req, res){
     remarkforclients: remarkforclients, extras: extras, remarkforbrokers: remarkforbrokers,
     laststatus: laststatus, measurement:measurement, stname: stname,
     unit: unit, exposure: exposure, balcony: balcony, parking: parking, maint: maint, occupy:occupy
+    //image:image
   }
   //add the data
   Listing.create(newListing, function(err, newlyCreated){

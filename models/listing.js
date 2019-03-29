@@ -44,6 +44,7 @@ var listingSchema = new mongoose.Schema({
   extras:String,
   remarkforbrokers:String,
   laststatus: String,
+//  image: String,
 
   author:{
     id:{
