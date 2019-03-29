@@ -13,7 +13,7 @@ router.get("/", function(req, res){
 // add login logic here
 router.post("/", passport.authenticate("local",
   {
-    successRedirect: "/search",
+    successRedirect: "/info",
     failureRedirect: "/"
   }), function(req, res){
 

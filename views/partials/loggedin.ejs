@@ -1,26 +1,14 @@
 <div class="wrapper">
-  <div class="headerNav">
-    <div class="header-nav" id="navigation">
+    <div class="headerNav">
       <div class="">
-        <ul class="nav-lower">
-          <li>
-            <div class=""> <a class="" href="/search">Search</a> </div>
-          </li>
-          <li class="">
-            <a class="" href="/info">Info Centre<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="">
-            <a class="" href="/listing">Listings</a>
-          </li>
-          <li class="">
-            <a class="" href="/listing/new">Add Listing</a>
-          </li>
-          <li class="">
-            <a class="" href="/links">Links</a>
-          </li>
-          <li><div class="">Welcome <strong> <%= currentUser.username %></strong> | <a href="/logout">Logout</a> </div></li>
-        </ul>
+          <span class=""><a class="" href="/info">Info Centre<span class="sr-only">(current)</span></a>  </span>
+          <span> <a class="" href="/search">Search</a> </span>
+          <span class=""><a class="" href="/listing">Listings</a></span>
+          <span class=""><a class="" href="/listing/new">Add Listing</a></span>
+          <span class=""><a class="" href="/links">Links</a></span>
       </div>
-    </div>
+      <div class="">
+          <span><strong> <%= currentUser.username %></strong> | <a href="/logout">Logout</a></span>
+      </div>
   </div>
 </div>

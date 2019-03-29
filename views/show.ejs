@@ -3,6 +3,7 @@
 
 
 <%
+  var today = new Date();
   function formattedDate(foundDate){
     foundDate = (foundDate.getMonth() + 1) + '/' + foundDate.getDate() + '/' +  foundDate.getFullYear();
     return foundDate;
@@ -153,7 +154,7 @@
       <div class="">
         <div class="card-body"> <span class="card-title">Ad: </span> <span class="card-text"> <%= listing.ad %> </span></div>
         <div class="card-body"> <span class="card-title">Original: </span> <span class="card-text">Tk.<%=listing.listprice %>/=</span></div>
-        <div class="card-body"> <span class="card-title">Last Updated: </span> <span class="card-text"><%= formattedDate(listing.contractdate) %></span></div>
+        <div class="card-body"> <span class="card-title">Last Updated: </span> <span class="card-text"><%= formattedDate(today) %></span></div>
       </div>
     </div>
   </div>

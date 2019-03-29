@@ -1,18 +1,17 @@
   .headerNav{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 5fr  2fr;
     border-bottom:3px #eee solid;
     position: relative;
     width: 100%;
     margin: auto;
     background-color: #fff;
     z-index: 15;
+    padding: 2rem 0;
 
-    ul{
-      display: block;
-
-      li{
-        display: inline-block;
+    div{
+      span{
+        padding: 0 1rem;
       }
     }
   }
