@@ -1,13 +1,18 @@
 
 .new_1{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+
+    label{
+      font-size: .9rem;
+      font-weight: bolder;
+    }
 }
 
 .new_2{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
   div{
     padding-left: .25rem;

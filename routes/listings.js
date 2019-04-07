@@ -1,35 +1,33 @@
 var express = require("express");
 var router = express.Router();
+var multer =  require("multer");
+var path = require("path");
 var Listing = require("../models/listing");
-//var multer =  require("multer");
 var middleware = require("../middleware");
-/*
+var math = require("mathjs");
+
+var randomNumber = Math.floor(Math.random() * 100000);
+
 var storage = multer.diskStorage({
-  destination: function(req, file, cb){
-    cb(null, './uploads');
-  },
+  destination: 'public/uploads/',
   filename: function(req, file, cb){
-    cb(null, file.originalname);
+    cb(null, file.fieldname + '-' + randomNumber + path.extname(file.originalname));
   }
 });
 
-var fileFilter = function(req, file, cb){
+/* var fileFilter = function(req, file, cb){
   if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png'){
     cb(null, true);
   }else{
     cb(null, false);
   }
-}
+} */
 
 var upload = multer({
-  storage: storage,
-  limits: {
-  fileSize: (1024 * 1024 * 5)
-},
-  fileFilter: fileFilter
-});
+  storage: storage
+}).single('image');
 
-*/
+
 //var finalQuery = require("../objects/finalquery");
 //Restful API
 
@@ -37,11 +35,12 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
 
   var finalQuery = {};
   var noMatch = null;
+
   var areaQuery = req.query.area;
   var proQuery = req.query.propertyclass;
+  var priceQuery = req.query.listprice;
   var saleQuery = req.query.sale;
   var statusQuery = req.query.status;
-  var priceQuery = req.query.listprice;
   var roomQuery = req.query.bedroom;
   var squareFt = req.query.measurement;
   var outerDesign = req.query.level;
@@ -55,6 +54,10 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
 
   if(req.query.status){
     finalQuery.status = req.query.status;
+  }
+
+  if(req.query.sale){
+    finalQuery.sale = req.query.sale;
   }
 
   if(req.query.area){
@@ -108,7 +111,7 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
 });
 //upload.single('image'),
 // Upload a new listing
-router.post("/listing", middleware.isLoggedIn, function(req, res){
+router.post("/listing", upload,  middleware.isLoggedIn, function(req, res){
   //get the data
   var propertyclass = req.body.propertyclass;
   var sale = req.body.sale;
@@ -127,6 +130,7 @@ router.post("/listing", middleware.isLoggedIn, function(req, res){
   var occupy = req.body.occupy;
 
   var listprice = req.body.listprice;
+  var originalprice = req.body.originalprice;
   var contractdate = req.body.contractdate;
   var expirydate = req.body.expirydate;
   var possessiondate = req.body.possessiondate;
@@ -154,7 +158,15 @@ router.post("/listing", middleware.isLoggedIn, function(req, res){
 
   var status = req.body.status;
   var laststatus = req.body.laststatus;
-  //var image = req.file.path;
+  var image = req.file.path;
+  var desc1 = req.body.desc1;
+  var desc2 = req.body.desc2;
+  var desc3 = req.body.desc3;
+  var desc4 = req.body.desc4;
+  var decimal = req.body.decimal;
+  var katha = req.body.katha;
+  var length = req.body.length;
+  var width = req.body.width;
 
   var author ={
     id: req.user._id
@@ -171,8 +183,9 @@ router.post("/listing", middleware.isLoggedIn, function(req, res){
     ac: ac, elevator: elevator, ad: ad, amenities: amenities,
     remarkforclients: remarkforclients, extras: extras, remarkforbrokers: remarkforbrokers,
     laststatus: laststatus, measurement:measurement, stname: stname,
-    unit: unit, exposure: exposure, balcony: balcony, parking: parking, maint: maint, occupy:occupy
-    //image:image
+    unit: unit, exposure: exposure, balcony: balcony, parking: parking, maint: maint, occupy:occupy,
+    desc1: desc1, desc2: desc2, desc3: desc3, desc4: desc4, decimal: decimal, katha: katha, length: length,
+    width: width, originalprice: originalprice, image: image
   }
   //add the data
   Listing.create(newListing, function(err, newlyCreated){

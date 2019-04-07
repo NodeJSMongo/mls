@@ -1,0 +1,77 @@
+<div class="new_3">
+  <div class="">
+    <div class="">
+    <label for="measurement">Measurement</label> <br>
+        <input type="number" name="listing[measurement]" value="<%= listing.measurement %>" placeholder="" step="1" min="250" id="eh0001" disabled>
+    </div>
+    <div class="">
+      <label for="measurement">Exposure</label> <br>
+      <input type="text" name="listing[exposure]" value="<%= listing.exposure %>" placeholder="" id="eh0002" disabled>
+    </div>
+    <div class="">
+      <label for="measurement">Balcony</label> <br>
+      <input type="text" name="listing[balcony]" value="<%= listing.balcony %>" placeholder="" id="eh0003" disabled>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      <b> <small>Floor Description</small> </b><br>
+      <label for="desc1">Bedroom:</label><br>
+      <input type="text" name="listing[desc1]" value="<%= listing.desc1 %>" placeholder="" size="15" id="eh0004" disabled> <br>
+      <label for="desc2">Washroom:</label><br>
+      <input type="text" name="listing[desc2]" value="<%= listing.desc2 %>" placeholder="" size="15" id="eh0005" disabled> <br>
+      <label for="desc3">Kitchen:</label><br>
+      <input type="text" name="listing[desc3]" value="<%= listing.desc3 %>" placeholder="" size="15" id="eh0006" disabled> <br>
+      <label for="desc4">Dining:</label><br>
+      <input type="text" name="listing[desc4]" value="<%= listing.desc4 %>" placeholder="" size="15" id="eh0007" disabled> <br>
+    </div>
+  </div>
+
+
+  <div class="">
+    <div class="">
+      <label for="water" class="">Water</label> <br>
+      <select class="" data-style="" name="listing[water]" id="eh0009" disabled>
+              <option name="" value="N/A">Select One</option>
+              <option name="table3" value="WASA" <%= listing.water === 'WASA' ? 'selected': '' %>>WASA</option>
+              <option name="table3" value="pump" <%= listing.water === 'pump' ? 'selected': '' %>>Pump</option>
+      </select>
+    </div>
+    <div class="">
+      <label for="power" class="">Power</label> <br>
+      <select class="" data-style="" name="listing[power]" id="eh00010" disabled>
+              <option name="" value="N/A">Select One</option>
+              <option name="table3" value="PDB" <%= listing.power === 'PDB' ? 'selected': '' %>>PDB</option>
+              <option name="table3" value="Solar" <%= listing.power === 'Solar' ? 'selected': '' %>>Solar</option>
+              <option name="table3" value="Generator" <%= listing.power === 'Generator' ? 'selected': '' %>>Generator</option>
+      </select>
+    </div>
+    <div class="">
+      <label for="ac" class="">A/C</label> <br>
+      <select class="" data-style="" name="listing[ac]" id="eh00014" disabled>
+              <option name="table1" value="Y" <%= listing.ac === 'Y' ? 'selected': '' %>>Available</option>
+              <option name="table2" value="N" <%= listing.ac === 'N' ? 'selected': '' %>>Not Available</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      <label for="bedroom" class="">#Bedrooms</label> <br>
+      <input type="number" name="listing[bedroom]" value="<%= listing.bedroom %>" min="1" id="eh00011" disabled>
+    </div>
+    <div class="">
+      <label for="washroom" class="">#Washrooms</label> <br>
+      <input type="number" name="listing[washroom]" value="<%= listing.washroom %>" min="1" id="eh00012" disabled>
+    </div>
+    <div class="">
+      <label for="kitchen" class="">#Kitchens</label> <br>
+      <input type="number" name="listing[kitchen]" value="<%= listing.kitchen %>" min="1" id="eh00013" disabled>
+    </div>
+    <div class="">
+      <label for="occupy">Currently Occupied</label> <br>
+      <input type="text" name="listing[occupy]" value="<%= listing.occupy %>" placeholder="" id="eh0008" disabled>
+    </div>
+  </div>
+</div>

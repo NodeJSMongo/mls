@@ -1,0 +1,107 @@
+<div class="new_3">
+  <div class="">
+    <div class="">
+      <label for="unit"> Unit </label> <br>
+      <input type="text" name="listing[unit]" value="<%= listing.unit %>" placeholder="" id="e0001" disabled> <br>
+    </div>
+    <div class="">
+    <label for="measurement">Measurement</label> <br>
+        <input type="number" name="listing[measurement]" value="<%= listing.measurement %>" placeholder="" step="1" min="250" id="e0002" disabled>
+    </div>
+    <div class="">
+      <label for="measurement">Exposure</label> <br>
+      <input type="text" name="listing[exposure]" value="<%= listing.exposure %>" placeholder="" id="e0003" disabled>
+    </div>
+    <div class="">
+      <label for="measurement">Balcony</label> <br>
+      <input type="text" name="listing[balcony]" value="<%= listing.balcony %>" placeholder="" id="e0004" disabled>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      <b> <small>Floor Description</small> </b><br>
+      <label for="desc1">Bedroom:</label><br>
+      <input type="text" name="desc1" value="<%= listing.desc1 %>" placeholder="" size="15" id="e0005" disabled> <br>
+      <label for="desc2">Washroom:</label><br>
+      <input type="text" name="desc2" value="<%= listing.desc2 %>" placeholder="" size="15" id="e0006" disabled> <br>
+      <label for="desc3">Kitchen:</label><br>
+      <input type="text" name="desc3" value="<%= listing.desc3 %>" placeholder="" size="15" id="e0007" disabled> <br>
+      <label for="desc4">Dining:</label><br>
+      <input type="text" name="desc4" value="<%= listing.desc4 %>" placeholder="" size="15" id="e0008" disabled> <br>
+    </div>
+    <div class="">
+      <label for="maint">Maintainence</label> <br>
+      <input type="Number" name="listing[maint]" value="<%= listing.maint %>" placeholder="" id="maint">
+    </div>
+    <div class="">
+      <label for="occupy">Currently Occupied</label> <br>
+      <input type="text" name="listing[occupy]" value="<%= listing.occupy %>" placeholder="" id="e0009" disabled>
+    </div>
+  </div>
+
+
+  <div class="">
+    <div class="">
+      <label for="water" class="">Water</label> <br>
+      <select class="" data-style="" name="listing[water]" id="e00010" disabled>
+              <option name="" value="N/A">Select One</option>
+              <option name="table3" value="WASA" <%= listing.water === 'WASA' ? 'selected': '' %>>WASA</option>
+              <option name="table3" value="pump" <%= listing.water === 'pump' ? 'selected': '' %>>Pump</option>
+      </select>
+    </div>
+    <div class="">
+      <label for="power" class="">Power</label> <br>
+      <select class="" data-style="" name="listing[power]" id="e00011" disabled>
+              <option name="" value="N/A">Select One</option>
+              <option name="table3" value="PDB" <%= listing.power === 'PDB' ? 'selected': '' %>>PDB</option>
+              <option name="table3" value="Solar" <%= listing.power === 'Solar' ? 'selected': '' %>>Solar</option>
+              <option name="table3" value="Generator" <%= listing.power === 'Generator' ? 'selected': '' %>>Generator</option>
+      </select>
+    </div>
+    <div class="">
+      <label for="parking">Parking</label> <br>
+      <input type="Number" name="listing[parking]" value="<%= listing.parking %>" placeholder="" min="1" id="e00012" disabled>
+    </div>
+    <div class="">
+      <label for="amenities" class="">Amenities</label> <br>
+      <textarea name="listing[amenities]" rows="2" cols="20" id="amenities"> <%= listing.amenities %> </textarea>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      <label for="bedroom" class="">#Bedrooms</label> <br>
+      <input type="number" name="listing[bedroom]" value="<%= listing.bedroom %>" min="1" id="e00013" disabled>
+    </div>
+    <div class="">
+      <label for="washroom" class="">#Washrooms</label> <br>
+      <input type="number" name="listing[washroom]" value="<%= listing.washroom %>" min="1" id="e00014" disabled>
+    </div>
+    <div class="">
+      <label for="kitchen" class="">#Kitchens</label> <br>
+      <input type="number" name="listing[kitchen]" value="<%= listing.kitchen %>" min="1" id="e00015" disabled>
+    </div>
+    <div class="">
+      <label for="level" class="">Level</label> <br>
+      <input type="text" name="listing[level]" value="<%= listing.level %>" placeholder="" id="e00016" disabled>
+    </div>
+   <div class="">
+     <label for="ac" class="">A/C</label> <br>
+     <select class="" data-style="" name="listing[ac]" id="e00017" disabled>
+             <option name="table1" value="Y" <%= listing.ac === 'Y' ? 'selected': '' %>>Available</option>
+             <option name="table2" value="N" <%= listing.ac === 'N' ? 'selected': '' %>>Not Available</option>
+     </select>
+   </div>
+   <div class="">
+     <label for="elevator" class="">Elevator/Lift</label> <br>
+     <select class="" data-style="" name="listing[elevator]" id="e00018" disabled>
+             <option name="table1" value="Y" <%= listing.elevator === 'Y' ? 'selected': '' %>>Available</option>
+             <option name="table2" value="N" <%= listing.elevator === 'N' ? 'selected': '' %>>Not Available</option>
+     </select>
+   </div>
+  </div>
+</div>
+
+
+<!-- End of prices and Dates -->

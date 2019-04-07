@@ -1,301 +1,289 @@
 <% include partials/header %>
 <% include partials/loggedin %>
+
+<%
+if(listing.contractdate || listing.expirydate || listing.possessiondate){
+  var today = new Date();
+  function formattedDate(foundDate){
+    foundDate = (foundDate.getMonth() + 1) + '/' + foundDate.getDate() + '/' +  foundDate.getFullYear();
+    return foundDate;
+  }
+}
+%>
 <div class="wrapper">
-  <h1>Edit this Listing %></h1>
+  <h1>Add New</h1>
   <form class="" action="/listing/<%= listing._id %>?_method=PUT" method="POST">
+
     <h6 id="centeredheading">Property Classification</h6>
     <hr>
     <div class="new_1">
       <div class="col">
-        <label for="propertyclass" class="">Property Class</label>
-        <select class="" data-style="" name="propertyclass" required>
-                <option name="listing[propertyclass]" value="<%=listing.propertyclass %>"><%=listing.propertyclass %></option>
-                <option name="table1" value="Residential">Residential</option>
-                <option name="table2" value="Commercial">Commercial</option>
+        <label for="propertyclass" class="">Property Class</label> <br>
+        <select class="" data-style="" name="listing[propertyclass]" id="propertyclass"  size="2">
+                <option name="table1" value="Residential" <%= listing.propertyclass === 'Residential' ? 'selected': '' %>>Residential</option>
+                <option name="table2" value="Commercial" <%= listing.propertyclass === 'Commercial' ? 'selected': '' %>>Commercial</option>
         </select>
       </div>
 
       <div class="col">
-        <label for="sale" class="">Sale or Lease</label>
-        <select class="" data-style="" name="sale" required>
-                <option name="listing[sale]" value="<%=listing.sale %>"><%=listing.sale %></option>
-                <option name="table1" value="Sale">Sale</option>
-                <option name="table2" value="Lease">Lease</option>
-                <option name="table3" value="Sub Lease">Sub Lease</option>
+        <label for="sale" class="">Sale or Lease</label> <br>
+        <select class="" data-style="" name="listing[sale]" id="sale" size="3">
+                <option name="table1" value="Sale" <%= listing.sale === 'Sale' ? 'selected': '' %>>Sale</option>
+                <option name="table2" value="Lease" <%= listing.sale === 'Lease' ? 'selected': '' %>>Lease</option>
+                <option name="table3" value="Sub Lease" <%= listing.sale === 'Sub Lease' ? 'selected': '' %>>Sub Lease</option>
+        </select>
+      </div>
+      <div class="exteriortypes">
+        <label for="name" class="">Property Type:</label> <br>
+        <select class="exteriortype" data-style="" name="listing[exteriortype]" id="exteriortype"  size="3" disabled>
+          <option name="exteriortype1" value="Apartment" <%= listing.exteriortype === 'Apartment' ? 'selected': '' %> class="property">Apartment</option>
+          <option name="exteriortype2" value="House" <%= listing.exteriortype === 'House' ? 'selected': '' %> id="house" class="property">House</option>
+          <option name="exteriortype5" value="Land" <%= listing.exteriortype === 'Land' ? 'selected': '' %> id="land" class="property">Land</option>
+          <option name="exteriortype3" value="Duplex" <%= listing.exteriortype === 'Duplex' ? 'selected': '' %> class="property">Duplex</option>
+          <option name="exteriortype4" value="Multiplex"  <%= listing.exteriortype === 'Multiplex' ? 'selected': '' %>class="property">Multi-storey Building</option>
+          <option name="exteriortype5" value="Store" <%= listing.exteriortype === 'Store' ? 'selected': '' %> id="store" class="property">Store</option>
+          <option name="exteriortype5" value="Office" <%= listing.exteriortype === 'Office' ? 'selected': '' %> id="office" class="property">Office</option>
+          <option name="exteriortype5" value="Market"  <%= listing.exteriortype === 'Market' ? 'selected': '' %> id="market" class="property">Market</option>
         </select>
       </div>
     </div>
-
 
     <h6 id="centeredheading">Location</h6>
     <hr>
     <div class="new_2">
       <div class="col">
-        <label for="name" class="">Division</label> <br>
+        <label for="division" class="">Division</label> <br>
         <select class="" data-style="" name="listing[division]">
-                <option name="table2" value="Dhaka"  >Dhaka</option>
+                <option name="table2" value="Dhaka" <%= listing.division === 'Dhaka' ? 'selected': '' %> >Dhaka</option>
         </select>
         <br>
-        <label for="name" class="">District</label> <br>
+        <label for="district" class="">District</label> <br>
         <select class="" data-style="" name="listing[district]">
-                <option name="table1" value="Dhaka"  >Dhaka</option>
+                <option name="table1" value="Dhaka" <%= listing.district === 'Dhaka' ? 'selected': '' %>>Dhaka</option>
         </select>
         <br>
-        <label for="name" class="">City</label> <br>
-        <select class="" data-style="" name="listing[city]" required>
-                <option name="listing[city]" value="<%=listing.city %>"><%=listing.city %></option>
-                <option name="table1" value="Dhaka Uttar">Dhaka Uttar</option>
-                <option name="table2" value="Dhaka Dokkhin">Dhaka Dokkhin</option>
+        <label for="city" class="">City</label> <br>
+        <select class="" data-style="" name="listing[city]">
+                <option name="table1" value="Dhaka South" <%= listing.city === 'Dhaka South' ? 'selected': '' %>>Dhaka South</option>
+                <option name="table2" value="Dhaka North" <%= listing.city === 'Dhaka North' ? 'selected': '' %>>Dhaka North</option>
         </select>
       </div>
       <div class="col">
-        <legend for="area" class="">Area</legend>
-        <select class="" data-style="" name="listing[area]" required size="5">
-                <option name="listing[area]" value="<%=listing.area %>"  ><%=listing.area %></option>
-                <option name="table1" value="Adabar">Adabar</option>
-                <option name="table2" value="Azampur">Azampur</option>
-                <option name="table3" value="Badda">Badda</option>
-                <option name="table4" value="Bangsal">Bangsal</option>
-                <option name="table5" value="Bimanbandar">Bimanbandar</option>
-                <option name="table6" value="Cantonment">Cantonment</option>
-                <option name="table7" value="Chowkbazar">Chowkbazar</option>
-                <option name="table8" value="Darus Salam">Darus Salam</option>
-                <option name="table9" value="Demra">Demra</option>
-                <option name="table10" value="Dhanmondi">Dhanmondi</option>
-                <option name="table11" value="Gendaria">Gendaria</option>
-                <option name="table12" value="Gulshan">Gulshan</option>
-                <option name="table13" value="Hazaribagh">Hazaribagh</option>
-                <option name="table14" value="Kadamtali">Kadamtali</option>
-                <option name="table15" value="Kafrul">Kafrul</option>
-                <option name="table16" value="Kalabagan">Kalabagan</option>
-                <option name="table17" value="kamrangirchar">kamrangirchar</option>
-                <option name="table18" value="Khilgoan">Khilgoan</option>
-                <option name="table19" value="Khilkhet">Khilkhet</option>
-                <option name="table20" value="Kotwali">Kotwali</option>
-                <option name="table21" value="Lalbagh">Lalbagh</option>
-                <option name="table22" value="Mirpur">Mirpur</option>
-                <option name="table23" value="Mohammadpur">Mohammadpur</option>
-                <option name="table24" value="Motijheel">Motijheel</option>
-                <option name="table25" value="New Market">New Market</option>
-                <option name="table26" value="Pallabi">Pallabi</option>
-                <option name="table27" value="Paltan">Paltan</option>
-                <option name="table28" value="Panthapath">Panthapath</option>
-                <option name="table29" value="Romna">Ramna</option>
-                <option name="table30" value="Rampura">Rampura</option>
-                <option name="table31" value="Shabujbagh">Shabujbagh</option>
-                <option name="table32" value="Shah Ali">Shah Ali</option>
-                <option name="table33" value="Sher-e-Bangla Nagar">Sher-e-Bangla Nagar</option>
-                <option name="table34" value="Shyampur">Shyampur</option>
-                <option name="table35" value="Sutrapur">Sutrapur</option>
-                <option name="table36" value="Tejgoan">Tejgoan</option>
-                <option name="table37" value="Tejgoan Industrial Area">Tejgoan Industrial Area</option>
-                <option name="table38" value="Turag">Turag</option>
-                <option name="table39" value="Uttar Khan">Uttar Khan</option>
-                <option name="table40" value="Uttara">Uttara</option>
-                <option name="table41" value="Vatara">Vatara</option>
-                <option name="table42" value="Wari">Wari</option>
+        <label for="area" class="">Area</label> <br>
+        <select class="" data-style="" name="listing[area]" size="4">
+                <option name="table1" value="Adabar" <%= listing.area === 'Adabar' ? 'selected': '' %>>Adabar</option>
+                <option name="table2" value="Azampur" <%= listing.area === 'Azampur' ? 'selected': '' %>>Azampur</option>
+                <option name="table3" value="Badda" <%= listing.area === 'Badda' ? 'selected': '' %>>Badda</option>
+                <option name="table4" value="Bangsal" <%= listing.area === 'Bangsal' ? 'selected': '' %>>Bangsal</option>
+                <option name="table5" value="Bimanbandar" <%= listing.area === 'Bimanbandar' ? 'selected': '' %>>Bimanbandar</option>
+                <option name="table6" value="Cantonment" <%= listing.area === 'Cantonment' ? 'selected': '' %>>Cantonment</option>
+                <option name="table7" value="Chowkbazar" <%= listing.area === 'Chowkbazar' ? 'selected': '' %>>Chowkbazar</option>
+                <option name="table8" value="Darus Salam" <%= listing.area === 'Darus Salam' ? 'selected': '' %>>Darus Salam</option>
+                <option name="table9" value="Demra" <%= listing.area === 'Demra' ? 'selected': '' %>>Demra</option>
+                <option name="table10" value="Dhanmondi" <%= listing.area === 'Dhanmondi' ? 'selected': '' %>>Dhanmondi</option>
+                <option name="table11" value="Gendaria" <%= listing.area === 'Gendaria' ? 'selected': '' %>>Gendaria</option>
+                <option name="table12" value="Gulshan"<%= listing.area === 'Gulshan' ? 'selected': '' %>>Gulshan</option>
+                <option name="table13" value="Hazaribagh"<%= listing.area === 'Hazaribagh' ? 'selected': '' %>>Hazaribagh</option>
+                <option name="table14" value="Kadamtali"<%= listing.area === 'Kadamtali' ? 'selected': '' %>>Kadamtali</option>
+                <option name="table15" value="Kafrul"<%= listing.area === 'Kafrul' ? 'selected': '' %>>Kafrul</option>
+                <option name="table16" value="Kalabagan"<%= listing.area === 'Kalabagan' ? 'selected': '' %>>Kalabagan</option>
+                <option name="table17" value="kamrangirchar"<%= listing.area === 'kamrangirchar' ? 'selected': '' %>>kamrangirchar</option>
+                <option name="table18" value="Khilgoan" <%= listing.area === 'Khilgoan' ? 'selected': '' %>>Khilgoan</option>
+                <option name="table19" value="Khilkhet" <%= listing.area === 'Khilkhet' ? 'selected': '' %>>Khilkhet</option>
+                <option name="table20" value="Kotwali" <%= listing.area === 'Kotwali' ? 'selected': '' %>>Kotwali</option>
+                <option name="table21" value="Lalbagh" <%= listing.area === 'Lalbagh' ? 'selected': '' %>>Lalbagh</option>
+                <option name="table22" value="Mirpur" <%= listing.area === 'Mirpur' ? 'selected': '' %>>Mirpur</option>
+                <option name="table23" value="Mohammadpur" <%= listing.area === 'Mohammadpur' ? 'selected': '' %>>Mohammadpur</option>
+                <option name="table24" value="Motijheel" <%= listing.area === 'Motijheel' ? 'selected': '' %>>Motijheel</option>
+                <option name="table25" value="New Market" <%= listing.area === 'New Market' ? 'selected': '' %>>New Market</option>
+                <option name="table26" value="Pallabi" <%= listing.area === 'Pallabi' ? 'selected': '' %>>Pallabi</option>
+                <option name="table27" value="Paltan" <%= listing.area === 'Paltan' ? 'selected': '' %>>Paltan</option>
+                <option name="table28" value="Panthapath" <%= listing.area === 'Panthapath' ? 'selected': '' %>>Panthapath</option>
+                <option name="table29" value="Romna" <%= listing.area === 'Ramna' ? 'selected': '' %>>Ramna</option>
+                <option name="table30" value="Rampura" <%= listing.area === 'Rampura' ? 'selected': '' %>>Rampura</option>
+                <option name="table31" value="Shabujbagh" <%= listing.area === 'Shabujbagh' ? 'selected': '' %>>Shabujbagh</option>
+                <option name="table32" value="Shah Ali" <%= listing.area === 'Shah Ali' ? 'selected': '' %>>Shah Ali</option>
+                <option name="table33" value="Sher-e-Bangla Nagar" <%= listing.area === 'Sher-e-Bangla Nagar' ? 'selected': '' %>>Sher-e-Bangla Nagar</option>
+                <option name="table34" value="Shyampur" <%= listing.area === 'Shyampur' ? 'selected': '' %>>Shyampur</option>
+                <option name="table35" value="Sutrapur" <%= listing.area === 'Sutrapur' ? 'selected': '' %>>Sutrapur</option>
+                <option name="table36" value="Tejgoan" <%= listing.area === 'Tejgoan' ? 'selected': '' %>>Tejgoan</option>
+                <option name="table37" value="Tejgoan Industrial Area" <%= listing.area === 'Tejgoan Industrial Area' ? 'selected': '' %>>Tejgoan Industrial Area</option>
+                <option name="table38" value="Turag" <%= listing.area === 'Turag' ? 'selected': '' %>>Turag</option>
+                <option name="table39" value="Uttar Khan" <%= listing.area === 'Uttar Khan' ? 'selected': '' %>>Uttar Khan</option>
+                <option name="table40" value="Uttara" <%= listing.area === 'Uttara' ? 'selected': '' %>>Uttara</option>
+                <option name="table41" value="Vatara" <%= listing.area === 'Vatara' ? 'selected': '' %>>Vatara</option>
+                <option name="table42" value="Wari" <%= listing.area === 'Wari' ? 'selected': '' %>>Wari</option>
         </select>
+        <div class="">
+          <label for="stname"> Street </label> <br>
+          <input type="text" name="listing[stname]" value="<%= listing.stname %>" placeholder="" > <br>
+          <label for="community" class="">Community</label> <br>
+          <input type="text" name="listing[community]" value="<%= listing.community %>"  placeholder="">
+        </div>
       </div>
       <div class="">
-        <label for="stname"> Street </label> <br>
-        <input type="text" name="listing[stname]" value="<%= listing.stname %>" placeholder="67 T&T Road" required> <br>
-        <label for="unit"> Unit </label> <br>
-        <input type="text" name="listing[unit]" value="<%= listing.unit %>" placeholder="6B"> <br>
-        <label for="community" class="">Community</label> <br>
-        <input type="text" name="listing[community]" value="<%= listing.community %>" placeholder="Farmgate" required>
+        <div class="col">
+          <label for="listprice" class="">List Price</label> <br>
+          <input type="number" name="listing[listprice]" value="<%= listing.listprice %>" step="1" min="0" id="price001">
+          <input type="number" name="listing[originalprice]" value="<%= listing.listprice %>" id="price002" hidden>
+        </div>
+        <div class="col">
+          <label for="name" class="">Contract Commencement: <%= formattedDate(listing.contractdate); %></label> <br>
+          <input type="date" name="listing[contractdate]" value=" <%= listing.contractdate %>" required>
+        </div>
+        <div class="col">
+          <label for="name" class="">Expiry Date : <%= formattedDate(listing.expirydate); %></label> <br>
+          <input type="date" name="listing[expirydate]" value=" <%= listing.expirydate %>" required>
+        </div>
+        <div class="col">
+          <label for="name" class="">Possession Date: <%= formattedDate(listing.possessiondate); %></label> <br>
+          <input type="date" name="listing[possessiondate]" value=" <%= listing.possessiondate %>" required>
+        </div>
+      </div>
+
+      <div class="">
+        <div class="col">
+          <label for="name" class="">Holdover Days</label> <br>
+          <input type="number" name="listing[holdoverdays]" value="<%= listing.holdoverdays %>">
+        </div>
+        <div class="">
+          <label for="name" class="">Seller/Landlord Name</label> <br>
+          <input type="text" name="listing[sellername]" value="<%= listing.sellername %>">
+        </div>
+        <div class="">
+          <label for="cbcomm" class="">Brokerage Commission</label> <br>
+          <input type="text" name="listing[cbcomm]" value="<%= listing.cbcomm %>">
+        </div>
+        <div class="">
+          <label for="ad" class="">Advertisment</label> <br>
+          <select class="" data-style="" name="listing[ad]">
+                  <option name="table1" value="Y" <%= listing.ad === 'Y' ? 'selected': '' %>>Yes</option>
+                  <option name="table2" value="N" <%= listing.ad === 'N' ? 'selected': '' %>>No</option>
+          </select>
+        </div>
       </div>
     </div>
 
-    <h6 id="centeredheading">Amounts/Dates</h6>
+    <h6 id="centeredheading">Details</h6>
     <hr>
-    <div class="new_3">
-      <div>
-      <div class="col">
-        <label for="listprice" class="">List Price</label> <br>
-        <input type="number" name="listing[listprice]" value="<%= listing.listprice %>" placeholder="5000000" required step="50000" min="100000">
-      </div>
-      <div class="col">
-        <label for="contractdate" class="">Contract Commencement</label> <br>
-        <input type="date" name="contractdate" value="@Model.Date.ToString("<%= listing.contractdate %>")" >
-      </div>
-      <div class="col">
-        <label for="expirydate" class="">Expiry Date</label> <br>
-        <input type="date" name="expirydate" value="@Model.Date.ToString("<%= listing.expirydate %>")">
-      </div>
-      <div class="col">
-        <label for="possessiondate" class="">Possession Date</label> <br>
-        <input type="date" name="possessiondate" value="@Model.Date.ToString("<%= listing.possessiondate %>")">
-      </div>
-      <div class="col">
-        <label for="holdoverdays" class="">Holdover Days</label> <br>
-        <input type="number" name="holdoverdays" value="<%= listing.holdoverdays %>">
-      </div>
-      <div class="">
-        <label for="sellername" class="">Seller/Landlord Name</label> <br>
-        <input type="text" name="listing[sellername]" value="<%= listing.sellername %>">
-      </div>
-      <div class="">
-        <label for="cbcomm" class="">Brokerage Commission</label> <br>
-        <input type="text" name="listing[cbcomm]" value="<%= listing.cbcomm %>">
-      </div>
-      </div>
-      <div class="">
-        <div class="">
-          <label for="exteriortype" class="">Property Type:</label> <br>
-          <select class="" data-style="" name="listing[exteriortype]" required size="3">
-            <option name="listing[exteriortype]" value="<%= listing.exteriortype %>"  ><%= listing.exteriortype %></option>
-            <option name="exteriortype1" value="Apartment">Apartment</option>
-            <option name="exteriortype2" value="House">House</option>
-            <option name="exteriortype3" value="Duplex">Duplex</option>
-            <option name="exteriortype4" value="Multiplex">Multi-storey</option>
-            <option name="exteriortype5" value="Market">Market</option>
-          </select>
+    <h3 class="warn">You must select a "Property Type" to insert specific details.</h3>
+    <div class="">
+        <div class="block" id="apt">
+          <% include partials/aptedit %>
         </div>
-        <div class="">
-        <label for="measurement">Square ft.</label> <br>
-          <select class="" name="listing[measurement]" size="3" required>
-            <option name="listing[measurement]" value="<%= listing.measurement %>"  ><%= listing.measurement %></option>
-            <option name="measurement" value="700">Less than 700</option>
-            <option name="measurement" value="1100"> 700 - 1100</option>
-            <option name="measurement" value="1500">1100 -1500</option>
-            <option name="measurement" value="1501"> More than 1500</option>
-          </select>
+        <div class="block"  id="house">
+          <% include partials/houseedit %>
         </div>
-        <div class="">
-          <label for="exposure">Exposure</label> <br>
-          <input type="text" name="listing[exposure]" value="<%= listing.exposure %>" placeholder="East/west/north/south">
+        <div class="block"  id="land">
+          <% include partials/landedit %>
         </div>
-        <div class="">
-          <label for="balcony">Balcony</label> <br>
-          <input type="text" name="listing[balcony]" value="<%= listing.balcony %>" placeholder="open/enclosed">
+        <div class="block"  id="common">
+          <% include partials/commonedit %>
         </div>
-      </div>
-
-      <div class="">
-        <div class="">
-          <label for="water" class="">Water</label> <br>
-          <select class="" data-style="" name="listing[water]" required>
-                  <option name="listing[water]" value="<%= listing.water %>"><%= listing.water %></option>
-                  <option name="table3" value="WASA">WASA</option>
-                  <option name="table3" value="pump">Pump</option>
-          </select>
-        </div>
-        <div class="">
-          <label for="power" class="">Power</label> <br>
-          <select class="" data-style="" name="listing[power]" required>
-                  <option name="listing[power]" value="<%= listing.power %>"><%= listing.power %></option>
-                  <option name="table3" value="PDB">PDB</option>
-                  <option name="table3" value="Solar">Solar</option>
-                  <option name="table3" value="Generator">Generator</option>
-          </select>
-        </div>
-        <div class="">
-          <label for="parking">Parking</label> <br>
-          <input type="Number" name="listing[parking]" value="<%= listing.parking %>" placeholder="" min="0">
-        </div>
-        <div class="">
-          <label for="maint">Maintainence</label> <br>
-          <input type="Number" name="listing[maint]" value="<%= listing.maint %>" placeholder="7000">
-        </div>
-        <div class="">
-          <label for="occupy">Currently Occupied</label> <br>
-          <input type="text" name="listing[occupy]" value="<%= listing.occupy %>" placeholder="Owner/Tenant">
-        </div>
-        <div class="">
-          <label for="amenities" class="">Amenities</label> <br>
-          <textarea name="listing[amenities]" rows="2" cols="20" value="" placeholder="Bike Storage, Gym, Indoor Pool, Party/Meeting Room etc."><%= listing.amenities %></textarea>
-        </div>
-      </div>
-
-      <div class="">
-        <div class="">
-          <label for="bedroom" class="">#Bedrooms</label> <br>
-          <input type="number" name="listing[bedroom]" value="<%= listing.bedroom %>" required min="1">
-        </div>
-        <div class="">
-          <label for="washroom" class="">#Washrooms</label> <br>
-          <input type="number" name="listing[washroom]" value="<%= listing.washroom %>" required min="1">
-        </div>
-        <div class="">
-          <label for="kitchen" class="">#Kitchens</label> <br>
-          <input type="number" name="listing[kitchen]" value="<%= listing.kitchen %>" required min="1">
-        </div>
-        <div class="">
-          <label for="level" class="">Level</label> <br>
-          <select class="" data-style="" name="listing[level]">
-                  <option name="listing[level]" value="<%= listing.level %>"><%= listing.level %></option>
-                  <option name="table1" value="First Floor">First Floor</option>
-                  <option name="table2" value="Second Floor">2nd Floor</option>
-                  <option name="table3" value="Third Floor"> 3rd Floor</option>
-                  <option name="table4" value="Four to Sixth Floor">4th, 5th or 6th Floor</option>
-                  <option name="table5" value="Seventh to Ninth Floor"> 7th, 8th or 9th Floor</option>
-                  <option name="table6" value="Above tenth Floor"> 10th or above</option>
-          </select>
-        </div>
-       <div class="">
-         <label for="ac" class="">A/C</label> <br>
-         <select class="" data-style="" name="listing[ac]">
-                <option name="listing[ac]" value="<%= listing.ac %>"><%= listing.ac %></option>
-                 <option name="table1" value="Available">Available</option>
-                 <option name="table2" value="Not Available">Not Available</option>
-         </select>
-       </div>
-       <div class="">
-         <label for="elevator" class="">Elevator/Lift</label> <br>
-         <select class="" data-style="" name="listing[elevator]">
-                <option name="listing[elevator]" value="<%= listing.elevator %>"><%= listing.elevator %></option>
-                 <option name="table1" value="Available">Available</option>
-                 <option name="table2" value="Not Included">Not Available</option>
-         </select>
-       </div>
-       <div class="">
-         <label for="ad" class="">Advertisment</label> <br>
-         <select class="" data-style="" name="listing[ad]">
-                 <option name="listing[ad]" value="<%= listing.ad %>"><%= listing.ad %></option>
-                 <option name="table1" value="Yes">Yes</option>
-                 <option name="table2" value="No">No</option>
-         </select>
-       </div>
-      </div>
      </div>
-  <!-- End of prices and Dates -->
+<!-- End of prices and Dates -->
 
     <!-- End of interior -->
     <h6>Comments</h6>
     <hr>
     <div class="new_4">
       <div class="col">
-        <legend>Remarks for Clients: </legend>
-        <textarea name="listing[remarkforclients]" rows="2" cols="100" maxlength="250"><%= listing.remarkforclients %></textarea>
+        <label>Remarks for Clients: </label> <br>
+        <textarea name="listing[remarkforclients]" rows="2" cols="100" maxlength="250" ><%= listing.remarkforclients %> </textarea>
       </div>
       <div class="col">
-        <legend>Extras: </legend>
+        <label>Extras: </label> <br>
         <textarea name="listing[extras]" rows="2" cols="100" maxlength="250"><%= listing.extras %></textarea>
       </div>
 
       <div class="col">
-        <legend>Remarks for Brokerages: </legend>
+        <label>Remarks for Brokerages: </label> <br>
         <textarea name="listing[remarkforbrokers]" rows="2" cols="100" maxlength="250"><%= listing.remarkforbrokers %></textarea>
+      </div>
+
+      <div class="col">
+        <select class="" data-style="" name="listing[laststatus]" size="3" >
+          <option name="laststatus1" value="Available" <%= listing.laststatus === 'Available' ? 'selected': '' %> >Available</option>
+          <option name="laststatus2" value="Price Changed" <%= listing.laststatus === 'Price Changed' ? 'selected': '' %>>Price Changed</option>
+          <option name="laststatus3" value="Conditional Sold" <%= listing.laststatus === 'Conditional Sold' ? 'selected': '' %>>Conditional Sold</option>
+          <option name="laststatus4" value="Sold" <%= listing.laststatus === 'Sold' ? 'selected': '' %>>Sold</option>
+          <option name="laststatus4" value="Terminated" <%= listing.laststatus === 'Terminated' ? 'selected': '' %>>Terminated</option>
+        </select>
       </div>
     </div>
     <div class="col">
       <!-- Default Availibility is unsold -->
       <label for="status" class=""></label>
       <select class="" data-style="" name="listing[status]" hidden>
-        <option name="table1" value="Available"  >Unsold</option>
-        <option name="table1" value="Unvailable" >sold</option>
+        <option name="table1" value="Available" <%= listing.status === 'Available' ? 'selected': '' %> >Unsold</option>
+        <option name="table1" value="Unvailable" <%= listing.status === 'Unvailable' ? 'selected': '' %> >sold</option>
       </select>
     </div>
-    <div class="col">
-      <select class="" data-style="" name="listing[laststatus]" size="3">
-        <option name="laststatus1" value="<%= listing.laststatus %>"   ><%= listing.laststatus %></option>
-        <option name="laststatus2" value="Price Changed">Price Changed</option>
-        <option name="laststatus3" value="Conditional Sold">Conditional Sold</option>
-        <option name="laststatus4" value="Sold">Sold</option>
-        <option name="laststatus4" value="Terminated">Terminated</option>
-      </select>
-    </div>
+
+
+<!-- End of comments -->
     <button type="submit" name="button"> Submit </button>
   </form>
 </div>
+<script type="text/javascript">
+  var properties = document.querySelectorAll('.property');
+  var blocks = document.querySelectorAll('.block');
+  var warning = document.querySelector('.warn');
+
+  blocks[0].classList.add('blockHidden');
+  blocks[1].classList.add('blockHidden');
+  blocks[2].classList.add('blockHidden');
+  blocks[3].classList.add('blockHidden');
+
+if(properties[0].selected == true){
+    blocks[0].classList.remove('blockHidden');
+    blocks[0].classList.add('currentBlock');
+    blocks[1].classList.add('blockHidden');
+    blocks[2].classList.add('blockHidden');
+    blocks[3].classList.add('blockHidden');
+    warning.classList.add('warning');
+    var nums = [];
+    for( var i = 1; i < 19; i++ ) {
+        nums[i] = parseInt( document.getElementById("e000" + i).disabled = false );
+    }
+}
+
+if(properties[1].selected == true){
+    blocks[1].classList.remove('blockHidden');
+    blocks[1].classList.add('currentBlock');
+    blocks[0].classList.add('blockHidden');
+    blocks[2].classList.add('blockHidden');
+    blocks[3].classList.add('blockHidden');
+    warning.classList.add('warning');
+    var nums = [];
+
+    for( var i = 1; i < 16; i++ ) {
+        nums[i] = parseInt( document.getElementById("eh000" + i).disabled = false );
+    }
+}
+
+ if(properties[2].selected == true){
+     blocks[2].classList.remove('blockHidden');
+     blocks[2].classList.add('currentBlock');
+     blocks[1].classList.add('blockHidden');
+     blocks[0].classList.add('blockHidden');
+     blocks[3].classList.add('blockHidden');
+     warning.classList.add('warning');
+}
+
+if(properties[3].selected == true || properties[4].selected == true || properties[5].selected == true || properties[6].selected == true ||  properties[7].selected == true ){
+    blocks[3].classList.remove('blockHidden');
+    blocks[3].classList.add('currentBlock');
+    blocks[1].classList.add('blockHidden');
+    blocks[2].classList.add('blockHidden');
+    blocks[0].classList.add('blockHidden');
+    warning.classList.add('warning');
+
+    var nums = [];
+    for( var i = 1; i < 13; i++ ) {
+        nums[i] = parseInt( document.getElementById("e0000" + i).disabled = false );
+    }
+}
+
+</script>
 <% include partials/footer %>

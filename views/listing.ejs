@@ -21,12 +21,11 @@
       <tr class="">
         <th>#</th>
         <th>LSC</th>
+        <th>Property</th>
         <th>Street Name</th>
         <th>Apt/Unit</th>
-        <th>Municipality</th>
         <th>Community</th>
         <th>Price</th>
-        <th>Property Type</th>
         <th>Br + Wr</th>
         <th>Exposure</th>
         <th>Balcony</th>
@@ -40,28 +39,27 @@
         </tr>
     <% listings.forEach(function(listing, index){ %>
           <tr class="">
-            <td> <%= index %></td>
+            <td> <%= index + 1 %></td>
             <td><%= listing.laststatus %> </td>
+            <td><%= listing.exteriortype %> </td>
             <td> <%= listing.stname %> </td>
             <td> <%= listing.unit %>  </td>
-            <td><%= listing.city %> </td>
             <td><%= listing.community %> </td>
-            <td><%= listing.listprice %> </td>
-            <td><%= listing.propertyclass %> </td>
+            <td>Tk<%= listing.listprice %> </td>
             <td><%= listing.bedroom %>+<%= listing.washroom %></td>
             <td> <%= listing.exposure %> </td>
             <td> <%= listing.balcony %> </td>
             <td> <%= listing.parking %> </td>
-            <td> Tk <%= listing.maint %>/=</td>
+            <td> Tk <%= listing.maint %>.00</td>
             <td> <%= formattedDate(listing.contractdate) %> </td>
             <td> <%= currentUser.brokerage %>  </td>
             <td> <%= currentUser.phone %> </td>
-            <td> <%= listing.cbcomm %> % </td>
+            <td> <%= listing.cbcomm %> </td>
             <td> <%= ("BD").concat(listing.id.slice(4, 9)); %></td>
-            <td><a href="/listing/<%= listing._id %>">Details</a></td>
+            <td><a href="/listing/<%= listing._id %>"><i class="fas fa-eye"></i></a></td>
             <td>
               <% if(currentUser && listing.author.id.equals(currentUser._id)){ %>
-            <a href="/listing/<%= listing._id %>/edit">Edit</a>
+            <a href="/listing/<%= listing._id %>/edit"><i class="fas fa-edit"></i></a>
               <% } %>
             </td>
           </tr>

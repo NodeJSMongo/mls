@@ -3,18 +3,30 @@
 
 
 <%
+if(listing.contractdate || listing.expirydate || listing.possessiondate){
   var today = new Date();
   function formattedDate(foundDate){
     foundDate = (foundDate.getMonth() + 1) + '/' + foundDate.getDate() + '/' +  foundDate.getFullYear();
     return foundDate;
   }
+}
+%>
+
+<%
+if(listing.image){
+  var imageString = listing.image;
+  //remove slashes
+  imageString= imageString.replace(/\\/g, "\/");
+  //remove public folder
+  imageString = imageString.replace("public", "");
+}
 %>
 <br>
 <div class=" wrapper show_border">
   <div class="show">
 
     <div class="show_image">
-      <img src="/SEOCapture.PNG" class="figure-img img-fluid rounded" alt="...">
+      <img src="<%= imageString %>" class="figure-img img-fluid rounded" alt="..." style="max-width: 60%; margin: 0 auto 0 auto;">
     </div>
 
     <div class="show_first">
@@ -40,16 +52,17 @@
 
         <div class="">
           <div class="card-body"> <span class="card-title">Property Class: </span> <span class="card-text"><%=listing.propertyclass %></span></div>
-          <div class="card-body"> <span class="card-title">Property Type: </span> <span class="card-text"><%=listing.exteriortype %></span></div>
-          <div class="card-body"> <span class="card-title">Level: </span> <span class="card-text"><%=listing.level %></span></div>
-          <div class="card-body"> <span class="card-title">Unit: </span> <span class="card-text"><%=listing.unit %></span></div>
+          <div class="card-body"> <span class="card-title">Property Type: </span> <span class="card-text" id="property00"><%=listing.exteriortype %></span></div>
+          <div class="" id="apt001" hidden>
+            <div class="card-body"> <span class="card-title">Level: </span> <span class="card-text"><%=listing.level %></span></div>
+            <div class="card-body"> <span class="card-title">Unit: </span> <span class="card-text"><%=listing.unit %></span></div>
+          </div>
         </div>
-        <div class="">
+        <div class="" id="apt002" hidden>
           <div class="card-body"> <span class="card-title">Number of Bedrooms: </span> <span class="card-text"><%=listing.bedroom %></span></div>
           <div class="card-body"> <span class="card-title">Number of Washrooms: </span> <span class="card-text"><%=listing.washroom %></span></div>
           <div class="card-body"> <span class="card-title">Number of kitchens: </span> <span class="card-text"><%=listing.kitchen %></span></div>
         </div>
-
       </div>
 
     </div>
@@ -70,54 +83,57 @@
       <div class="card-body"> <span class="card-title">Contact After Expiry: </span> <span class="card-text">N</span></div>
     </div>
   </div>
+
   <div class="show_four">
-    <div class="">
+      <div class="card-body" id="land001"> <span class="card-title">In Decimal: </span> <span class="card-text">8000</span></div>
+      <div class="card-body" id="land002"> <span class="card-title">In Katha: </span> <span class="card-text">8000</span></div>
+      <div class="card-body" id="land003"> <span class="card-title">Length: </span> <span class="card-text">8000</span></div>
+      <div class="card-body" id="land004"> <span class="card-title">Width: </span> <span class="card-text">9000</span></div>
+  </div>
+  <div class="show_four" >
+    <div class="" id="apt003" hidden>
       <div class="card-body"> <span class="card-title">Property Exterior: </span> <span class="card-text"><%=listing.exteriortype %></span></div>
       <div class="card-body"> <span class="card-title">Total Sq. ft: </span> <span class="card-text"><%=listing.measurement %></span></div>
       <div class="card-body"> <span class="card-title">Exposure: </span> <span class="card-text"><%= listing.exposure %></span></div>
-    </div>
-    <div class="">
       <div class="card-body"> <span class="card-title">Maintainence: </span> <span class="card-text"><%= listing.maint %></span></div>
+      <div class="card-body"> <span class="card-title">Air Condition: </span> <span class="card-text"><%=listing.ac %></span></div>
+      <div class="card-body"> <span class="card-title">Elevator: </span> <span class="card-text"><%=listing.elevator %></span></div>
+    </div>
+    <div class="" id="apt004" hidden>
       <div class="card-body"> <span class="card-title">Taxes Included: </span> <span class="card-text">N</span></div>
       <div class="card-body"> <span class="card-title">Hydro Included: </span> <span class="card-text">N</span></div>
       <div class="card-body"> <span class="card-title">Cable Tv Included: </span> <span class="card-text">N</span></div>
       <div class="card-body"> <span class="card-title">Bldg Ins Included: </span> <span class="card-text">N</span></div>
       <div class="card-body"> <span class="card-title">Com Elem Incl: </span> <span class="card-text">Y</span></div>
-      <div class="card-body"> <span class="card-title">Air Condition: </span> <span class="card-text"><%=listing.ac %></span></div>
-      <div class="card-body"> <span class="card-title">Elevator/Lift Service: </span> <span class="card-text"><%=listing.elevator %></span></div>
     </div>
-    <div class="">
+    <div class="" id="apt005" hidden>
       <div class="card-body"> <span class="card-title">Balcony: </span> <span class="card-text"><%=listing.balcony %></span></div>
       <div class="card-body"> <span class="card-title">Total Parking Spaces: </span> <span class="card-text"><%=listing.parking %></span></div>
       <div class="card-body"> <span class="card-title">Water Supply: </span> <span class="card-text"><%= listing.water %></span></div>
       <div class="card-body"> <span class="card-title">Power Supply: </span> <span class="card-text"><%= listing.power %></span></div>
-      <div class="card-body"> <span class="card-title">Bldg Amenities: </span> <span class="card-text"><%= listing.amenities %></span></div>
+      <div class="card-body" id="apt0001"> <span class="card-title">Bldg Amenities: </span> <span class="card-text"><%= listing.amenities %></span></div>
     </div>
-    <div class="">
+    <div class="" id="apt006" hidden>
       <table>
         <tr>
-          <th>Room</th>
+          <th>Floor Spaces</th>
           <th>Description</th>
         </tr>
         <tr>
+          <td>Bed Room:</td>
+          <td><%= listing.desc1 %></td>
+        </tr>
+        <tr>
           <td>Living:</td>
-          <td>Tile</td>
+          <td><%= listing.desc2 %></td>
         </tr>
         <tr>
           <td>Dining:</td>
-          <td>Tile</td>
+          <td><%= listing.desc3 %></td>
         </tr>
         <tr>
           <td>Kitchen:</td>
-          <td>Tile</td>
-        </tr>
-        <tr>
-          <td>Master:</td>
-          <td>Tile</td>
-        </tr>
-        <tr>
-          <td>2nd Bdrms:</td>
-          <td>Mosaic</td>
+          <td><%= listing.desc4 %></td>
         </tr>
       </table>
     </div>
@@ -143,18 +159,26 @@
       <div class="">
         <div class="card-body"> <span class="card-title">Contract Date: </span> <span class="card-text"><%= formattedDate(listing.contractdate) %></span></div>
         <div class="card-body"> <span class="card-title">Expiry Date: </span> <span class="card-text"><%= formattedDate(listing.expirydate) %></span></div>
-        <div class="card-body"> <span class="card-title">Possession Date: </span> <span class="card-text"><%=formattedDate(listing.possessiondate)%></span></div>
+        <div class="card-body"> <span class="card-title">Possession Date: </span> <span class="card-text"><%= formattedDate(listing.possessiondate)%></span></div>
       </div>
 
       <div class="">
         <div class="card-body"> <span class="card-title">Condition: </span> <span class="card-text"> </span></div>
-        <div class="card-body"> <span class="card-title">CB commission: </span> <span class="card-text"> <%= listing.cbcomm %> %</span></div>
+        <div class="card-body"> <span class="card-title">CB commission: </span> <span class="card-text"> <%= listing.cbcomm %> </span></div>
       </div>
 
       <div class="">
         <div class="card-body"> <span class="card-title">Ad: </span> <span class="card-text"> <%= listing.ad %> </span></div>
-        <div class="card-body"> <span class="card-title">Original: </span> <span class="card-text">Tk.<%=listing.listprice %>/=</span></div>
-        <div class="card-body"> <span class="card-title">Last Updated: </span> <span class="card-text"><%= formattedDate(today) %></span></div>
+        <div class="card-body"> <span class="card-title">Original price: </span> <span class="card-text">
+          <%
+          if( listing.originalprice === undefined){
+            %>
+            <%= listing.listprice %>
+          <% }else{ %>
+            <%= listing.originalprice %>
+          <% } %>
+         </span></div>
+        <div class="card-body" > <span class="card-title">Last Updated: </span> <span class="card-text"><%= formattedDate(new Date) %></span></div>
       </div>
     </div>
   </div>
@@ -162,13 +186,56 @@
   <div class="">
     <% if(currentUser && listing.author.id.equals(currentUser._id)){ %>
       <a href="/listing/<%= listing._id %>/edit">Edit</a>
-      <form class="" action="/listing/<%=listing._id %>?_method=delete" method="post">
+      <form class="" action="/listing/<%= listing._id %>?_method=delete" method="post">
       <button type="submit" name="button">Remove</button>
       </form>
     <% }%>
 
-    <a href="/listing">back</a>
+    <a href="/info">back</a>
   </div>
 </div>
+<script type="text/javascript">
+  var properties = document.getElementById('property00').textContent;
 
+  if(properties === 'Apartment'){
+    var nums = [];
+
+    for( var i = 1; i < 7; i++ ) {
+        nums[i] = parseInt( document.getElementById("apt00" + i).hidden = false );
+    }
+    for( var i = 1; i < 5; i++ ) {
+        nums[i] = parseInt( document.getElementById("land00" + i).hidden = true );
+    }
+
+  }else if(properties === 'House'){
+    var nums = [];
+
+    for( var i = 1; i < 7; i++ ) {
+        nums[i] = parseInt( document.getElementById("apt00" + i).hidden = false );
+    }
+    for( var i = 1; i < 5; i++ ) {
+        nums[i] = parseInt( document.getElementById("land00" + i).hidden = true );
+    }
+  }else if(properties === 'Land'){
+    var nums = [];
+
+    for( var i = 1; i < 7; i++ ) {
+        nums[i] = parseInt( document.getElementById("apt00" + i).hidden = true );
+    }
+    for( var i = 1; i < 5; i++ ) {
+        nums[i] = parseInt( document.getElementById("land00" + i).hidden = false );
+    }
+  }else{
+    var nums = [];
+
+    for( var i = 1; i < 7; i++ ) {
+        nums[i] = parseInt( document.getElementById("apt00" + i).hidden = false );
+    }
+    for( var i = 1; i < 5; i++ ) {
+        nums[i] = parseInt( document.getElementById("land00" + i).hidden = true );
+    }
+  }
+
+
+</script>
 <% include partials/footer %>

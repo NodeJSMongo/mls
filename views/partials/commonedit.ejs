@@ -1,0 +1,80 @@
+<div class="new_3">
+  <div class="">
+    <div class="">
+    <label for="measurement">Measurement</label> <br>
+        <input type="number" name="listing[measurement]" value="<%= listing.measurement %>" placeholder="" step="1" min="250" id="e00001" disabled>
+    </div>
+    <div class="">
+      <label for="measurement">Exposure</label> <br>
+      <input type="text" name="listing[exposure]" value="<%= listing.exposure %>" placeholder="" id="e00002" disabled>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      <label for="unit"> Unit </label> <br>
+      <input type="text" name="listing[unit]" value="<%= listing.unit %>" placeholder="" id="e00003" disabled> <br>
+    </div>
+    <div class="">
+      <label for="measurement">Balcony</label> <br>
+      <input type="text" name="listing[balcony]" value="<%= listing.balcony %>" placeholder="" id="e00004" disabled>
+    </div>
+    <div class="">
+      <label for="occupy">Currently Occupied</label> <br>
+      <input type="text" name="listing[occupy]" value="<%= listing.occupy %>" placeholder="" id="e00005" disabled>
+    </div>
+  </div>
+
+
+  <div class="">
+    <div class="">
+      <label for="water" class="">Water</label> <br>
+      <select class="" data-style="" name="listing[water]" id="e00006" disabled>
+              <option name="" value="N/A">Select One</option>
+              <option name="table3" value="WASA" <%= listing.water === 'WASA' ? 'selected': '' %>>WASA</option>
+              <option name="table3" value="pump" <%= listing.water === 'pump' ? 'selected': '' %>>Pump</option>
+      </select>
+    </div>
+    <div class="">
+      <label for="power" class="">Power</label> <br>
+      <select class="" data-style="" name="listing[power]" id="e00007" disabled>
+              <option name="" value="N/A">Select One</option>
+              <option name="table3" value="PDB" <%= listing.power === 'PDB' ? 'selected': '' %>>PDB</option>
+              <option name="table3" value="Solar" <%= listing.power === 'Solar' ? 'selected': '' %>>Solar</option>
+              <option name="table3" value="Generator" <%= listing.power === 'Generator' ? 'selected': '' %>>Generator</option>
+      </select>
+    </div>
+    <div class="">
+      <label for="parking">Parking</label> <br>
+      <input type="Number" name="listing[parking]" value="<%= listing.parking %>" placeholder="" min="1" id="e00008" disabled>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      <label for="washroom" class="">#Washrooms</label> <br>
+      <input type="number" name="listing[washroom]" value="<%= listing.washroom %>" min="1" id="e00009" disabled>
+    </div>
+    <div class="">
+      <label for="level" class="">Level</label> <br>
+      <input type="text" name="listing[level]" value="<%= listing.level %>" placeholder="" id="e000010" disabled>
+    </div>
+   <div class="">
+     <label for="ac" class="">A/C</label> <br>
+     <select class="" data-style="" name="listing[ac]" id="e000011" disabled>
+             <option name="table1" value="Y" <%= listing.ac === 'Y' ? 'selected': '' %>>Available</option>
+             <option name="table2" value="N" <%= listing.ac === 'N' ? 'selected': '' %>>Not Available</option>
+     </select>
+   </div>
+   <div class="">
+     <label for="elevator" class="">Elevator/Lift</label> <br>
+     <select class="" data-style="" name="listing[elevator]" id="e000012" disabled>
+             <option name="table1" value="Y" <%= listing.elevator === 'Y' ? 'selected': '' %>>Available</option>
+             <option name="table2" value="N" <%= listing.elevator === 'N' ? 'selected': '' %>>Not Available</option>
+     </select>
+   </div>
+  </div>
+</div>
+
+
+<!-- End of prices and Dates -->
