@@ -2,6 +2,7 @@
 <% include partials/loggedin %>
 <div class="wrapper">
   <form class="" action="/listing" method="GET">
+    <hr>
     <div class="search_1">
       <div class="">
         <label>Class</label> <br>
@@ -81,29 +82,17 @@
     <br><hr>
     <div class="search_3">
       <div class="">
-        <label style="font-size: .8rem; font-weight: bolder; text-align: center;" >Price Range (In Lakh)</label> <br>
-        <div class="">
-          <div>
-            <input type="number" name="listprice" value=""><br>
-          </div>
+        <label style="font-size: .8rem; font-weight: bolder; text-align: center;" >Price Range: </label>
+        <div class=""> <br>
+          Min:<input type="number"  name="listprice" value="" id="minprice" disabled>
+          Max:<input type="number"  name="listprice" value="" id="maxprice" disabled>
         </div>
       </div>
-
       <div class="">
-        <label style="font-size: .8rem; font-weight: bolder;  text-align: center;" >Number of Bedrooms</label> <br>
-        <div class="search_3-2">
-          <div class="">
-            <input type="checkbox" name="bedroom" value="1">First<br>
-            <input type="checkbox" name="bedroom" value="2">Second<br>
-            <input type="checkbox" name="bedroom" value="3">Three<br>
-            <input type="checkbox" name="bedroom" value="4">Four<br>
-          </div>
-          <div class="">
-            <input type="checkbox" name="bedroom" value="5">Five<br>
-            <input type="checkbox" name="bedroom" value="6">Six<br>
-            <input type="checkbox" name="bedroom" value="7">Seven<br>
-            <input type="checkbox" name="bedroom" value="8">Eigth or above<br>
-          </div>
+        <label style="font-size: .8rem; font-weight: bolder; text-align: center;" >Number of Rooms:</label>
+        <div class=""> <br>
+          Min: <input type="Number"  name="bedroom" value="" disabled>
+          Max: <input type="Number"  name="bedroom" value="" disabled>
         </div>
       </div>
     </div>
@@ -112,26 +101,29 @@
     <div class="">
     <label>Square ft.</label>  <br>
       <select class="" name="measurement" size="3">
-        <option name="measurement" value="700">&#139; than 700</option>
-        <option name="measurement" value="1100"> 700 - 1100</option>
-        <option name="measurement" value="1500">1100 -1500</option>
-        <option name="measurement" value="1501"> &#155; 1500</option>
+        <option name="measurement" value="700">700 or less</option>
+        <option name="measurement" value="1100"> 701 - 1100</option>
+        <option name="measurement" value="1500">1101 -1500</option>
+        <option name="measurement" value="1501">1501 & more</option>
       </select>
     </div>
     <div class="">
       <label>Property Type:</label>  <br>
         <select class="" name="exteriortype" size="3">
-          <option name="exteriortype" value="Apartment">Apartment</option>
-          <option name="exteriortype" value="House">House</option>
-          <option name="exteriortype" value="Duplex">Duplex</option>
-          <option name="exteriortype" value="Multiplex">Multiplex</option>
-          <option name="exteriortype" value="Market">Market</option>
+          <option name="exteriortype6" value="Apartment">Apartment</option>
+          <option name="exteriortype7" value="House">House</option>
+          <option name="exteriortype5" value="Land">Land</option>
+          <option name="exteriortype3" value="Duplex">Duplex</option>
+          <option name="exteriortype4" value="Multiplex">Multi-storey Building</option>
+          <option name="exteriortype5" value="Store">Store</option>
+          <option name="exteriortype5" value="Office">Office</option>
+          <option name="exteriortype5" value="Market">Market</option>
         </select>
     </div>
     <div class="">
       <label>Level</label>  <br>
         <select class="" name="level" size="3">
-          <option name="level" value="First Floor">First Floor</option>
+          <option name="level" value="First Floor">1st Floor</option>
           <option name="level" value="Second Floor">2nd Floor</option>
           <option name="level" value="Third Floor"> 3rd Floor</option>
           <option name="level" value="Sixth Floor">4th, 5th or 6th Floor</option>
@@ -142,15 +134,17 @@
     <div class="">
     <label>Last Status</label> <br>
       <select class="" name="laststatus" size="3">
-        <option name="laststatus" value="Unchanged">Unchanged</option>
-        <option name="laststatus" value="Adjusted">Price adjusted</option>
-        <option name="laststatus" value="CS">Conditional Sold</option>
-        <option name="laststatus" value="SC">Sold</option>
+        <option name="laststatus1" value="Available">Available</option>
+        <option name="laststatus2" value="Price Changed">Price Changed</option>
+        <option name="laststatus3" value="Conditional Sold">Conditional Sold</option>
+        <option name="laststatus4" value="Sold">Sold</option>
+        <option name="laststatus4" value="Terminated">Terminated</option>
       </select>
     </div>
   </div>
   <hr>
-    <input type="submit" name="" value="Continue">
+    <input type="submit" name="submit" value="Continue">
   </form>
 </div>
+
 <% include partials/footer %>

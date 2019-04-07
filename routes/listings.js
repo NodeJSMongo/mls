@@ -63,9 +63,11 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
   if(req.query.area){
     finalQuery.area = req.query.area;
   }
+
   if(req.query.listprice){
     finalQuery.listprice = req.query.listprice;
   }
+
   if(req.query.bedroom){
     finalQuery.bedroom = req.query.bedroom;
   }
@@ -85,7 +87,7 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
   if(proQuery || areaQuery || saleQuery || statusQuery || priceQuery ||
     roomQuery || squareFt || outerDesign || propertyType || lastStatus){
     console.log(finalQuery);
-    Listing.find(finalQuery, function(err, listings){
+    Listing.find(finalQuery,  function(err, listings){
       if(err){
         console.log(err);
       }else{

@@ -4,6 +4,7 @@ html , body{
   line-height: 1.2;
   font-family: 'Raleway', sans-serif;
   margin: 0;
+  background-color: #f0f5f5;
 }
 
 img{
@@ -34,6 +35,10 @@ i{
 
 .listings{
   width: 100%;
+}
+
+input[type=number]{
+    width: 110px;
 }
 
 table {
@@ -70,7 +75,7 @@ table td {
     max-width: 98%;
     table-layout:auto;
   }
-  
+
   table th,
   table td {
     padding: .225rem .425rem;

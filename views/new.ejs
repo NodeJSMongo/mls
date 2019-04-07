@@ -1,7 +1,7 @@
 <% include partials/header %>
 <% include partials/loggedin %>
 <div class="wrapper">
-  <h1>Add New</h1>
+  <h3>Add A New List : <small>You can add one list at a time.</small></h3>
   <form class="" action="/listing" method="post" enctype="multipart/form-data">
 
     <h6 id="centeredheading">Property Classification</h6>
@@ -24,7 +24,7 @@
         </select>
       </div>
       <div class="exteriortypes">
-        <label for="name" class="">Property Type:</label> <br>
+        <label for="name" class="">Property Type: </label> <br>
         <select class="exteriortype" data-style="" name="exteriortype" id="exteriortype" required size="3">
           <option name="exteriortype1" value="Apartment" class="property">Apartment</option>
           <option name="exteriortype2" value="House" id="house" class="property">House</option>
@@ -32,8 +32,8 @@
           <option name="exteriortype3" value="Duplex" class="property">Duplex</option>
           <option name="exteriortype4" value="Multiplex" class="property">Multi-storey Building</option>
           <option name="exteriortype5" value="Store" id="store" class="property">Store</option>
-          <option name="exteriortype5" value="Office" id="office" class="property">Office</option>
-          <option name="exteriortype5" value="Market" id="market" class="property">Market</option>
+          <option name="exteriortype6" value="Office" id="office" class="property">Office</option>
+          <option name="exteriortype7" value="Market" id="market" class="property">Market</option>
         </select>
       </div>
     </div>
@@ -156,7 +156,7 @@
 
     <h6 id="centeredheading">Details</h6>
     <hr>
-    <h3 class="warn">You must select a "Property Type" to insert specific details.</h3>
+    <h3 class="warn"> <small> You must select a "Property Type" to insert specific details.</small></h3>
     <div class="">
         <div class="block" id="apt">
           <% include partials/apt %>
@@ -210,7 +210,7 @@
         <option name="laststatus2" value="Price Changed">Price Changed</option>
         <option name="laststatus3" value="Conditional Sold">Conditional Sold</option>
         <option name="laststatus4" value="Sold">Sold</option>
-        <option name="laststatus4" value="Terminated">Terminated</option>
+        <option name="laststatus5" value="Terminated">Terminated</option>
       </select>
     </div>
 

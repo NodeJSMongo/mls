@@ -25,6 +25,7 @@ div{
 .search_3{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
 
   &-1{
     display: grid;

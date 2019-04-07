@@ -2,3 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
 }
+
+.image_height{
+  height: 100vh;
+}

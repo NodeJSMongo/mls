@@ -355,6 +355,7 @@ html , body{
   line-height: 1.2;
   font-family: 'Raleway', sans-serif;
   margin: 0;
+  background-color: #f0f5f5;
 }
 
 img{
@@ -385,6 +386,10 @@ i{
 
 .listings{
   width: 100%;
+}
+
+input[type=number]{
+    width: 110px;
 }
 
 table {
@@ -420,7 +425,7 @@ table td {
     max-width: 98%;
     table-layout:auto;
   }
-  
+
   table th,
   table td {
     padding: .225rem .425rem;
@@ -495,7 +500,7 @@ table td {
     grid-template-columns: 5fr  2fr;
     border-bottom:3px #eee solid;
     position: relative;
-    width: 100%;
+    max-width: 100%;
     margin: auto;
     background-color: #fff;
     z-index: 15;
@@ -555,6 +560,10 @@ table td {
 .headerHero{
   display: grid;
   grid-template-columns: 1fr;
+}
+
+.image_height{
+  height: 100vh;
 }
 
 .placeOrder{
@@ -1100,6 +1109,7 @@ table td {
 .search_3{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-items: center;
 }
 
 .search_3-1{

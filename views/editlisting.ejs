@@ -11,7 +11,7 @@ if(listing.contractdate || listing.expirydate || listing.possessiondate){
 }
 %>
 <div class="wrapper">
-  <h1>Add New</h1>
+  <h3>Edit this List : <small>You must fill the required fields. Required fields are contarct, expiry , Commencement and Last status field</small></h3>
   <form class="" action="/listing/<%= listing._id %>?_method=PUT" method="POST">
 
     <h6 id="centeredheading">Property Classification</h6>
@@ -202,7 +202,7 @@ if(listing.contractdate || listing.expirydate || listing.possessiondate){
       </div>
 
       <div class="col">
-        <select class="" data-style="" name="listing[laststatus]" size="3" >
+        <select class="" data-style="" name="listing[laststatus]" size="3" required>
           <option name="laststatus1" value="Available" <%= listing.laststatus === 'Available' ? 'selected': '' %> >Available</option>
           <option name="laststatus2" value="Price Changed" <%= listing.laststatus === 'Price Changed' ? 'selected': '' %>>Price Changed</option>
           <option name="laststatus3" value="Conditional Sold" <%= listing.laststatus === 'Conditional Sold' ? 'selected': '' %>>Conditional Sold</option>
