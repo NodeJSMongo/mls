@@ -12,7 +12,7 @@ if(listing.contractdate || listing.expirydate || listing.possessiondate){
 %>
 <div class="wrapper">
   <h3>Edit this List : <small>You must fill the required fields. Required fields are contarct, expiry , Commencement and Last status field</small></h3>
-  <form class="" action="/listing/<%= listing._id %>?_method=PUT" method="POST">
+  <form class="" action="/listing/<%= listing._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
     <h6 id="centeredheading">Property Classification</h6>
     <hr>
@@ -220,6 +220,10 @@ if(listing.contractdate || listing.expirydate || listing.possessiondate){
       </select>
     </div>
 
+    <div class="col">
+      <label>Upload an Image of the property: </label>
+      <iframe src="https://script.google.com/a/macros/s/abc/exec" width="800" height="800" frameborder="0"></iframe>
+    </div>
 
 <!-- End of comments -->
     <button type="submit" name="button"> Submit </button>

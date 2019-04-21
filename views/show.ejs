@@ -13,12 +13,15 @@ if(listing.contractdate || listing.expirydate || listing.possessiondate){
 %>
 
 <%
-if(listing.image){
-  var imageString = listing.image;
-  //remove slashes
-  imageString= imageString.replace(/\\/g, "\/");
-  //remove public folder
-  imageString = imageString.replace("public", "");
+var imageString = [];
+for(var i = 0; i < listing.image.length; i++){
+  if(listing.image[i]){
+    imageString[i] = listing.image[i];
+    //remove slashes
+    imageString[i] = imageString[i].replace(/\\/g, "\/");
+    //remove public folder
+    imageString[i] = imageString[i].replace("public", "");
+  }
 }
 %>
 <br>
@@ -26,7 +29,7 @@ if(listing.image){
   <div class="show">
 
     <div class="show_image">
-      <img src="<%= imageString %>" class="figure-img img-fluid rounded" alt="..." style="max-width: 60%; margin: 0 auto 0 auto;">
+      <img src="<%= imageString[0] %>" class="figure-img img-fluid rounded" alt="..." style="max-width: 60%; margin: 0 auto 0 auto;">
     </div>
 
     <div class="show_first">

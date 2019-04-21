@@ -1,7 +1,7 @@
 <% include partials/header %>
 <% include partials/loggedin %>
 <div class="wrapper">
-  <form class="" action="/listing" method="GET">
+  <form class="" action="/listing" method="GET" onsubmit="listprice()">
     <hr>
     <div class="search_1">
       <div class="">
@@ -84,32 +84,54 @@
       <div class="">
         <label style="font-size: .8rem; font-weight: bolder; text-align: center;" >Price Range: </label>
         <div class=""> <br>
-          Min:<input type="number"  name="listprice" value="" id="minprice" disabled>
-          Max:<input type="number"  name="listprice" value="" id="maxprice" disabled>
+          <select class="" name="minprice" id="minprice">
+            <option value="">Min Price</option>
+            <option value="0">0</option>
+            <option value="10000">10000</option>
+            <option value="50000">50000</option>
+            <option value="100000">100000</option>
+            <option value="200000">200000</option>
+            <option value="300000">300000</option>
+            <option value="500000">500000</option>
+            <option value="1000000">1000000</option>
+            <option value="2500000">2500000</option>
+            <option value="5000000">5000000</option>
+            <option value="10000000">10000000</option>
+          </select>
+          <select class="" name="maxprice" id="maxprice">
+            <option value="">Max Price</option>
+            <option value="10000">10000</option>
+            <option value="50000">50000</option>
+            <option value="100000">100000</option>
+            <option value="200000">200000</option>
+            <option value="300000">300000</option>
+            <option value="500000">500000</option>
+            <option value="1000000">1000000</option>
+            <option value="2500000">2500000</option>
+            <option value="5000000">5000000</option>
+            <option value="10000000">10000000</option>
+            <option value="100000000">100000000</option>
+            <option value="1000000000">1000000000</option>
+          </select>
         </div>
       </div>
       <div class="">
         <label style="font-size: .8rem; font-weight: bolder; text-align: center;" >Number of Rooms:</label>
         <div class=""> <br>
-          Min: <input type="Number"  name="bedroom" value="" disabled>
-          Max: <input type="Number"  name="bedroom" value="" disabled>
+          <input type="Number"  name="bedroom" value="" min="1" placeholder="N/A">
         </div>
       </div>
     </div>
     <br><hr>
   <div class="search_4">
     <div class="">
-    <label>Square ft.</label>  <br>
-      <select class="" name="measurement" size="3">
-        <option name="measurement" value="700">700 or less</option>
-        <option name="measurement" value="1100"> 701 - 1100</option>
-        <option name="measurement" value="1500">1101 -1500</option>
-        <option name="measurement" value="1501">1501 & more</option>
-      </select>
+    <label>Measurement</label>  <br>
+      <input type="text" name="measurement" value="" placeholder="square ft./decimal">
     </div>
     <div class="">
       <label>Property Type:</label>  <br>
-        <select class="" name="exteriortype" size="3">
+        <select class="" name="exteriortype">
+          <option name="" value="">N/A</option>
           <option name="exteriortype6" value="Apartment">Apartment</option>
           <option name="exteriortype7" value="House">House</option>
           <option name="exteriortype5" value="Land">Land</option>
@@ -122,7 +144,8 @@
     </div>
     <div class="">
       <label>Level</label>  <br>
-        <select class="" name="level" size="3">
+        <select class="" name="level">
+          <option name="" value="">N/A</option>
           <option name="level" value="First Floor">1st Floor</option>
           <option name="level" value="Second Floor">2nd Floor</option>
           <option name="level" value="Third Floor"> 3rd Floor</option>
@@ -132,8 +155,9 @@
         </select>
     </div>
     <div class="">
-    <label>Last Status</label> <br>
-      <select class="" name="laststatus" size="3">
+    <label>Status</label> <br>
+      <select class="" name="laststatus">
+        <option name="" value="">N/A</option>
         <option name="laststatus1" value="Available">Available</option>
         <option name="laststatus2" value="Price Changed">Price Changed</option>
         <option name="laststatus3" value="Conditional Sold">Conditional Sold</option>
@@ -146,5 +170,4 @@
     <input type="submit" name="submit" value="Continue">
   </form>
 </div>
-
 <% include partials/footer %>

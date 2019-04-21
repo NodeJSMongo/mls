@@ -1,6 +1,7 @@
 var path = require("path");
 var express = require("express");
 var app = express();
+var jwt = require("jsonwebtoken");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var flash = require("connect-flash");

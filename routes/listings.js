@@ -8,12 +8,15 @@ var math = require("mathjs");
 
 var randomNumber = Math.floor(Math.random() * 100000);
 
+
 var storage = multer.diskStorage({
-  destination: 'public/uploads/',
-  filename: function(req, file, cb){
-    cb(null, file.fieldname + '-' + randomNumber + path.extname(file.originalname));
-  }
-});
+    destination:function(req, file ,cb){
+		cb(null,'public/uploads/')
+	},
+    filename: function(req, file, cb){
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+  });
 
 /* var fileFilter = function(req, file, cb){
   if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png'){
@@ -25,7 +28,7 @@ var storage = multer.diskStorage({
 
 var upload = multer({
   storage: storage
-}).single('image');
+}).array("image", 6);
 
 
 //var finalQuery = require("../objects/finalquery");
@@ -33,12 +36,13 @@ var upload = multer({
 
 router.get("/listing", middleware.isLoggedIn, function(req,res){
 
+  var minprice = parseInt(req.query.minprice);
+  var maxprice = parseInt(req.query.maxprice);
+
   var finalQuery = {};
   var noMatch = null;
-
   var areaQuery = req.query.area;
   var proQuery = req.query.propertyclass;
-  var priceQuery = req.query.listprice;
   var saleQuery = req.query.sale;
   var statusQuery = req.query.status;
   var roomQuery = req.query.bedroom;
@@ -51,23 +55,15 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
   if(req.query.propertyclass ){
     finalQuery.propertyclass = req.query.propertyclass;
   }
-
   if(req.query.status){
     finalQuery.status = req.query.status;
   }
-
   if(req.query.sale){
     finalQuery.sale = req.query.sale;
   }
-
   if(req.query.area){
     finalQuery.area = req.query.area;
   }
-
-  if(req.query.listprice){
-    finalQuery.listprice = req.query.listprice;
-  }
-
   if(req.query.bedroom){
     finalQuery.bedroom = req.query.bedroom;
   }
@@ -84,10 +80,34 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
     finalQuery.laststatus = req.query.laststatus;
   }
 
-  if(proQuery || areaQuery || saleQuery || statusQuery || priceQuery ||
+  if(proQuery || areaQuery || saleQuery || statusQuery ||
     roomQuery || squareFt || outerDesign || propertyType || lastStatus){
     console.log(finalQuery);
-    Listing.find(finalQuery,  function(err, listings){
+    var filter = Listing.find(finalQuery,  function(err, listings){
+      if(err){
+        console.log(err);
+      }else{
+          if(listings.length < 1){
+            var noMatch = "You must select a search criteria to a filtered listing. Please try again";
+          }else{
+            if(minprice && maxprice){
+             filter.find({listprice: { $gte: minprice, $lte: maxprice }}, function(err, listings){
+               if(err){
+                 console.log(err);
+               }else{
+                   if(listings.length < 1){
+                     var noMatch = "You must select a search criteria to a filtered listing. Please try again";
+                   }
+                   res.render("listing", {listings: listings, noMatch: noMatch});
+               }
+             });
+           }
+         res.render("listing", {listings: listings, noMatch: noMatch});
+        }
+      }
+    });
+  }else if(minprice && maxprice){
+    Listing.find({listprice: { $gte: minprice, $lte: maxprice }}, function(err, listings){
       if(err){
         console.log(err);
       }else{
@@ -109,12 +129,12 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
       }
     });
   }
-
 });
 //upload.single('image'),
 // Upload a new listing
 router.post("/listing", upload,  middleware.isLoggedIn, function(req, res){
   //get the data
+
   var propertyclass = req.body.propertyclass;
   var sale = req.body.sale;
 
@@ -160,7 +180,29 @@ router.post("/listing", upload,  middleware.isLoggedIn, function(req, res){
 
   var status = req.body.status;
   var laststatus = req.body.laststatus;
-  var image = req.file.path;
+
+  var image = [];
+  for(var i = 0; i < req.files.length; i++){
+    image[i] = req.files[i].path;
+  }
+/*  var image1;
+  var image2;
+  var image3;
+  var image4;
+  var image5;
+  for(var i = 0; i < req.files.length; i++){
+    if(i == 0){
+      image1 = req.files[i].path;
+    }else if (i == 1) {
+      image2 = req.files[i].path;
+    }else if (i == 2) {
+      image3 = req.files[i].path;
+    }else if (i == 3) {
+      image4 = req.files[i].path;
+    }else {
+      image5 = req.files[i].path;
+    }
+  }  */
   var desc1 = req.body.desc1;
   var desc2 = req.body.desc2;
   var desc3 = req.body.desc3;
@@ -219,7 +261,7 @@ router.get("/listing/:id", middleware.isLoggedIn, function(req, res){
 
 // Edit a listing
 
-  router.get("/listing/:id/edit", middleware.checkOwnership, function(req, res){
+  router.get("/listing/:id/edit", upload, middleware.checkOwnership, function(req, res){
       Listing.findById(req.params.id, function(err, findListing){
           res.render("editlisting", {listing: findListing});
       });
