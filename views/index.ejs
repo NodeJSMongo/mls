@@ -1,33 +1,35 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Bangladesh listing</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  </head>
-  <body>
+<% include partials/header %>
+<div class="container login-container ">
+  <h3><%= message %> </h3>
+            <div class="row login_form">
+                <div class="col-md-6 col-sm-12 login-form-1">
+                    <form class="container" action="/" method="post">
+                      <h5 class="form-group">User Authentication</h5>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" placeholder="Enter your User ID *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" placeholder="Your Password *" value="" />
+                        </div>
+                        <div class="form-group">
+                          <button  type="submit" class="btnSubmit btn 3xkd kdbutton collectorbtn"><strong>Click Here to Log On</strong></button>
+                        </div>
+                        <div class="form-group">
+                            <a href="#" class="ForgetPwd">Forget Password?</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <ul class="login_links">
+                      <li> <a href="#">I lost my token/phone</a></li>
+                      <li><a href="#">My token/phone is broken</a></li>
+                      <li><a href="#">I forgot my PIN</a></li>
+                      <li><a href="#">I want to change my PIN</a></li>
+                      <li><a href="#">I need to enroll my Authenticator App</a></li>
+                      <li><a href="#">I need to enroll my Authenticator App</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-<h3><%= message %> </h3>
-<div class="container">
-  <div class="jumbotron">
-    <h1 class="display-4 center">Bangladesh MLS</h1>
-    <p class="lead">Welcome to Modernized Real Estate Services in Bangladesh. A best practice for all.</p>
-    <hr class="my-4">
-  </div>
-</div>
-
-<form class="container" action="/" method="post">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Enter your User ID</label>
-    <input type="text"class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Enter your PIN</label>
-    <input type="password" name="password"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="">
-  </div>
-  <button type="submit" name="button" class="btn btn-primary">Continue</button>
-</form>
-
-<h6 style="text-align: center;">All rights reserver &copy; Trademark</h6>
-</body>
-</html>
+<% include partials/footer %>
