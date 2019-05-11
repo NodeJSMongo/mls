@@ -135,9 +135,9 @@ table td {
     top: 10%;
     width: 90%;
     left: 5%;
-    border: .5px solid #000;
+    border: none;
     border-radius: 2px;
-    padding: .5rem;
+    padding: 1rem;
   }
   .login_links{
     li{
