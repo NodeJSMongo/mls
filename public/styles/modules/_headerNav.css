@@ -15,3 +15,26 @@
       }
     }
   }
+.bg-light{
+  background-color: #094E12 !important;
+}
+
+.navbar-brand{
+  color: #fff !important;
+  font-family: Roboto;
+  font-weight: 600;
+}
+
+.nav-link{
+  color: #fff !important;
+  font-family: Roboto;
+}
+.navbar-text{
+  strong{
+    color:#FF8900;
+  }
+  a{
+    color: #fff !important;
+    text-decoration: none;
+  }
+}

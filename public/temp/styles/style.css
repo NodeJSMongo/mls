@@ -352,8 +352,7 @@ template {
 html , body{
   width: 100%;
   letter-spacing: 0.05em;
-  line-height: 1.2;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto';
   margin: 0;
   background-color: #f0f5f5;
 }
@@ -389,7 +388,7 @@ i{
 }
 
 input[type=number]{
-    width: 110px;
+    width: 100px;
 }
 
 table {
@@ -400,18 +399,20 @@ table {
   padding: 0;
   max-width: 98%;
   table-layout:auto;
+  font-size: .5rem;
 }
 
 table tr {
   background-color: #f8f8f8;
   border: 1px solid #ddd;
+    font-size: .5rem !important;
 }
 
 table th,
 table td {
-  padding: .325rem .625rem;
+  padding: .325rem .25rem !important;
   text-align: center;
-  font-size: .7rem;
+  font-size: .5rem !important;
 }
 
 .login_form{
@@ -437,6 +438,31 @@ table td {
         font-weight: bold;
         font-color: blue;
       }
+
+.row_space{
+  margin-top: 1rem;
+}
+
+.row_center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.area_font{
+  font-size: .8rem;
+}
+
+.lebel_font{
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: Roboto;
+}
+
+.carousal_title, .carousal_desc{
+  background-color: rgba(255,255,255, .5);
+  color: #000;
+  font-family: Roboto !important;
+}
 
 /* For small screens like mobile */
 
@@ -469,6 +495,15 @@ table td {
     .login_links li{
         font-size: .75rem;
     }
+  .lebel_font{
+    font-size: .8rem;
+    font-weight: bold;
+    font-family: Roboto;
+  }
+}
+
+p.card-text{
+  font-size: .8rem !important;
 }
 
 /* For medium screens like iPad */
@@ -560,6 +595,30 @@ table td {
         padding: 0 1rem;
       }
 
+.bg-light{
+  background-color: #094E12 !important;
+}
+
+.navbar-brand{
+  color: #fff !important;
+  font-family: Roboto;
+  font-weight: 600;
+}
+
+.nav-link{
+  color: #fff !important;
+  font-family: Roboto;
+}
+
+.navbar-text strong{
+    color:#FF8900;
+  }
+
+.navbar-text a{
+    color: #fff !important;
+    text-decoration: none;
+  }
+
 .subHeader{
       display: none;
       }
@@ -625,8 +684,16 @@ table td {
 .footerLinks{
   display: grid;
   grid-template-columns: repeat (10, 1fr);
-  
 }
+
+.footer_bg{
+  background-color: #C60000;
+  color: #fff;
+}
+
+.footer_bg_lower{
+    background-color: #094E12;
+  }
 
 .section-title{
   text-align: center;

@@ -1,5 +1,12 @@
 .footerLinks{
   display: grid;
   grid-template-columns: repeat (10, 1fr);
-  
+}
+
+.footer_bg{
+  background-color: #C60000;
+  color: #fff;
+  &_lower{
+    background-color: #094E12;
+  }
 }
