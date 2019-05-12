@@ -1,12 +1,10 @@
 <% include partials/header %>
 <% include partials/loggedin %>
-
-<div class="wrapper">
+<div class="listing_scroll">
   <div class="">
     <% if(noMatch !== null) { %>
       <h4><%= noMatch %> </h4>
       <% } %>
-  </div>
   </div>
   <%
     function formattedDate(foundDate){
@@ -70,5 +68,7 @@
       </tbody>
   </table>
   </div>
+</div>
+
 
 <% include partials/footer %>

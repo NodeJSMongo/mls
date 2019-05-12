@@ -236,7 +236,7 @@
   blocks[3].classList.add('blockHidden');
 
   properties.forEach(function(property){
-    property.addEventListener("click", function(){
+    property.addEventListener("touchstart", function(){
       if(properties[0] == this){
         blocks[0].classList.remove('blockHidden');
         blocks[0].classList.add('currentBlock');
