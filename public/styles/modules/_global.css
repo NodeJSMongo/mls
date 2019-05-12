@@ -4,7 +4,6 @@ html , body{
   font-family: 'Roboto';
   margin: 0;
   background-color: #f0f5f5;
-  overflow-x: hidden;
 }
 
 img{
@@ -66,28 +65,21 @@ table td {
   font-size: .5rem !important;
 }
 
-.login-container{
-  width: 100%;
-  height: 100vh;
-  background-color: #094E12;
-  margin-top: -.5rem
-}
-
 .login_form{
   position: absolute;
-  top: 8%;
-  width: auto;
+  top: 10%;
+  width: 40%;
   left: 30%;
   background-color: #FF0606;
   padding: 4rem;
   height: auto;
   color: #fff;
-  border-radius: 50%;
   a{
     color:#fff;
     text-decoration: none;
   }
 }
+
 /* .login_links{
   li{
       text-align: left;
@@ -131,9 +123,10 @@ table td {
 
 @media all and (max-width: 360px) and (min-width: 200px) {
   .login_form{
-    top: 25%;
-    left: 7%;
-    padding: 1rem
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    padding: 1rem;
   }
 }
 
@@ -162,9 +155,10 @@ table td {
     font-family: Roboto;
   }
   .login_form{
-    top: 25%;
-    left: 15%;
-    padding: 1rem
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    padding: 1rem;
   }
 }
 p.card-text{
