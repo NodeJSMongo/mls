@@ -1,11 +1,6 @@
 <% include partials/header %>
 <% include partials/loggedin %>
 <div class="listing_scroll">
-  <div class="">
-    <% if(noMatch !== null) { %>
-      <h4><%= noMatch %> </h4>
-      <% } %>
-  </div>
   <%
     function formattedDate(foundDate){
       foundDate = (foundDate.getMonth() + 1) + '/' + foundDate.getDate() + '/' +  foundDate.getFullYear();
@@ -68,6 +63,13 @@
       </tbody>
   </table>
   </div>
+
+    <% if(noMatch !== null) { %>
+      <div class="" style="text-align: center; width:100%; height: 56vh; padding-top:1rem;">
+      <h4><%= noMatch %> </h4>
+      <!-- <img src="/images/search_again.jpg" alt="" style="display:block; margin-left:auto; margin-right:auto; max-width:100%;"> -->
+      </div>
+      <% } %>
 </div>
 
 

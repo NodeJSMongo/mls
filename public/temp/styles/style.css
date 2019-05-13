@@ -392,6 +392,7 @@ input[type=number]{
 }
 
 table {
+  margin-top: 1rem;
   border: 1px solid #ccc;
   border-collapse: collapse;
   margin-left: auto;
@@ -399,20 +400,19 @@ table {
   padding: 0;
   max-width: 98%;
   table-layout:auto;
-  font-size: .5rem;
 }
 
 table tr {
   background-color: #f8f8f8;
-  border: 1px solid #ddd;
-    font-size: .5rem !important;
+  border: 1px solid #bbb;
 }
 
 table th,
 table td {
-  padding: .325rem .25rem !important;
+  padding: .225rem .35rem !important;
   text-align: center;
-  font-size: .5rem !important;
+  font-size: .8rem !important;
+  border: .5px solid #ccc;
 }
 
 .login_form{

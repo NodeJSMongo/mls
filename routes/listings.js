@@ -88,7 +88,8 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
         console.log(err);
       }else{
           if(listings.length < 1){
-            var noMatch = "You must select a search criteria to a filtered listing. Please try again";
+            var noMatch = "No result found. Please Try Again!";
+            res.render("listing", {listings: listings, noMatch: noMatch});
           }else{
             if(minprice && maxprice){
              filter.find({listprice: { $gte: minprice, $lte: maxprice }}, function(err, listings){
@@ -96,7 +97,7 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
                  console.log(err);
                }else{
                    if(listings.length < 1){
-                     var noMatch = "You must select a search criteria to a filtered listing. Please try again";
+                     var noMatch = "No result found. Please Try Again!";
                    }
                    res.render("listing", {listings: listings, noMatch: noMatch});
                }
@@ -112,7 +113,7 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
         console.log(err);
       }else{
           if(listings.length < 1){
-            var noMatch = "You must select a search criteria to a filtered listing. Please try again";
+            var noMatch = "No result found. Please Try Again!";
           }
           res.render("listing", {listings: listings, noMatch: noMatch});
       }
@@ -123,7 +124,7 @@ router.get("/listing", middleware.isLoggedIn, function(req,res){
         console.log(err);
       }else{
           if(listings.length < 1){
-            var noMatch = "You must select a search criteria to a filtered listing. Please try again";
+            var noMatch = "No result found. Please Try Again!";
           }
           res.render("listing", {listings: listings, noMatch: noMatch});
       }
