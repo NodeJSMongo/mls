@@ -4,6 +4,7 @@ html , body{
   font-family: 'Roboto';
   margin: 0;
   background-color: #f0f5f5;
+  height: 100%;
 }
 
 img{
@@ -97,6 +98,7 @@ table td {
 } */
 .listing_scroll{
   overflow-x: scroll;
+  
 }
 
 .row_space{
@@ -120,6 +122,8 @@ table td {
   color: #000;
   font-family: Roboto !important;
 }
+
+
 
 @media all and (max-width: 360px) and (min-width: 200px) {
   .login_form{
