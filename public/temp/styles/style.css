@@ -1208,17 +1208,49 @@ p.card-text{
       grid-template-columns: 1fr 1fr 1fr;
     }
 
-.card-body{
-  padding-left: 1rem;
-}
-
-.card-title{
-  font-weight: bolder;
+.cs_font{
   font-size: .9rem;
 }
 
-.card-text{
-  font-size: .9rem;
+.cs_title{
+  font-weight: bold;
+}
+
+.cs_border{
+  border:1px #000 solid;
+}
+
+.cs_row_space{
+  margin-top: 1rem;
+}
+
+/* For small screens like mobile */
+
+@media all and (max-width: 767px) and (min-width: 200px) {
+  .cs_font{
+    font-size: .7rem;
+  }
+  .show{
+    grid-template-columns: 1fr;
+}
+  .show_image {
+    border:1px #000 solid;
+  }
+    .show_image img {
+    max-width: 80%;
+    }
+}
+
+/* For medium screens like iPad */
+
+@media all and (max-width: 1020px) and (min-width: 768px) {
+
+}
+
+/* For regular Laptop and desktop screens*/
+
+@media all and (max-width: 1920px) and (min-width: 1021px) {
+
 }
 
 .search_1{

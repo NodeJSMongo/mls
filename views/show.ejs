@@ -25,98 +25,98 @@ for(var i = 0; i < listing.image.length; i++){
 }
 %>
 <br>
-<div class=" wrapper show_border">
-  <div class="show">
+<div class="container cs_font">
+  <div class="row">
 
-    <div class="show_image">
-      <img src="<%= imageString[0] %>" class="figure-img img-fluid rounded" alt="..." style="max-width: 60%; margin: 0 auto 0 auto;">
+    <div class="col-sm-4 cs_border">
+      <img src="<%= imageString[0] %>" class="" alt="..." style="max-width: 60%; margin: 0 auto 0 auto;">
     </div>
 
-    <div class="show_first">
+    <div class="col-sm-8 cs_border">
 
-      <div class="show_second">
+      <div class="row">
 
-        <div class="">
-          <div class="card-body"> <span class="card-title">Division: </span> <span class="card-text"><%=listing.division %></span></div>
-          <div class="card-body"> <span class="card-title">District: </span> <span class="card-text"><%=listing.district %></span></div>
-          <div class="card-body"> <span class="card-title">City: </span> <span class="card-text"><%=listing.city %></span></div>
-          <div class="card-body"> <span class="card-title">Area: </span> <span class="card-text"><%=listing.area %></span></div>
-          <div class="card-body"> <span class="card-title">Community: </span> <span class="card-text"><%=listing.community %></span></div>
-          <div class="card-body"> <span class="card-title">Street: </span> <span class="card-text"><%=listing.stname %></span></div>
+        <div class="col-6 cs_border">
+          <div class=" "> <span class="cs_title">Division: </span> <span class=" "><%=listing.division %></span></div>
+          <div class=" "> <span class=" cs_title">District: </span> <span class=" "><%=listing.district %></span></div>
+          <div class=" "> <span class=" cs_title">City: </span> <span class=" "><%=listing.city %></span></div>
+          <div class=" "> <span class=" cs_title">Area: </span> <span class=" "><%=listing.area %></span></div>
+          <div class=" "> <span class=" cs_title">Community: </span> <span class=" "><%=listing.community %></span></div>
+          <div class=" "> <span class=" cs_title">Street: </span> <span class=" "><%=listing.stname %></span></div>
         </div>
-        <div class="">
-          <div class="card-body"> <span class="card-title">Last Status: </span> <span class="card-text"><%=listing.laststatus %></span></div>
-          <div class="card-body"> <span class="card-title">Price: </span> <span class="card-text">Tk.<%=listing.listprice %>/=</span></div>
-          <div class="card-body"> <span class="card-title">For: </span> <span class="card-text"><%=listing.sale %></span></div>
+        <div class="col-6 cs_border">
+          <div class=" "> <span class=" cs_title">Last Status: </span> <span class=" "><%=listing.laststatus %></span></div>
+          <div class=" "> <span class=" cs_title">Price: </span> <span class=" ">Tk.<%=listing.listprice %>/=</span></div>
+          <div class=" "> <span class=" cs_title">For: </span> <span class=" "><%=listing.sale %></span></div>
         </div>
 
       </div>
-      <div class="show_second">
+      <div class="row">
 
-        <div class="">
-          <div class="card-body"> <span class="card-title">Property Class: </span> <span class="card-text"><%=listing.propertyclass %></span></div>
-          <div class="card-body"> <span class="card-title">Property Type: </span> <span class="card-text" id="property00"><%=listing.exteriortype %></span></div>
+        <div class="col-6 cs_border">
+          <div class=" "> <span class=" cs_title">Property Class: </span> <span class=" "><%=listing.propertyclass %></span></div>
+          <div class=" "> <span class=" cs_title">Property Type: </span> <span class=" " id="property00"><%=listing.exteriortype %></span></div>
           <div class="" id="apt001" hidden>
-            <div class="card-body"> <span class="card-title">Level: </span> <span class="card-text"><%=listing.level %></span></div>
-            <div class="card-body"> <span class="card-title">Unit: </span> <span class="card-text"><%=listing.unit %></span></div>
+            <div class=" "> <span class=" cs_title">Level: </span> <span class=" "><%=listing.level %></span></div>
+            <div class=" "> <span class=" cs_title">Unit: </span> <span class=" "><%=listing.unit %></span></div>
           </div>
         </div>
-        <div class="" id="apt002" hidden>
-          <div class="card-body"> <span class="card-title">Number of Bedrooms: </span> <span class="card-text"><%=listing.bedroom %></span></div>
-          <div class="card-body"> <span class="card-title">Number of Washrooms: </span> <span class="card-text"><%=listing.washroom %></span></div>
-          <div class="card-body"> <span class="card-title">Number of kitchens: </span> <span class="card-text"><%=listing.kitchen %></span></div>
+        <div class="col-6 cs_border" id="apt002" hidden>
+          <div class=" "> <span class=" cs_title">Number of Bedrooms: </span> <span class=" "><%=listing.bedroom %></span></div>
+          <div class=" "> <span class=" cs_title">Number of Washrooms: </span> <span class=" "><%=listing.washroom %></span></div>
+          <div class=" "> <span class=" cs_title">Number of kitchens: </span> <span class=" "><%=listing.kitchen %></span></div>
         </div>
       </div>
 
     </div>
 
   </div>
-  <div class="show_third">
-    <div class="">
-      <div class="card-body"> <span class="card-title">MLS#: </span> <span class="card-text"><%= ("BD").concat(listing.id.slice(4, 9)); %></span></div>
-      <div class="card-body"> <span class="card-title">Holdover Period: </span> <span class="card-text"><%=listing.holdoverdays %></span></div>
+  <div class="row">
+    <div class="col-4 cs_border">
+      <div class=" "> <span class="cs_title ">MLS#: </span> <span class=" "><%= ("BD").concat(listing.id.slice(4, 9)); %></span></div>
+      <div class=" "> <span class="cs_title ">Holdover Period: </span> <span class=" "><%=listing.holdoverdays %></span></div>
     </div>
-    <div class="">
-      <div class="card-body"> <span class="card-title">Seller Name: </span> <span class="card-text"><%= listing.sellername %></span></div>
-      <div class="card-body"> <span class="card-title">Expiry Date: </span> <span class="card-text"><%= formattedDate(listing.expirydate)  %></span></div>
-      <div class="card-body"> <span class="card-title">Occup: </span> <span class="card-text"><%= listing.occupy %></span></div>
+    <div class="col-4 cs_border">
+      <div class=" "> <span class=" cs_title">Seller Name: </span> <span class=" "><%= listing.sellername %></span></div>
+      <div class=" "> <span class=" cs_title">Expiry Date: </span> <span class=" "><%= formattedDate(listing.expirydate)  %></span></div>
+      <div class=" "> <span class=" cs_title">Occup: </span> <span class=" "><%= listing.occupy %></span></div>
     </div>
-    <div class="">
-      <div class="card-body"> <span class="card-title">Possession Date: </span> <span class="card-text"><%= formattedDate(listing.possessiondate) %></span></div>
-      <div class="card-body"> <span class="card-title">Contact After Expiry: </span> <span class="card-text">N</span></div>
+    <div class="col-4 cs_border">
+      <div class=" "> <span class="cs_title ">Possession Date: </span> <span class=" "><%= formattedDate(listing.possessiondate) %></span></div>
+      <div class=" "> <span class=" cs_title">Contact After Expiry: </span> <span class=" ">N</span></div>
     </div>
   </div>
 
-  <div class="show_four">
-      <div class="card-body" id="land001"> <span class="card-title">In Decimal: </span> <span class="card-text"><%= listing.decimal %></span></div>
-      <div class="card-body" id="land002"> <span class="card-title">In Katha: </span> <span class="card-text"><%= listing.katha %></span></div>
-      <div class="card-body" id="land003"> <span class="card-title">Length: </span> <span class="card-text"><%= listing.length %></span></div>
-      <div class="card-body" id="land004"> <span class="card-title">Width: </span> <span class="card-text"><%= listing.width %></span></div>
+  <div class="row cs_border">
+      <div class="col-6 col-md-3" id="land001"> <span class="cs_title ">In Decimal: </span> <span class=" "><%= listing.decimal %></span></div>
+      <div class="col-6 col-md-3 " id="land002"> <span class=" cs_title">In Katha: </span> <span class=" "><%= listing.katha %></span></div>
+      <div class="col-6 col-md-3 " id="land003"> <span class="cs_title ">Length: </span> <span class=" "><%= listing.length %></span></div>
+      <div class="col-6 col-md-3" id="land004"> <span class=" cs_title">Width: </span> <span class=" "><%= listing.width %></span></div>
   </div>
-  <div class="show_four" >
-    <div class="" id="apt003" hidden>
-      <div class="card-body"> <span class="card-title">Property Exterior: </span> <span class="card-text"><%=listing.exteriortype %></span></div>
-      <div class="card-body"> <span class="card-title">Total Sq. ft: </span> <span class="card-text"><%=listing.measurement %></span></div>
-      <div class="card-body"> <span class="card-title">Exposure: </span> <span class="card-text"><%= listing.exposure %></span></div>
-      <div class="card-body"> <span class="card-title">Maintainence: </span> <span class="card-text"><%= listing.maint %></span></div>
-      <div class="card-body"> <span class="card-title">Air Condition: </span> <span class="card-text"><%=listing.ac %></span></div>
-      <div class="card-body"> <span class="card-title">Elevator: </span> <span class="card-text"><%=listing.elevator %></span></div>
+  <div class="row">
+    <div class="col-6 col-md-3 cs_border" id="apt003" hidden>
+      <div class=" "> <span class=" cs_title">Property Exterior: </span> <span class=" "><%=listing.exteriortype %></span></div>
+      <div class=" "> <span class="cs_title ">Total Sq. ft: </span> <span class=" "><%=listing.measurement %></span></div>
+      <div class=" "> <span class=" cs_title">Exposure: </span> <span class=" "><%= listing.exposure %></span></div>
+      <div class=" "> <span class=" cs_title">Maintainence: </span> <span class=" "><%= listing.maint %></span></div>
+      <div class=" "> <span class=" cs_title">Air Condition: </span> <span class=" "><%=listing.ac %></span></div>
+      <div class=" "> <span class=" cs_title">Elevator: </span> <span class=" "><%=listing.elevator %></span></div>
     </div>
-    <div class="" id="apt004" hidden>
-      <div class="card-body"> <span class="card-title">Taxes Included: </span> <span class="card-text">N</span></div>
-      <div class="card-body"> <span class="card-title">Hydro Included: </span> <span class="card-text">N</span></div>
-      <div class="card-body"> <span class="card-title">Cable Tv Included: </span> <span class="card-text">N</span></div>
-      <div class="card-body"> <span class="card-title">Bldg Ins Included: </span> <span class="card-text">N</span></div>
-      <div class="card-body"> <span class="card-title">Com Elem Incl: </span> <span class="card-text">Y</span></div>
+    <div class="col-6 col-md-3 cs_border" id="apt004" hidden>
+      <div class=" "> <span class="cs_title ">Taxes Included: </span> <span class=" ">N</span></div>
+      <div class=" "> <span class=" cs_title">Hydro Included: </span> <span class=" ">N</span></div>
+      <div class=" "> <span class="cs_title ">Cable Tv Included: </span> <span class=" ">N</span></div>
+      <div class=" "> <span class=" cs_title">Bldg Ins Included: </span> <span class=" ">N</span></div>
+      <div class=" "> <span class=" cs_title">Com Elem Incl: </span> <span class=" ">Y</span></div>
     </div>
-    <div class="" id="apt005" hidden>
-      <div class="card-body"> <span class="card-title">Balcony: </span> <span class="card-text"><%=listing.balcony %></span></div>
-      <div class="card-body"> <span class="card-title">Total Parking Spaces: </span> <span class="card-text"><%=listing.parking %></span></div>
-      <div class="card-body"> <span class="card-title">Water Supply: </span> <span class="card-text"><%= listing.water %></span></div>
-      <div class="card-body"> <span class="card-title">Power Supply: </span> <span class="card-text"><%= listing.power %></span></div>
-      <div class="card-body" id="apt0001"> <span class="card-title">Bldg Amenities: </span> <span class="card-text"><%= listing.amenities %></span></div>
+    <div class="col-6 col-md-3 cs_border" id="apt005" hidden>
+      <div class=" "> <span class=" cs_title">Balcony: </span> <span class=" "><%=listing.balcony %></span></div>
+      <div class=" "> <span class=" cs_title">Total Parking Spaces: </span> <span class=" "><%=listing.parking %></span></div>
+      <div class=" "> <span class=" cs_title">Water Supply: </span> <span class=" "><%= listing.water %></span></div>
+      <div class=" "> <span class=" cs_title">Power Supply: </span> <span class=" "><%= listing.power %></span></div>
+      <div class=" " id="apt0001"> <span class=" cs_title">Bldg Amenities: </span> <span class=" "><%= listing.amenities %></span></div>
     </div>
-    <div class="" id="apt006" hidden>
+    <div class="col-6 col-md-3 cs_border" id="apt006" hidden>
       <table>
         <tr>
           <th>Floor Spaces</th>
@@ -142,61 +142,68 @@ for(var i = 0; i < listing.image.length; i++){
     </div>
   </div>
 
-  <div class="show_five">
+  <div class="row cs_border">
     <div class="">
-      <div class="card-body"> <span class="card-title">Remarks For Clients: </span> <span class="card-text"><%=listing.remarkforclients %></span></div>
-      <div class="card-body"> <span class="card-title">Extras: </span> <span class="card-text"><%=listing.extras %></span></div>
-      <div class="card-body"> <span class="card-title">Remarks for Brokerages: </span> <span class="card-text"><%=listing.remarkforbrokers %></span></div>
+      <div class=" "> <span class="cs_title ">Remarks For Clients: </span> <span class=" "><%=listing.remarkforclients %></span></div>
+      <div class=" "> <span class="cs_title ">Extras: </span> <span class=" "><%=listing.extras %></span></div>
+      <div class=" "> <span class=" cs_title">Remarks for Brokerages: </span> <span class=" "><%=listing.remarkforbrokers %></span></div>
     </div>
   </div>
 
-  <div class="show_six">
-    <div class="">
+  <div class="row cs_border">
+    <div class="col-12">
       <div class="">
-                <div class="card-body"> <span class="card-title"></span> <span class="card-text"><%= currentUser.brokerage %> , <%= currentUser.phone %>, <%= currentUser.unit %> , <%= currentUser.street %>, <%= currentUser.city %>
-                </span></div>
+        <div class=" "> <span class=" "></span> <span class=" "><%= currentUser.brokerage %> , <%= currentUser.phone %>, <%= currentUser.unit %> , <%= currentUser.street %>, <%= currentUser.city %>
+        </span></div>
       </div>
       <br>
     </div>
-    <div class="show_six-point">
-      <div class="">
-        <div class="card-body"> <span class="card-title">Contract Date: </span> <span class="card-text"><%= formattedDate(listing.contractdate) %></span></div>
-        <div class="card-body"> <span class="card-title">Expiry Date: </span> <span class="card-text"><%= formattedDate(listing.expirydate) %></span></div>
-        <div class="card-body"> <span class="card-title">Possession Date: </span> <span class="card-text"><%= formattedDate(listing.possessiondate)%></span></div>
-      </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-4 cs_border">
+          <div class=" "> <span class="cs_title ">Contract Date: </span> <span class=" "><%= formattedDate(listing.contractdate) %></span></div>
+          <div class=" "> <span class=" cs_title">Expiry Date: </span> <span class=" "><%= formattedDate(listing.expirydate) %></span></div>
+          <div class=" "> <span class=" cs_title">Possession Date: </span> <span class=" "><%= formattedDate(listing.possessiondate)%></span></div>
+        </div>
 
-      <div class="">
-        <div class="card-body"> <span class="card-title">Condition: </span> <span class="card-text"> </span></div>
-        <div class="card-body"> <span class="card-title">CB commission: </span> <span class="card-text"> <%= listing.cbcomm %> </span></div>
-      </div>
+        <div class="col-4 cs_border">
+          <div class=" "> <span class="cs_title ">Condition: </span> <span class=" "> </span></div>
+          <div class=" "> <span class=" cs_title">CB commission: </span> <span class=" "> <%= listing.cbcomm %> </span></div>
+        </div>
 
-      <div class="">
-        <div class="card-body"> <span class="card-title">Ad: </span> <span class="card-text"> <%= listing.ad %> </span></div>
-        <div class="card-body"> <span class="card-title">Original price: </span> <span class="card-text">
-          <%
-          if( listing.originalprice === undefined){
-            %>
-            <%= listing.listprice %>
-          <% }else{ %>
-            <%= listing.originalprice %>
-          <% } %>
-         </span></div>
-        <div class="card-body" > <span class="card-title">Last Updated: </span> <span class="card-text"><%= formattedDate(new Date) %></span></div>
+        <div class="col-4 cs_border">
+          <div class=""> <span class="cs_title">Ad: </span> <span class=" "> <%= listing.ad %> </span></div>
+          <div class=""> <span class="cs_title">Original price: </span> <span class=" ">
+            <%
+            if( listing.originalprice === undefined){
+              %>
+              <%= listing.listprice %>
+            <% }else{ %>
+              <%= listing.originalprice %>
+            <% } %>
+           </span></div>
+          <div class=" " > <span class="cs_title ">Last Updated: </span> <span class=" "><%= formattedDate(new Date) %></span></div>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="">
+  <div class="row text-center cs_row_space">
     <% if(currentUser && listing.author.id.equals(currentUser._id)){ %>
-      <a href="/listing/<%= listing._id %>/edit">Edit</a>
-      <form class="" action="/listing/<%= listing._id %>?_method=delete" method="post">
-      <button type="submit" name="button">Remove</button>
-      </form>
+      <div class="col-4">
+        <a href="/listing/<%= listing._id %>/edit" class="btn btn-success">Edit</a>
+      </div>
+      <div class="col-4">
+        <form class="" action="/listing/<%= listing._id %>?_method=delete" method="post">
+        <button type="submit" name="button" class="btn btn-danger">Remove</button>
+        </form>
+      </div>
     <% }%>
-
-    <a href="/info">back</a>
+    <div class="col-4">
+        <a href="/info" class="btn btn-secondary">back</a>
+    </div>
   </div>
 </div>
+<% include partials/footer %>
 <script type="text/javascript">
   var properties = document.getElementById('property00').textContent;
 
@@ -241,4 +248,3 @@ for(var i = 0; i < listing.image.length; i++){
 
 
 </script>
-<% include partials/footer %>
