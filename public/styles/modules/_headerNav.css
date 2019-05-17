@@ -16,7 +16,8 @@
     }
   }
 .bg-light{
-  background-color: #094E12 !important;
+  background:linear-gradient(to bottom left, #094E12, transparent) !important;
+  background-blend-mode: screen;
 }
 
 .navbar-brand{

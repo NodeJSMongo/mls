@@ -3,8 +3,12 @@ html , body{
   letter-spacing: 0.05em;
   font-family: 'Roboto';
   margin: 0;
-  background-color: #f0f5f5;
-  height: 100%;
+  background:
+      linear-gradient(#094E12, transparent),
+      linear-gradient(to top left, white, transparent),
+      linear-gradient(to top right, #094E12, transparent),
+      linear-gradient(to bottom left, #094E12, transparent);
+  background-blend-mode: screen;
 }
 
 img{
@@ -71,8 +75,11 @@ table td {
   top: 10%;
   width: 40%;
   left: 30%;
-  background-color: #FF0606;
-  padding: 4rem;
+  background:
+      linear-gradient(red, transparent),
+      linear-gradient(to top left, lime, transparent),
+      linear-gradient(to top right, blue, transparent);
+  background-blend-mode: screen;
   height: auto;
   color: #fff;
   a{
@@ -98,7 +105,7 @@ table td {
 } */
 .listing_scroll{
   overflow-x: scroll;
-  
+
 }
 
 .row_space{
@@ -123,12 +130,55 @@ table td {
   font-family: Roboto !important;
 }
 
+.cs_video_size{
+  width: 100%;
+  height: 100vh;
+}
 
+.cs_background_color{
+  background:
+      linear-gradient(#094E12, transparent),
+      linear-gradient(to top left, white, transparent),
+      linear-gradient(to top right, #094E12, transparent),
+      linear-gradient(to bottom left, #094E12, transparent);
+  background-blend-mode: screen;
+  height: 100vh;
+  weight:100%;
+}
+
+.cs_postion{
+  position: absolute;
+  width: 90%;
+  margin-left: 5%;
+  top: 12%;
+}
+.cs_text{
+  &_center{
+    text-align: center;
+  }
+}
+.cs_color{
+  &_white{
+    color: #fff;
+  }
+  &_green{
+    color: #222;
+  }
+}
+.cs_font{
+  &_family{
+    font-family: Roboto;
+    letter-spacing: .05em;
+  }
+  &_weight{
+    font-weight: bold;
+  }
+}
 
 @media all and (max-width: 360px) and (min-width: 200px) {
   .login_form{
-    top: 5%;
-    left: 5%;
+    top: 15%;
+    left: 9%;
     width: 90%;
     padding: 1rem;
   }
@@ -159,8 +209,8 @@ table td {
     font-family: Roboto;
   }
   .login_form{
-    top: 5%;
-    left: 5%;
+    top: 15%;
+    left: 9%;
     width: 90%;
     padding: 1rem;
   }
@@ -171,15 +221,16 @@ p.card-text{
 /* For medium screens like iPad */
 @media all and (max-width: 1020px) and (min-width: 768px) {
   .login_form{
+    width: 60%;
     top: 25%;
-    left: 25%;
+    left: 20%;
     padding: 4rem;
   }
 }
 /* For regular Laptop and desktop screens*/
 @media all and (max-width: 1920px) and (min-width: 1021px) {
   .login_form{
-    top: 10%;
+    top: 15%;
     left: 30%;
     padding: 5rem;
   }

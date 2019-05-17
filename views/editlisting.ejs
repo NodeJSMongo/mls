@@ -10,47 +10,50 @@ if(listing.contractdate || listing.expirydate || listing.possessiondate){
   }
 }
 %>
-<div class="wrapper">
-  <h3>Edit this List : <small>You must fill the required fields. Required fields are contarct, expiry , Commencement and Last status field</small></h3>
+<div class="container-fuild cs_row_space">
   <form class="" action="/listing/<%= listing._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <div class="container area_font">
+      <h3>Edit this List : <small>You must fill the required fields. Required fields are contarct, expiry , Commencement and Last status field</small></h3>
+        <h6 id="centeredheading">Property Classification</h6>
+        <hr>
+        <div class="row">
+          <div class="col">
+            <label for="propertyclass" class="">Property Class</label> <br>
+            <select class="" data-style="" name="listing[propertyclass]" id="propertyclass"  size="2">
+                    <option name="table1" value="Residential" <%= listing.propertyclass === 'Residential' ? 'selected': '' %>>Residential</option>
+                    <option name="table2" value="Commercial" <%= listing.propertyclass === 'Commercial' ? 'selected': '' %>>Commercial</option>
+            </select>
+          </div>
 
-    <h6 id="centeredheading">Property Classification</h6>
-    <hr>
-    <div class="new_1">
-      <div class="col">
-        <label for="propertyclass" class="">Property Class</label> <br>
-        <select class="" data-style="" name="listing[propertyclass]" id="propertyclass"  size="2">
-                <option name="table1" value="Residential" <%= listing.propertyclass === 'Residential' ? 'selected': '' %>>Residential</option>
-                <option name="table2" value="Commercial" <%= listing.propertyclass === 'Commercial' ? 'selected': '' %>>Commercial</option>
-        </select>
-      </div>
-
-      <div class="col">
-        <label for="sale" class="">Sale or Lease</label> <br>
-        <select class="" data-style="" name="listing[sale]" id="sale" size="3">
-                <option name="table1" value="Sale" <%= listing.sale === 'Sale' ? 'selected': '' %>>Sale</option>
-                <option name="table2" value="Lease" <%= listing.sale === 'Lease' ? 'selected': '' %>>Lease</option>
-                <option name="table3" value="Sub Lease" <%= listing.sale === 'Sub Lease' ? 'selected': '' %>>Sub Lease</option>
-        </select>
-      </div>
-      <div class="exteriortypes">
-        <label for="name" class="">Property Type:</label> <br>
-        <select class="exteriortype" data-style="" name="listing[exteriortype]" id="exteriortype"  size="3" disabled>
-          <option name="exteriortype1" value="Apartment" <%= listing.exteriortype === 'Apartment' ? 'selected': '' %> class="property">Apartment</option>
-          <option name="exteriortype2" value="House" <%= listing.exteriortype === 'House' ? 'selected': '' %> id="house" class="property">House</option>
-          <option name="exteriortype5" value="Land" <%= listing.exteriortype === 'Land' ? 'selected': '' %> id="land" class="property">Land</option>
-          <option name="exteriortype3" value="Duplex" <%= listing.exteriortype === 'Duplex' ? 'selected': '' %> class="property">Duplex</option>
-          <option name="exteriortype4" value="Multiplex"  <%= listing.exteriortype === 'Multiplex' ? 'selected': '' %>class="property">Multi-storey Building</option>
-          <option name="exteriortype5" value="Store" <%= listing.exteriortype === 'Store' ? 'selected': '' %> id="store" class="property">Store</option>
-          <option name="exteriortype5" value="Office" <%= listing.exteriortype === 'Office' ? 'selected': '' %> id="office" class="property">Office</option>
-          <option name="exteriortype5" value="Market"  <%= listing.exteriortype === 'Market' ? 'selected': '' %> id="market" class="property">Market</option>
-        </select>
-      </div>
+          <div class="col">
+            <label for="sale" class="">Sale or Lease</label> <br>
+            <select class="" data-style="" name="listing[sale]" id="sale" size="3">
+                    <option name="table1" value="Sale" <%= listing.sale === 'Sale' ? 'selected': '' %>>Sale</option>
+                    <option name="table2" value="Lease" <%= listing.sale === 'Lease' ? 'selected': '' %>>Lease</option>
+                    <option name="table3" value="Sub Lease" <%= listing.sale === 'Sub Lease' ? 'selected': '' %>>Sub Lease</option>
+            </select>
+          </div>
+          <div class="exteriortypes col">
+            <label for="name" class="">Property Type:</label> <br>
+            <select class="exteriortype" data-style="" name="listing[exteriortype]" id="exteriortype"  size="3" disabled>
+              <option name="exteriortype1" value="Apartment" <%= listing.exteriortype === 'Apartment' ? 'selected': '' %> class="property">Apartment</option>
+              <option name="exteriortype2" value="House" <%= listing.exteriortype === 'House' ? 'selected': '' %> id="house" class="property">House</option>
+              <option name="exteriortype5" value="Land" <%= listing.exteriortype === 'Land' ? 'selected': '' %> id="land" class="property">Land</option>
+              <option name="exteriortype3" value="Duplex" <%= listing.exteriortype === 'Duplex' ? 'selected': '' %> class="property">Duplex</option>
+              <option name="exteriortype4" value="Multiplex"  <%= listing.exteriortype === 'Multiplex' ? 'selected': '' %>class="property">Multi-storey Building</option>
+              <option name="exteriortype5" value="Store" <%= listing.exteriortype === 'Store' ? 'selected': '' %> id="store" class="property">Store</option>
+              <option name="exteriortype5" value="Office" <%= listing.exteriortype === 'Office' ? 'selected': '' %> id="office" class="property">Office</option>
+              <option name="exteriortype5" value="Market"  <%= listing.exteriortype === 'Market' ? 'selected': '' %> id="market" class="property">Market</option>
+            </select>
+          </div>
+        </div>
     </div>
+    <div class="container area_font">
+
 
     <h6 id="centeredheading">Location</h6>
     <hr>
-    <div class="new_2">
+    <div class="row">
       <div class="col">
         <label for="division" class="">Division</label> <br>
         <select class="" data-style="" name="listing[division]">
@@ -121,28 +124,28 @@ if(listing.contractdate || listing.expirydate || listing.possessiondate){
           <input type="text" name="listing[community]" value="<%= listing.community %>"  placeholder="">
         </div>
       </div>
-      <div class="">
-        <div class="col">
+      <div class="col">
+        <div class="">
           <label for="listprice" class="">List Price</label> <br>
           <input type="number" name="listing[listprice]" value="<%= listing.listprice %>" step="1" min="0" id="price001">
           <input type="number" name="listing[originalprice]" value="<%= listing.listprice %>" id="price002" hidden>
         </div>
-        <div class="col">
+        <div class="">
           <label for="name" class="">Contract Commencement: <%= formattedDate(listing.contractdate); %></label> <br>
           <input type="date" name="listing[contractdate]" value=" <%= listing.contractdate %>" required>
         </div>
-        <div class="col">
+        <div class="">
           <label for="name" class="">Expiry Date : <%= formattedDate(listing.expirydate); %></label> <br>
           <input type="date" name="listing[expirydate]" value=" <%= listing.expirydate %>" required>
         </div>
-        <div class="col">
+        <div class="">
           <label for="name" class="">Possession Date: <%= formattedDate(listing.possessiondate); %></label> <br>
           <input type="date" name="listing[possessiondate]" value=" <%= listing.possessiondate %>" required>
         </div>
       </div>
 
-      <div class="">
-        <div class="col">
+      <div class="col">
+        <div class="">
           <label for="name" class="">Holdover Days</label> <br>
           <input type="number" name="listing[holdoverdays]" value="<%= listing.holdoverdays %>">
         </div>
@@ -163,7 +166,8 @@ if(listing.contractdate || listing.expirydate || listing.possessiondate){
         </div>
       </div>
     </div>
-
+    </div>
+    <div class="container area_font">
     <h6 id="centeredheading">Details</h6>
     <hr>
     <h3 class="warn">You must select a "Property Type" to insert specific details.</h3>
@@ -184,9 +188,10 @@ if(listing.contractdate || listing.expirydate || listing.possessiondate){
 <!-- End of prices and Dates -->
 
     <!-- End of interior -->
+
     <h6>Comments</h6>
     <hr>
-    <div class="new_4">
+    <div class="container">
       <div class="col">
         <label>Remarks for Clients: </label> <br>
         <textarea name="listing[remarkforclients]" rows="2" cols="100" maxlength="250" ><%= listing.remarkforclients %> </textarea>
@@ -200,7 +205,12 @@ if(listing.contractdate || listing.expirydate || listing.possessiondate){
         <label>Remarks for Brokerages: </label> <br>
         <textarea name="listing[remarkforbrokers]" rows="2" cols="100" maxlength="250"><%= listing.remarkforbrokers %></textarea>
       </div>
-
+    </div>
+  </div> <br>
+  <hr>
+  <div class="container area_font">
+    <div class="row">
+      <!-- Default Availibility is unsold -->
       <div class="col">
         <select class="" data-style="" name="listing[laststatus]" size="3" required>
           <option name="laststatus1" value="Available" <%= listing.laststatus === 'Available' ? 'selected': '' %> >Available</option>
@@ -210,23 +220,31 @@ if(listing.contractdate || listing.expirydate || listing.possessiondate){
           <option name="laststatus4" value="Terminated" <%= listing.laststatus === 'Terminated' ? 'selected': '' %>>Terminated</option>
         </select>
       </div>
+      <div class="col">
+        <input type="file" name="image" accept="image/*">
+        <input type="file" name="image" accept="image/*">
+        <input type="file" name="image" accept="image/*">
+      </div>
+      <div class="col">
+        <input type="file" name="image" accept="image/*">
+        <input type="file" name="image" accept="image/*">
+        <input type="file" name="image" accept="image/*">
+      </div>
     </div>
-    <div class="col">
-      <!-- Default Availibility is unsold -->
-      <label for="status" class=""></label>
-      <select class="" data-style="" name="listing[status]" hidden>
-        <option name="table1" value="Available" <%= listing.status === 'Available' ? 'selected': '' %> >Unsold</option>
-        <option name="table1" value="Unvailable" <%= listing.status === 'Unvailable' ? 'selected': '' %> >sold</option>
-      </select>
-    </div>
+  </div>
 
-    <div class="col">
-      <label>Upload an Image of the property: </label>
-      <iframe src="https://script.google.com/a/macros/s/abc/exec" width="800" height="800" frameborder="0"></iframe>
-    </div>
+  <div class="">
+    <label for="status" class=""></label>
+    <select class="" data-style="" name="listing[status]" hidden>
+      <option name="table1" value="Available" <%= listing.status === 'Available' ? 'selected': '' %> >Unsold</option>
+      <option name="table1" value="Unvailable" <%= listing.status === 'Unvailable' ? 'selected': '' %> >sold</option>
+    </select>
+  </div>
 
 <!-- End of comments -->
-    <button type="submit" name="button"> Submit </button>
+    <div class="text-center">
+      <button type="submit" name="button" class="btn btn-secondary"> Submit </button>
+    </div>
   </form>
 </div>
 <script type="text/javascript">

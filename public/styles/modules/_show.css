@@ -67,7 +67,7 @@
   border:1px #000 solid;
 }
 .cs_row_space{
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 /* For small screens like mobile */
 @media all and (max-width: 767px) and (min-width: 200px) {

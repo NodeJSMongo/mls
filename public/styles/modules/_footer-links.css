@@ -4,9 +4,8 @@
 }
 
 .footer_bg{
-  background-color: #C60000;
-  color: #fff;
-  &_lower{
-    background-color: #094E12;
+  color: #000;
+  a{
+    color: #00f;
   }
 }

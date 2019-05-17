@@ -1,84 +1,27 @@
 <% include partials/header %>
 <% include partials/loggedin %>
-<div class="container-fluid">
-  <div class="">
-    <div class="card text-center">
-      <div class="card-body">
-        <h5 class="card-title">Highest & Lowest deals of the week!</h5>
-      </div>
-    </div>
-    <div class="bd-example">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="/images/slider1.jpg" class="d-block w-100" style="min-height: 60vh;" alt="...">
-              <div class="carousel-caption d-none d-block">
-                <h5 class="carousal_title">Highest Sold Price</h5>
-                <p class="carousal_desc">House in Adabar Sold in Tk.90,000,000</p>
-              </div>
-            </div>
-           <div class="carousel-item">
-              <img src="/images/slider2.jpg" class="d-block w-100" style="min-height: 60vh;" alt="...">
-              <div class="carousel-caption d-none d-block">
-                <h5 class="carousal_title"> Lowest Sold Price</h5>
-                <p class="carousal_desc">Apartment in Gulistan Sold in Tk.7,300,000.</p>
-              </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+  <!--Carousel Wrapper-->
+    <div class="cs_background_color">
+      <div class="cs_postion">
+        <div class="cs_text_center">
+          <h1 class="cs_font_weight">Hi <%= currentUser.username %> !</h1>
+          <h4>Welcome to Bangladesh MLS agent portal.</h4> <hr>
+        </div>
+        <div class="cs_color_green cs_row_space cs_font_family">
+          <p>
+            A multiple listing service (MLS, also multiple listing system or multiple listings service) is a suite of services that real estate
+            brokers use to establish contractual offers of compensation (among brokers) and accumulate and disseminate information to enable appraisals.
+          </p>
+          <p>
+              A multiple listing service's database and software is used by real estate brokers in real estate (or aircraft broker[1] in other industries for example),
+              representing sellers under a listing contract to widely share information about properties with other brokers who may represent
+              potential buyers or wish to work with a seller's broker in finding a buyer for the property or asset.
+          </p>
+          <p>
+            The listing data stored in a multiple listing service's database is the proprietary information of the seller.
+          </p>
         </div>
       </div>
-  </div>
-  <!-- <div class="row row_space">
-    <div class="col-sm-3">
-      <div class="card">
-        <img class="card-img-top" src="/images/sales.jpg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text"><b>Shamsul Islam</b> - the best Salesperson of this Month.</p>
-        </div>
-      </div>
-      </div>
-      <div class="col-sm-3">
-      <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Become a Broker</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Get ready</h6>
-        <p class="card-text">Do you want to extend your career as a broker? Take our 6 month broker certification course and get your broker license today.</p>
-        <a href="#" class="card-link">BDMLS</a>
-        <a href="#" class="card-link">More info</a>
-      </div>
-      </div>
-      </div>
-      <div class="col-sm-3">
-      <div class="card" >
-      <div class="card-body">
-        <h5 class="card-title">We are hiring!</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Urgent!</h6>
-        <p class="card-text">3 Sales person needed for Dhaka Broker Inc. Immediate start.</p>
-        <a href="#" class="card-link">Requirements</a>
-        <a href="#" class="card-link">Apply</a>
-      </div>
     </div>
-    </div>
-    <div class="col-sm-3">
-    <div class="card">
-      <img class="card-img-top" src="/images/agency.jpg" alt="Card image cap">
-      <div class="card-body">
-        <p class="card-text"><b>Dhaka Broker House Inc.</b>- Best realestate agency of the month.</p>
-      </div>
-    </div>
-    </div>
-  </div> -->
-</div>
+  <!--Carousel Wrapper-->
 <% include partials/footer %>
