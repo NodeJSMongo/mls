@@ -6,8 +6,7 @@ html , body{
   background:
       linear-gradient(#094E12, transparent),
       linear-gradient(to top left, white, transparent),
-      linear-gradient(to top right, #094E12, transparent),
-      linear-gradient(to bottom left, #094E12, transparent);
+      linear-gradient(to top right, #094E12, transparent);
   background-blend-mode: screen;
 }
 
@@ -75,15 +74,11 @@ table td {
   top: 10%;
   width: 40%;
   left: 30%;
-  background:
-      linear-gradient(red, transparent),
-      linear-gradient(to top left, lime, transparent),
-      linear-gradient(to top right, blue, transparent);
-  background-blend-mode: screen;
+  background: rgba(#fff, .07);
   height: auto;
-  color: #fff;
+  color: #000;
   a{
-    color:#fff;
+    color:#000;
     text-decoration: none;
   }
 }
@@ -224,7 +219,7 @@ p.card-text{
     width: 60%;
     top: 25%;
     left: 20%;
-    padding: 4rem;
+    padding: 2rem 4rem;
   }
 }
 /* For regular Laptop and desktop screens*/
@@ -232,6 +227,6 @@ p.card-text{
   .login_form{
     top: 15%;
     left: 30%;
-    padding: 5rem;
+    padding: 2rem 5rem;
   }
 }

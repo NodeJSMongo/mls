@@ -357,8 +357,7 @@ html , body{
   background:
       linear-gradient(#094E12, transparent),
       linear-gradient(to top left, white, transparent),
-      linear-gradient(to top right, #094E12, transparent),
-      linear-gradient(to bottom left, #094E12, transparent);
+      linear-gradient(to top right, #094E12, transparent);
   background-blend-mode: screen;
 }
 
@@ -425,17 +424,13 @@ table td {
   top: 10%;
   width: 40%;
   left: 30%;
-  background:
-      linear-gradient(red, transparent),
-      linear-gradient(to top left, lime, transparent),
-      linear-gradient(to top right, blue, transparent);
-  background-blend-mode: screen;
+  background: rgba(255,255,255, .07);
   height: auto;
-  color: #fff;
+  color: #000;
 }
 
 .login_form a{
-    color:#fff;
+    color:#000;
     text-decoration: none;
   }
 
@@ -582,7 +577,7 @@ p.card-text{
     width: 60%;
     top: 25%;
     left: 20%;
-    padding: 4rem;
+    padding: 2rem 4rem;
   }
 }
 
@@ -592,7 +587,7 @@ p.card-text{
   .login_form{
     top: 15%;
     left: 30%;
-    padding: 5rem;
+    padding: 2rem 5rem;
   }
 }
 
@@ -657,27 +652,6 @@ p.card-text{
                  "fc";
 }
 
-.headerNav{
-    display: grid;
-    grid-template-columns: 5fr  2fr;
-    border-bottom:3px #eee solid;
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    background-color: #fff;
-    z-index: 15;
-    padding: 2rem 0;
-  }
-
-.headerNav div span{
-        padding: 0 1rem;
-      }
-
-.bg-light{
-  background:linear-gradient(to bottom left, #094E12, transparent) !important;
-  background-blend-mode: screen;
-}
-
 .navbar-brand{
   color: #fff !important;
   font-family: Roboto;
@@ -688,15 +662,6 @@ p.card-text{
   color: #fff !important;
   font-family: Roboto;
 }
-
-.navbar-text strong{
-    color:#FF8900;
-  }
-
-.navbar-text a{
-    color: #fff !important;
-    text-decoration: none;
-  }
 
 .subHeader{
       display: none;

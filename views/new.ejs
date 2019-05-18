@@ -231,6 +231,7 @@
         <option name="laststatus5" value="Terminated">Terminated</option>
       </select>
     </div>
+    /* Write the logic here for 3 new hidden fields about brokerage info*/
 <!-- End of comments -->
     <div class="text-center">
       <input type="submit" name="submit" onsubmit="priceOrig();" class="btn btn-secondary"/>
@@ -247,60 +248,6 @@
   blocks[1].classList.add('blockHidden');
   blocks[2].classList.add('blockHidden');
   blocks[3].classList.add('blockHidden');
-
-  properties.forEach(function(property){
-    property.addEventListener("touchstart", function(){
-      if(properties[0] == this){
-        blocks[0].classList.remove('blockHidden');
-        blocks[0].classList.add('currentBlock');
-        blocks[1].classList.add('blockHidden');
-        blocks[2].classList.add('blockHidden');
-        blocks[3].classList.add('blockHidden');
-        warning.classList.add('warning');
-
-        var nums = [];
-        for( var i = 1; i < 19; i++ ) {
-            nums[i] = parseInt( document.getElementById("000" + i).disabled = false );
-        }
-
-
-      }else if(properties[1] == this){
-        blocks[1].classList.remove('blockHidden');
-        blocks[1].classList.add('currentBlock');
-        blocks[0].classList.add('blockHidden');
-        blocks[2].classList.add('blockHidden');
-        blocks[3].classList.add('blockHidden');
-        warning.classList.add('warning');
-
-        var nums = [];
-
-        for( var i = 1; i < 16; i++ ) {
-            nums[i] = parseInt( document.getElementById("h000" + i).disabled = false );
-        }
-
-      }else if(properties[2] == this){
-        blocks[2].classList.remove('blockHidden');
-        blocks[2].classList.add('currentBlock');
-        blocks[1].classList.add('blockHidden');
-        blocks[0].classList.add('blockHidden');
-        blocks[3].classList.add('blockHidden');
-        warning.classList.add('warning');
-
-      }else{
-        blocks[3].classList.remove('blockHidden');
-        blocks[3].classList.add('currentBlock');
-        blocks[1].classList.add('blockHidden');
-        blocks[2].classList.add('blockHidden');
-        blocks[0].classList.add('blockHidden');
-        warning.classList.add('warning');
-        var nums = [];
-        for( var i = 1; i < 13; i++ ) {
-            nums[i] = parseInt( document.getElementById("0000" + i).disabled = false );
-        }
-
-      }
-    })
-  });
 
   properties.forEach(function(property){
     property.addEventListener("click", function(){
@@ -355,6 +302,58 @@
       }
     })
   });
+  properties.forEach(function(property){
+    property.addEventListener("touchstart", function(){
+      if(properties[0] == this){
+        blocks[0].classList.remove('blockHidden');
+        blocks[0].classList.add('currentBlock');
+        blocks[1].classList.add('blockHidden');
+        blocks[2].classList.add('blockHidden');
+        blocks[3].classList.add('blockHidden');
+        warning.classList.add('warning');
 
+        var nums = [];
+        for( var i = 1; i < 19; i++ ) {
+            nums[i] = parseInt( document.getElementById("000" + i).disabled = false );
+        }
+
+
+      }else if(properties[1] == this){
+        blocks[1].classList.remove('blockHidden');
+        blocks[1].classList.add('currentBlock');
+        blocks[0].classList.add('blockHidden');
+        blocks[2].classList.add('blockHidden');
+        blocks[3].classList.add('blockHidden');
+        warning.classList.add('warning');
+
+        var nums = [];
+
+        for( var i = 1; i < 16; i++ ) {
+            nums[i] = parseInt( document.getElementById("h000" + i).disabled = false );
+        }
+
+      }else if(properties[2] == this){
+        blocks[2].classList.remove('blockHidden');
+        blocks[2].classList.add('currentBlock');
+        blocks[1].classList.add('blockHidden');
+        blocks[0].classList.add('blockHidden');
+        blocks[3].classList.add('blockHidden');
+        warning.classList.add('warning');
+
+      }else{
+        blocks[3].classList.remove('blockHidden');
+        blocks[3].classList.add('currentBlock');
+        blocks[1].classList.add('blockHidden');
+        blocks[2].classList.add('blockHidden');
+        blocks[0].classList.add('blockHidden');
+        warning.classList.add('warning');
+        var nums = [];
+        for( var i = 1; i < 13; i++ ) {
+            nums[i] = parseInt( document.getElementById("0000" + i).disabled = false );
+        }
+
+      }
+    })
+  });
 </script>
 <% include partials/footer %>
