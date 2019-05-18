@@ -176,25 +176,25 @@
        <hr>
        <h6>Comments</h6>
        <hr>
-       <div class="container">
+       <div class="">
          <div class="row">
            <div class="col">
              <label>Remarks for Clients: </label> <br>
-             <textarea name="remarkforclients" rows="3" cols="45" maxlength="250"></textarea>
+             <textarea name="remarkforclients" rows="3" cols="40" maxlength="250"></textarea>
            </div>
            <div class="col">
              <label>Extras: </label> <br>
-             <textarea name="extras" rows="3" cols="45" maxlength="250"></textarea>
+             <textarea name="extras" rows="3" cols="40" maxlength="250"></textarea>
            </div>
 
            <div class="col">
              <label>Remarks for Brokerages: </label> <br>
-             <textarea name="remarkforbrokers" rows="3" cols="45" maxlength="250"></textarea>
+             <textarea name="remarkforbrokers" rows="3" cols="40" maxlength="250"></textarea>
            </div>
          </div>
          <br>
          <hr>
-         <div class="container">
+         <div class="">
            <h6 id="centeredheading">Upload Image of the property: </h6> <br>
            <div class="row">
              <div class="col">
@@ -231,7 +231,11 @@
         <option name="laststatus5" value="Terminated">Terminated</option>
       </select>
     </div>
-    /* Write the logic here for 3 new hidden fields about brokerage info*/
+
+    <div class="">
+      <input type="text" name="usrbrkr" value="<%= currentUser.brokerage %>" hidden>
+      <input type="text" name="usrphn" value="<%= currentUser.phone %>" hidden>
+    </div>
 <!-- End of comments -->
     <div class="text-center">
       <input type="submit" name="submit" onsubmit="priceOrig();" class="btn btn-secondary"/>
@@ -250,60 +254,7 @@
   blocks[3].classList.add('blockHidden');
 
   properties.forEach(function(property){
-    property.addEventListener("click", function(){
-      if(properties[0] == this){
-        blocks[0].classList.remove('blockHidden');
-        blocks[0].classList.add('currentBlock');
-        blocks[1].classList.add('blockHidden');
-        blocks[2].classList.add('blockHidden');
-        blocks[3].classList.add('blockHidden');
-        warning.classList.add('warning');
-
-        var nums = [];
-        for( var i = 1; i < 19; i++ ) {
-            nums[i] = parseInt( document.getElementById("000" + i).disabled = false );
-        }
-
-
-      }else if(properties[1] == this){
-        blocks[1].classList.remove('blockHidden');
-        blocks[1].classList.add('currentBlock');
-        blocks[0].classList.add('blockHidden');
-        blocks[2].classList.add('blockHidden');
-        blocks[3].classList.add('blockHidden');
-        warning.classList.add('warning');
-
-        var nums = [];
-
-        for( var i = 1; i < 16; i++ ) {
-            nums[i] = parseInt( document.getElementById("h000" + i).disabled = false );
-        }
-
-      }else if(properties[2] == this){
-        blocks[2].classList.remove('blockHidden');
-        blocks[2].classList.add('currentBlock');
-        blocks[1].classList.add('blockHidden');
-        blocks[0].classList.add('blockHidden');
-        blocks[3].classList.add('blockHidden');
-        warning.classList.add('warning');
-
-      }else{
-        blocks[3].classList.remove('blockHidden');
-        blocks[3].classList.add('currentBlock');
-        blocks[1].classList.add('blockHidden');
-        blocks[2].classList.add('blockHidden');
-        blocks[0].classList.add('blockHidden');
-        warning.classList.add('warning');
-        var nums = [];
-        for( var i = 1; i < 13; i++ ) {
-            nums[i] = parseInt( document.getElementById("0000" + i).disabled = false );
-        }
-
-      }
-    })
-  });
-  properties.forEach(function(property){
-    property.addEventListener("touchstart", function(){
+    property.addEventListener("mousedown", function(){
       if(properties[0] == this){
         blocks[0].classList.remove('blockHidden');
         blocks[0].classList.add('currentBlock');

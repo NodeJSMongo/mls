@@ -1,8 +1,3 @@
-.footerLinks{
-  display: grid;
-  grid-template-columns: repeat (10, 1fr);
-}
-
 .footer_bg{
   color: #000;
   a{

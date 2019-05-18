@@ -181,29 +181,14 @@ router.post("/listing", upload,  middleware.isLoggedIn, function(req, res){
 
   var status = req.body.status;
   var laststatus = req.body.laststatus;
+  var usrbrkr = req.body.usrbrkr;
+  var usrphn = req.body.usrphn;
 
   var image = [];
   for(var i = 0; i < req.files.length; i++){
     image[i] = req.files[i].path;
   }
-/*  var image1;
-  var image2;
-  var image3;
-  var image4;
-  var image5;
-  for(var i = 0; i < req.files.length; i++){
-    if(i == 0){
-      image1 = req.files[i].path;
-    }else if (i == 1) {
-      image2 = req.files[i].path;
-    }else if (i == 2) {
-      image3 = req.files[i].path;
-    }else if (i == 3) {
-      image4 = req.files[i].path;
-    }else {
-      image5 = req.files[i].path;
-    }
-  }  */
+
   var desc1 = req.body.desc1;
   var desc2 = req.body.desc2;
   var desc3 = req.body.desc3;
@@ -230,7 +215,7 @@ router.post("/listing", upload,  middleware.isLoggedIn, function(req, res){
     laststatus: laststatus, measurement:measurement, stname: stname,
     unit: unit, exposure: exposure, balcony: balcony, parking: parking, maint: maint, occupy:occupy,
     desc1: desc1, desc2: desc2, desc3: desc3, desc4: desc4, decimal: decimal, katha: katha, length: length,
-    width: width, originalprice: originalprice, image: image
+    width: width, originalprice: originalprice, image: image, usrbrkr: usrbrkr, usrphn: usrphn
   }
   //add the data
   Listing.create(newListing, function(err, newlyCreated){

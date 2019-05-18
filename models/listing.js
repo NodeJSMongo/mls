@@ -54,10 +54,8 @@ var listingSchema = new mongoose.Schema({
   length: String,
   width: String,
   image: Array,
-  /*usrphn: String,
-  usrnm: String,
-  usrbrkr: String,*/
-
+  usrphn: mongoose.Schema.Types.Mixed,
+  usrbrkr: String,
   author:{
     id:{
       type:mongoose.Schema.Types.ObjectId,

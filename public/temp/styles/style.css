@@ -663,6 +663,33 @@ p.card-text{
   font-family: Roboto;
 }
 
+.navbar-light{
+  z-index: 100 !important;
+  width:50%;
+  margin-left: 25%;
+}
+
+@media all and (max-width: 360px) and (min-width: 200px) {
+  .navbar-light{
+    width:100%;
+    margin-left: auto;
+  }
+}
+
+@media all and (max-width: 768px) and (min-width: 361px) {
+  .navbar-light{
+    width:100%;
+    margin-left: auto;
+  }
+}
+
+@media all and (max-width: 1024px) and (min-width: 769px) {
+  .navbar-light{
+    width:60%;
+    margin-left: 20%;
+  }
+}
+
 .subHeader{
       display: none;
       }
@@ -723,11 +750,6 @@ p.card-text{
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   position: relative;
 
-}
-
-.footerLinks{
-  display: grid;
-  grid-template-columns: repeat (10, 1fr);
 }
 
 .footer_bg{
