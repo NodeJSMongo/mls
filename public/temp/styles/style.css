@@ -354,11 +354,7 @@ html , body{
   letter-spacing: 0.05em;
   font-family: 'Roboto';
   margin: 0;
-  background:
-      linear-gradient(#094E12, transparent),
-      linear-gradient(to top left, white, transparent),
-      linear-gradient(to top right, #094E12, transparent);
-  background-blend-mode: screen;
+  background-color:#fff;
 }
 
 img{
@@ -486,12 +482,7 @@ table td {
 }
 
 .cs_background_color{
-  background:
-      linear-gradient(#094E12, transparent),
-      linear-gradient(to top left, white, transparent),
-      linear-gradient(to top right, #094E12, transparent),
-      linear-gradient(to bottom left, #094E12, transparent);
-  background-blend-mode: screen;
+  background-color:#eee;
   height: 100vh;
   weight:100%;
 }

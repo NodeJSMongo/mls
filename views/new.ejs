@@ -254,7 +254,7 @@
   blocks[3].classList.add('blockHidden');
 
   properties.forEach(function(property){
-    property.addEventListener("mousedown", function(){
+    property.addEventListener("mouseover", function(){
       if(properties[0] == this){
         blocks[0].classList.remove('blockHidden');
         blocks[0].classList.add('currentBlock');
@@ -279,7 +279,7 @@
 
         var nums = [];
 
-        for( var i = 1; i < 16; i++ ) {
+        for( var i = 1; i < 15; i++ ) {
             nums[i] = parseInt( document.getElementById("h000" + i).disabled = false );
         }
 

@@ -1,5 +1,5 @@
-<div class="new_3">
-  <div class="">
+<div class="row">
+  <div class="col-6 col-md-3">
     <div class="">
     <label for="measurement">Measurement</label> <br>
         <input type="number" name="listing[measurement]" value="<%= listing.measurement %>" placeholder="" step="1" min="250" id="e00001" disabled>
@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <div class="">
+  <div class="col-6 col-md-3">
     <div class="">
       <label for="unit"> Unit </label> <br>
       <input type="text" name="listing[unit]" value="<%= listing.unit %>" placeholder="" id="e00003" disabled> <br>
@@ -26,7 +26,7 @@
   </div>
 
 
-  <div class="">
+  <div class="col-6 col-md-3">
     <div class="">
       <label for="water" class="">Water</label> <br>
       <select class="" data-style="" name="listing[water]" id="e00006" disabled>
@@ -50,7 +50,7 @@
     </div>
   </div>
 
-  <div class="">
+  <div class="col-6 col-md-3">
     <div class="">
       <label for="washroom" class="">#Washrooms</label> <br>
       <input type="number" name="listing[washroom]" value="<%= listing.washroom %>" min="1" id="e00009" disabled>
