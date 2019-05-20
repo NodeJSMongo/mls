@@ -24,16 +24,24 @@
         </div>
         <div class="exteriortypes col">
           <label for="name" class="">Property Type: </label> <br>
-          <select class="exteriortype" data-style="" name="exteriortype" id="exteriortype" required size="3" style="cursor:pointer;">
-            <option name="exteriortype1" value="Apartment" class="property">Apartment</option>
-            <option name="exteriortype2" value="House" id="house" class="property">House</option>
-            <option name="exteriortype5" value="Land" id="land" class="property">Land</option>
-            <option name="exteriortype3" value="Duplex" class="property">Duplex</option>
-            <option name="exteriortype4" value="Multiplex" class="property">Multi-storey Building</option>
-            <option name="exteriortype5" value="Store" id="store" class="property">Store</option>
-            <option name="exteriortype6" value="Office" id="office" class="property">Office</option>
-            <option name="exteriortype7" value="Market" id="market" class="property">Market</option>
-          </select>
+        <!--<select class="exteriortype" data-style="" name="exteriortype" id="exteriortype" required size="3">
+            <option value="Apartment" class="property">Apartment</option>
+            <option  value="House" id="house" class="property">House</option>
+            <option  value="Land" id="land" class="property">Land</option>
+            <option  value="Duplex" class="property">Duplex</option>
+            <option  value="Multiplex" class="property">Multi-storey Building</option>
+            <option  value="Store" id="store" class="property">Store</option>
+            <option  value="Office" id="office" class="property">Office</option>
+            <option  value="Market" id="market" class="property">Market</option>
+          </select> -->
+          <input type="radio" name="exteriortype" value="Adabar" class="property">Apartment<br>
+          <input type="radio" name="exteriortype" value="Azampur" class="property" id="house">House<br>
+          <input type="radio" name="exteriortype" value="Badda" class="property" id="land">Land<br>
+          <input type="radio" name="exteriortype" value="Bangsal" class="property">Duplex<br>
+          <input type="radio" name="exteriortype" value="Bimanbandar" class="property">Multi-storey Building<br>
+          <input type="radio" name="exteriortype" value="Cantonment" class="property" id="store">Store<br>
+          <input type="radio" name="exteriortype" value="Chowkbazar" class="property" id="office">Office<br>
+          <input type="radio" name="exteriortype" value="Chowkbazar" class="property" id="market">Market<br>
         </div>
       </div>
     </div>
@@ -254,7 +262,7 @@
   blocks[3].classList.add('blockHidden');
 
   properties.forEach(function(property){
-    property.addEventListener("mouseover", function(){
+    property.addEventListener("click", function(){
       if(properties[0] == this){
         blocks[0].classList.remove('blockHidden');
         blocks[0].classList.add('currentBlock');
